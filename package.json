@@ -1,5 +1,5 @@
 {
-  "name": "gulp-starter",
+  "name": "gulpstarter",
   "version": "1.0.0",
   "description": "Gulp 4 powered starter kit.",
   "license": "MIT",
@@ -11,7 +11,7 @@
   "author": "Lance Guyatt",
   "repository": {
     "type": "git",
-    "url": "git@github.com:lanceguyatt/gulp-starter.git"
+    "url": "git@github.com:lanceguyatt/gulpstarter.git"
   },
   "scripts": {
     "start": "node app.js",
@@ -22,7 +22,7 @@
     "test:html": "gulp test:html",
     "test:styles": "gulp test:styles",
     "test:scripts": "gulp test:scripts",
-    "deploy": "npm run build && surge -p build -d gulp-starter.surge.sh"
+    "deploy": "npm run build && surge -p build -d gulpstarter.surge.sh"
   },
   "dependencies": {
     "dotenv": "^4.0.0",
@@ -69,8 +69,6 @@
     "postcss-nested": "^1.0.0",
     "postcss-short": "^3.0.3",
     "postcss-simple-vars": "^3.0.0",
-    "pug-lint": "^2.4.0",
-    "pug-lint-config-pustur": "^1.0.4",
     "pump": "^1.0.2",
     "rimraf": "^2.6.1",
     "stylelint": "^7.5.0",

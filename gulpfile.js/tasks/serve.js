@@ -34,12 +34,11 @@ const serve = {
 
   browserSync(done) {
     browserSync.init(null, {
-      open: false,
+      open: true,
       notify: false,
       proxy: `http://localhost:${port}`,
     });
-
-    return done();
+    done();
   },
 
   watch(done) {
