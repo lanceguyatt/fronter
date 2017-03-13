@@ -1,8 +1,10 @@
-const gulp = require('gulp');
-const svgstore = require('gulp-svgstore');
-const svgmin = require('gulp-svgmin');
-const rename = require('gulp-rename');
+/* eslint-disable comma-dangle */
 const { resolve } = require('path');
+const gulp = require('gulp');
+const pump = require('pump');
+const rename = require('gulp-rename');
+const svgmin = require('gulp-svgmin');
+const svgstore = require('gulp-svgstore');
 
 const { paths } = require('../../config');
 
@@ -11,32 +13,37 @@ const files = [
 ];
 
 const images = {
-
   svgMin(done) {
-    gulp.src(files)
-      .pipe(svgmin({
-        plugins: [
-          {
-            mergePaths: true,
-          }, {
-            convertColors: {
-              currentColor: true,
+    pump(
+      [
+        gulp.src(files),
+        svgmin({
+          plugins: [
+            {
+              mergePaths: true,
+            }, {
+              convertColors: {
+                currentColor: true,
+              },
             },
-          },
-        ],
-      }))
-      .pipe(gulp.dest(resolve(paths.images.srcDir, 'icons')));
-
-    return done();
+          ],
+        }),
+        gulp.dest(resolve(paths.images.srcDir, 'icons')),
+      ],
+      done
+    );
   },
 
   svgStore(done) {
-    gulp.src(files)
-      .pipe(rename({ prefix: 'i-' }))
-      .pipe(svgstore())
-      .pipe(gulp.dest(resolve(paths.images.destDir, 'icons')));
-
-    return done();
+    pump(
+      [
+        gulp.src(files),
+        rename({ prefix: 'i-' }),
+        svgstore(),
+        gulp.dest(resolve(paths.images.destDir, 'icons')),
+      ],
+      done
+    );
   },
 };
 

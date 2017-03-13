@@ -1,13 +1,14 @@
-const gulp = require('gulp');
-const pug = require('gulp-pug');
+/* eslint-disable comma-dangle */
 const { resolve } = require('path');
-const plumber = require('gulp-plumber');
+const browserSync = require('browser-sync').get('main');
 const changed = require('gulp-changed');
+const gulp = require('gulp');
 const gutil = require('gulp-util');
 const htmlhint = require('gulp-htmlhint');
-const browserSync = require('browser-sync').get('main');
+const pug = require('gulp-pug');
+const pump = require('pump');
 
-const { paths, onError, prod } = require('../../config');
+const { prod, paths } = require('../../config');
 const locals = require('../../data/index.json');
 
 const files = [
@@ -16,27 +17,27 @@ const files = [
 
 const templates = {
   templates(done) {
-    gulp.src(files)
-      .pipe(pug({
-        locals,
-        pretty: true,
-      }))
-      .pipe(prod ? gutil.noop() : changed(paths.destDir, {
-        extension: '.html',
-      }))
-      .pipe(plumber(onError))
-      .pipe(gulp.dest(paths.templates.destDir))
-      .pipe(prod ? gutil.noop() : browserSync.stream());
-
-    return done();
+    pump(
+      [
+        gulp.src(files),
+        pug({ locals, pretty: true, }),
+        prod ? gutil.noop() : changed(paths.destDir, { extension: '.html', }),
+        gulp.dest(paths.templates.destDir),
+        prod ? gutil.noop() : browserSync.stream(),
+      ],
+      done
+    );
   },
 
   test(done) {
-    gulp.src(resolve(paths.destDir, '*.html'))
-      .pipe(htmlhint('.htmlhintrc'))
-      .pipe(htmlhint.reporter());
-
-    return done();
+    pump(
+      [
+        gulp.src(resolve(paths.destDir, '*.html')),
+        htmlhint('.htmlhintrc'),
+        htmlhint.reporter(),
+      ],
+      done
+    );
   },
 };
 

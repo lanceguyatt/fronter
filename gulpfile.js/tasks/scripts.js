@@ -1,18 +1,24 @@
-const gulp = require('gulp');
+/* eslint-disable comma-dangle */
 const { resolve } = require('path');
 const browserSync = require('browser-sync').get('main');
+const gulp = require('gulp');
 const gutil = require('gulp-util');
+const uglify = require('gulp-uglify');
+const pump = require('pump');
 
 const { prod, paths } = require('../../config');
 
 const scripts = {
-
   scripts(done) {
-    gulp.src(resolve(paths.scripts.srcDir, '*.js'))
-      .pipe(gulp.dest(paths.scripts.destDir))
-      .pipe(prod ? gutil.noop() : browserSync.stream());
-
-    return done();
+    pump(
+      [
+        gulp.src(resolve(paths.scripts.srcDir, '*.js')),
+        prod ? uglify() : gutil.noop(),
+        gulp.dest(paths.scripts.destDir),
+        prod ? gutil.noop() : browserSync.stream(),
+      ],
+      done
+    );
   },
 };
 

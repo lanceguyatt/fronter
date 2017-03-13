@@ -1,23 +1,26 @@
+/* eslint-disable comma-dangle */
+const { resolve } = require('path');
 const browserSync = require('browser-sync').get('main');
-const gutil = require('gulp-util');
-const gulp = require('gulp');
-const plumber = require('gulp-plumber');
-const postcss = require('gulp-postcss');
 const cssnano = require('gulp-cssnano');
+const gulp = require('gulp');
+const gutil = require('gulp-util');
+const postcss = require('gulp-postcss');
+const pump = require('pump');
 
-const { prod, files, paths, onError } = require('../../config');
+const { prod, paths } = require('../../config');
 
 const styles = {
-
   styles(done) {
-    gulp.src(files.styles)
-      .pipe(postcss())
-      .pipe(prod ? cssnano() : gutil.noop())
-      .pipe(plumber(onError))
-      .pipe(gulp.dest(paths.styles.destDir))
-      .pipe(prod ? gutil.noop() : browserSync.stream());
-
-    return done();
+    pump(
+      [
+        gulp.src(resolve(paths.styles.srcDir, '*.css')),
+        postcss(),
+        prod ? cssnano() : gutil.noop(),
+        gulp.dest(paths.styles.destDir),
+        prod ? gutil.noop() : browserSync.stream(),
+      ],
+      done
+    );
   },
 };
 
