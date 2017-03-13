@@ -1,13 +1,13 @@
+const { resolve } = require('path');
 const gulp = require('gulp');
 const nodemon = require('gulp-nodemon');
 const browserSync = require('browser-sync').create('main');
-const path = require('path');
+
+const { scripts } = require('./scripts');
+const { styles } = require('./styles');
+const { templates } = require('./templates');
 
 const { paths, port, prod } = require('../../config');
-
-const scripts = require('./scripts');
-const styles = require('./styles');
-const templates = require('./templates');
 
 const serve = {
   nodemon(done) {
@@ -22,7 +22,7 @@ const serve = {
         'node_modules',
       ],
     }).on('restart', function () {
-      console.log('Nodemon restarted!');
+      return console.log('Nodemon restarted!');
     }).on('start', function () {
       if (!started) {
         console.log('Nodemon started!');
@@ -34,19 +34,18 @@ const serve = {
 
   browserSync(done) {
     browserSync.init(null, {
-      open: true,
+      open: false,
       notify: false,
       proxy: `http://localhost:${port}`,
     });
-    done();
+    return done();
   },
 
   watch(done) {
-    console.log('Watching?');
-    gulp.watch(path.resolve(paths.scripts.srcDir, '**', '*.js'), scripts);
-    gulp.watch(path.join(paths.styles.srcDir, '**', '*.css'), styles);
-    gulp.watch(path.resolve(paths.templates.srcDir, '**', '*.pug'), templates);
-    done();
+    gulp.watch(resolve(paths.scripts.srcDir, '**', '*.js'), scripts);
+    gulp.watch(resolve(paths.styles.srcDir, '**', '*.css'), styles);
+    gulp.watch(resolve(paths.templates.srcDir, '**', '*.pug'), templates);
+    return done();
   },
 };
 

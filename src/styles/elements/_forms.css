@@ -38,10 +38,10 @@ select {
   padding: var(--form-padding-y) var(--form-padding-x);
   width: 100%;
 
-  &:focus {
+  /* &:focus {
     border-color: var(--black-pearl);
     outline: none;
-  }
+  } */
 
   &::placeholder {
     color: #b1b1b1;
@@ -73,8 +73,8 @@ select {
 
 :root {
   --form-font-family: inherit;
-  --form-font-size: 16px;
-  --form-color: var(--black-pearl);
+  --form-font-size: inherit;
+  --form-color: inherit;
   --form-line-height: 1.5;
   --form-border-width: var(--border-width);
   --form-border-radius: 2px;

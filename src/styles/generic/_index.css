@@ -12,7 +12,6 @@ body {
 }
 
 body {
-  color: var(--gravel);
   font-size: 16px;
   font-family: Arial;
   line-height: 1.5;
@@ -44,7 +43,7 @@ img {
 }
 
 a {
-  color: var(--blue);
+  /* color: var(--blue); */
   transition: color 0.2s;
   text-decoration: none;
 }
@@ -109,10 +108,10 @@ samp {
   font-size: 87.5%;
 }
 
-code {
+/*code {
   color: var(--blue);
   background-image: linear-gradient(transparent, transparent 87.5%, color(var(--blue) a(0.125)) 0);
-}
+}*/
 
 pre code {
   background-image: none;

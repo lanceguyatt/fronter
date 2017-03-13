@@ -8,7 +8,7 @@ const svgstore = require('gulp-svgstore');
 const { paths } = require('../../config');
 
 const files = [
-  resolve(paths.images.srcDir, '*.svg'),
+  resolve(paths.images.srcDir, 'icons', '*.svg'),
 ];
 
 const images = {
@@ -39,7 +39,7 @@ const images = {
         gulp.src(files),
         rename({ prefix: 'i-' }),
         svgstore(),
-        gulp.dest(resolve(paths.images.destDir, 'icons')),
+        gulp.dest(resolve(paths.images.destDir)),
       ],
       done
     );
