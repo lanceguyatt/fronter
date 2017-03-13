@@ -1,0 +1,84 @@
+form {
+  font-family: var(--form-font-family);
+  font-size: var(--form-font-size);
+  line-height: var(--form-line-height);
+}
+
+fieldset {
+  border: 0;
+}
+
+legend {
+  border: 0;
+}
+
+label {
+  display: inline-block;
+}
+
+label,
+select,
+input,
+textarea {
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+input,
+textarea,
+select {
+  appearance: none;
+  background-color: var(--white);
+  border-color: var(--form-border-color);
+  border-radius: var(--form-border-radius);
+  border-style: solid;
+  border-width: var(--form-border-width);
+  display: block;
+  padding: var(--form-padding-y) var(--form-padding-x);
+  width: 100%;
+
+  &:focus {
+    border-color: var(--black-pearl);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: #b1b1b1;
+    transition: opacity 0.2s;
+  }
+
+  &:focus::placeholder {
+    opacity: 0;
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+select {
+  appearance: none;
+  height: 40px;
+
+  &::-ms-expand { /* for IE 11 */
+    display: none;
+  }
+
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+}
+
+:root {
+  --form-font-family: inherit;
+  --form-font-size: 16px;
+  --form-color: var(--black-pearl);
+  --form-line-height: 1.5;
+  --form-border-width: var(--border-width);
+  --form-border-radius: 2px;
+  --form-border-color: #d3d3d3;
+  --form-padding-x: 0.4375em;
+  --form-padding-y: 0.4375em;
+}

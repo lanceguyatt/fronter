@@ -1,0 +1,41 @@
+.u-inline { display: inline; }
+.u-block { display: block; }
+.u-inline-block { display: inline-block; }
+.u-table { display: table; }
+.u-table-cell { display: table-cell; }
+
+/* http://danisadesigner.com/blog/flexbox-clear-fix-pseudo-elements/ */
+.u-clearfix {
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+    flex-basis: 0;
+    order: 1;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+.u-fit { max-width: 100%; }
+.u-border-box { box-sizing: border-box; }
+
+.u-left { float: left; }
+.u-right { float: right; }
+
+@media (--breakpoint-sm) {
+  .u-left-sm { float: left; }
+  .u-right-sm { float: right; }
+}
+
+@media (--breakpoint-md) {
+  .u-left-md { float: left; }
+  .u-right-md { float: right; }
+}
+
+@media (--breakpoint-lg) {
+  .u-left-lg { float: left; }
+  .u-right-lg { float: right; }
+}

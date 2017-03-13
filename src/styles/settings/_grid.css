@@ -1,0 +1,24 @@
+@lost gutter 20px;
+@lost cycle auto;
+
+:root {
+  --column-width-xs: 5px;
+  --gutter-width-xs: 20px;
+  --margin-width-xs: 20px;
+  --max-width-xs: 320px;
+
+  --column-width-sm: 21px;
+  --gutter-width-sm: 20px;
+  --margin-width-sm: 20px;
+  --max-width-sm: 512px;
+
+  --column-width-md: 42px;
+  --gutter-width-md: 20px;
+  --margin-width-md: 22px;
+  --max-width-md: 768px;
+
+  --column-width-lg: 63px;
+  --gutter-width-lg: 20px;
+  --margin-width-lg: 24px;
+  --max-width-lg: 1024px;
+}

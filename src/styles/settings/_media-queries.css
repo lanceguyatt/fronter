@@ -1,0 +1,12 @@
+/*
+xs http://gridcalculator.dk/#/320/12/20/14 6px
+sm http://gridcalculator.dk/#/640/12/16/18 32px
+md http://gridcalculator.dk/#/768/12/16/22 42px
+lg http://gridcalculator.dk/#/1200/12/20/40 75px
+*/
+
+/* @custom-media --breakpoint-xs (width <= 640px); */
+
+@custom-media --breakpoint-sm (width >= 640px);
+@custom-media --breakpoint-md (width >= 768px);
+@custom-media --breakpoint-lg (width >= 1224px);

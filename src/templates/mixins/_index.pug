@@ -1,0 +1,12 @@
+include objects/_index
+
+include components/_form
+include components/_index
+
+include utilities/_index
+
+mixin main
+
+  div(id='main' class='u-sr')
+  main(class='c-main')&attributes(attributes)
+    block

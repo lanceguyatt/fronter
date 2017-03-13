@@ -1,0 +1,32 @@
+.o-col-1-2 { lost-column: 1/2 auto var(--gutter-width-xs); }
+.o-col-1-3 { lost-column: 1/3 auto var(--gutter-width-xs); }
+.o-col-1-4 { lost-column: 1/4 auto var(--gutter-width-xs); }
+.o-col-2-3 { lost-column: 2/3 auto var(--gutter-width-xs); }
+.o-col-3-4 { lost-column: 3/4 auto var(--gutter-width-xs); }
+
+@media (--breakpoint-sm) {
+
+  .o-col-1-2-sm { lost-column: 1/2 auto var(--gutter-width-sm); }
+  .o-col-1-3-sm { lost-column: 1/3 auto var(--gutter-width-sm); }
+  .o-col-1-4-sm { lost-column: 1/4 auto var(--gutter-width-sm); }
+  .o-col-2-3-sm { lost-column: 2/3 auto var(--gutter-width-sm); }
+  .o-col-3-4-sm { lost-column: 3/4 auto var(--gutter-width-sm); }
+}
+
+@media (--breakpoint-md) {
+
+  .o-col-1-2-md { lost-column: 1/2 auto var(--gutter-width-md); }
+  .o-col-1-3-md { lost-column: 1/3 auto var(--gutter-width-md); }
+  .o-col-1-4-md { lost-column: 1/4 auto var(--gutter-width-md); }
+  .o-col-2-3-md { lost-column: 2/3 auto var(--gutter-width-md); }
+  .o-col-3-4-md { lost-column: 3/4 auto var(--gutter-width-md); }
+}
+
+@media (--breakpoint-lg) {
+
+  .o-col-1-2-lg { lost-column: 1/2 auto var(--gutter-width-lg); }
+  .o-col-1-3-lg { lost-column: 1/3 auto var(--gutter-width-lg); }
+  .o-col-1-4-lg { lost-column: 1/4 auto var(--gutter-width-lg); }
+  .o-col-2-3-lg { lost-column: 2/3 auto var(--gutter-width-lg); }
+  .o-col-3-4-lg { lost-column: 3/4 auto var(--gutter-width-lg); }
+}

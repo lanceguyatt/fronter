@@ -1,0 +1,36 @@
+.u-border {
+  border-style: solid;
+  border-width: var(--border-width);
+}
+
+.u-border-top {
+  border-top-style: solid;
+  border-top-width: var(--border-width);
+}
+
+.u-border-right {
+  border-right-style: solid;
+  border-right-width: var(--border-width);
+}
+
+.u-border-bottom {
+  border-bottom-style: solid;
+  border-bottom-width: var(--border-width);
+}
+
+.u-border-left {
+  border-left-style: solid;
+  border-left-width: var(--border-width);
+}
+
+.u-border-none { border: 0; }
+
+.u-rounded { border-radius: var(--border-radius); }
+.u-circle { border-radius: 50%; }
+
+.u-rounded-top { border-radius: var(--border-radius) var(--border-radius) 0 0; }
+.u-rounded-right { border-radius: 0 var(--border-radius) var(--border-radius) 0; }
+.u-rounded-bottom { border-radius: 0 0 var(--border-radius) var(--border-radius); }
+.u-rounded-left { border-radius: var(--border-radius) 0 0 var(--border-radius); }
+
+.u-not-rounded { border-radius: 0; }

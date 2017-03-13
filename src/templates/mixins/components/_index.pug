@@ -1,0 +1,7 @@
+mixin icon(id)
+
+  svg(
+    class=`c-icon c-icon--${id}`
+    role='img'
+  )&attributes(attributes)
+    use(xlink:href=`${paths.images}icons.svg#i-${id}`)

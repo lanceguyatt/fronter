@@ -1,0 +1,19 @@
+mixin label(id, label)
+
+  label(class='c-label' for=id)&attributes(attributes)=`${label}:`
+
+mixin input(id)
+
+  input(
+    id=id
+    type='text'
+  )&attributes(attributes)
+
+
+mixin textarea(id)
+
+  textarea(
+    data-behaviour='form-control'
+    id=id
+    rows=4
+  )&attributes(attributes)

@@ -1,0 +1,47 @@
+@media (--breakpoint-sm) {
+
+  .u-max-width-1-sm { @mixin max-width 1,  var(--column-width-sm), var(--gutter-width-sm) }
+  .u-max-width-2-sm { @mixin max-width 2,  var(--column-width-sm), var(--gutter-width-sm) }
+  .u-max-width-3-sm { @mixin max-width 3,  var(--column-width-sm), var(--gutter-width-sm) }
+  .u-max-width-4-sm { @mixin max-width 4,  var(--column-width-sm), var(--gutter-width-sm) }
+  .u-max-width-5-sm { @mixin max-width 5,  var(--column-width-sm), var(--gutter-width-sm) }
+  .u-max-width-6-sm { @mixin max-width 6,  var(--column-width-sm), var(--gutter-width-sm) }
+  .u-max-width-7-sm { @mixin max-width 7,  var(--column-width-sm), var(--gutter-width-sm) }
+  .u-max-width-8-sm { @mixin max-width 8,  var(--column-width-sm), var(--gutter-width-sm) }
+  .u-max-width-9-sm { @mixin max-width 9,  var(--column-width-sm), var(--gutter-width-sm) }
+  .u-max-width-10-sm { @mixin max-width 10, var(--column-width-sm), var(--gutter-width-sm) }
+  .u-max-width-11-sm { @mixin max-width 11, var(--column-width-sm), var(--gutter-width-sm) }
+  .u-max-width-12-sm { @mixin max-width 12, var(--column-width-sm), var(--gutter-width-sm) }
+}
+
+@media (--breakpoint-md) {
+
+  .u-max-width-1-md { @mixin max-width 1,  var(--column-width-md), var(--gutter-width-md) }
+  .u-max-width-2-md { @mixin max-width 2,  var(--column-width-md), var(--gutter-width-md) }
+  .u-max-width-3-md { @mixin max-width 3,  var(--column-width-md), var(--gutter-width-md) }
+  .u-max-width-4-md { @mixin max-width 4,  var(--column-width-md), var(--gutter-width-md) }
+  .u-max-width-5-md { @mixin max-width 5,  var(--column-width-md), var(--gutter-width-md) }
+  .u-max-width-6-md { @mixin max-width 6,  var(--column-width-md), var(--gutter-width-md) }
+  .u-max-width-7-md { @mixin max-width 7,  var(--column-width-md), var(--gutter-width-md) }
+  .u-max-width-8-md { @mixin max-width 8,  var(--column-width-md), var(--gutter-width-md) }
+  .u-max-width-9-md { @mixin max-width 9,  var(--column-width-md), var(--gutter-width-md) }
+  .u-max-width-10-md { @mixin max-width 10, var(--column-width-md), var(--gutter-width-md) }
+  .u-max-width-11-md { @mixin max-width 11, var(--column-width-md), var(--gutter-width-md) }
+  .u-max-width-12-md { @mixin max-width 12, var(--column-width-md), var(--gutter-width-md) }
+}
+
+@media (--breakpoint-lg) {
+
+  .u-max-width-1-lg { @mixin max-width 1,  var(--column-width-lg), var(--gutter-width-lg) }
+  .u-max-width-2-lg { @mixin max-width 2,  var(--column-width-lg), var(--gutter-width-lg) }
+  .u-max-width-3-lg { @mixin max-width 3,  var(--column-width-lg), var(--gutter-width-lg) }
+  .u-max-width-4-lg { @mixin max-width 4,  var(--column-width-lg), var(--gutter-width-lg) }
+  .u-max-width-5-lg { @mixin max-width 5,  var(--column-width-lg), var(--gutter-width-lg) }
+  .u-max-width-6-lg { @mixin max-width 6,  var(--column-width-lg), var(--gutter-width-lg) }
+  .u-max-width-7-lg { @mixin max-width 7,  var(--column-width-lg), var(--gutter-width-lg) }
+  .u-max-width-8-lg { @mixin max-width 8,  var(--column-width-lg), var(--gutter-width-lg) }
+  .u-max-width-9-lg { @mixin max-width 9,  var(--column-width-lg), var(--gutter-width-lg) }
+  .u-max-width-10-lg { @mixin max-width 10, var(--column-width-lg), var(--gutter-width-lg) }
+  .u-max-width-11-lg { @mixin max-width 11, var(--column-width-lg), var(--gutter-width-lg) }
+  .u-max-width-12-lg { @mixin max-width 12, var(--column-width-lg), var(--gutter-width-lg) }
+}

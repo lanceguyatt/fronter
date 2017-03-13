@@ -1,0 +1,12 @@
+@define-mixin colors $name, $color {
+
+  .u-$(name) { color: $color; }
+  .u-bg-$(name) { background-color: $color; }
+  .u-border-$(name) { border-color: $color; }
+}
+
+@define-mixin max-width $columns, $column-width, $gutter-width {
+  $gutters: calc($columns - 1);
+
+  max-width: calc(($column-width * $columns) + ($gutters * $gutter-width));
+}

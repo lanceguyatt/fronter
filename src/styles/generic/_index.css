@@ -1,0 +1,125 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  color: var(--gravel);
+  font-size: 16px;
+  font-family: Arial;
+  line-height: 1.5;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* https://css-tricks.com/eliminate-jumps-in-horizontal-centering-by-forcing-a-scroll-bar */
+body {
+  overflow-y: scroll;
+}
+
+/* Clearfix body */
+body::after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+/* ::selection {
+  background: color(var(--color-link) a(.25));
+} */
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--blue);
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+blockquote,
+dl,
+ol,
+ul,
+p,
+pre,
+table {
+  margin-bottom: calc(20 / 16) em;
+}
+
+ol,
+ul {
+  padding-left: 24px;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+td,
+th {
+  border-bottom: var(--border-width) solid rgba(0, 0, 0, 0.0625);
+  padding: 0.5em 0;
+  line-height: inherit;
+}
+
+th {
+  text-align: left;
+  font-weight: var(--font-weight-bold);
+  vertical-align: bottom;
+}
+
+td {
+  vertical-align: top;
+}
+
+cite {
+  font-style: normal;
+}
+
+code,
+pre,
+samp {
+  font-family: var(--font-family-mono-space);
+}
+
+code,
+samp {
+  padding: 0.125em;
+}
+
+code,
+pre,
+samp {
+  font-size: 87.5%;
+}
+
+code {
+  color: var(--blue);
+  background-image: linear-gradient(transparent, transparent 87.5%, color(var(--blue) a(0.125)) 0);
+}
+
+pre code {
+  background-image: none;
+  color: inherit;
+  padding: 0;
+}
+
+iframe {
+  border: 0;
+}

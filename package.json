@@ -1,0 +1,74 @@
+{
+  "name": "gulp-starter",
+  "version": "1.0.0",
+  "description": "Gulp 4 powered starter kit.",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "react-router",
+    "webpack",
+    "postcss",
+    "css modules",
+    "babel"
+  ],
+  "author": "Lance Guyatt",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lanceguyatt/gulp-starter.git"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "build": "NODE_ENV=production gulp build",
+    "dev": "gulp",
+    "icons": "gulp icons",
+    "test:html": "gulp test",
+    "deploy": "npm run build && surge -p build -d gulp-starter.surge.sh"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "finalhandler": "^1.0.0",
+    "http-server": "^0.9.0",
+    "serve-static": "^1.12.1"
+  },
+  "engines": {
+    "node": ">=4.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.6",
+    "browser-sync": "^2.18.8",
+    "css-mqpacker": "^5.0.1",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-changed": "^2.0.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-htmlhint": "^0.3.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.3.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-svgmin": "^1.2.3",
+    "gulp-svgstore": "^6.1.0",
+    "gulp-util": "^3.0.8",
+    "hashgrid": "https://github.com/dotjay/hashgrid.git",
+    "jquery": "^3.1.1",
+    "lost": "^8.0.0",
+    "postcss-calc": "^5.3.1",
+    "postcss-color-function": "^3.0.0",
+    "postcss-custom-media": "^5.0.1",
+    "postcss-custom-properties": "^5.0.2",
+    "postcss-custom-selectors": "^3.0.0",
+    "postcss-import": "^9.1.0",
+    "postcss-media-minmax": "^2.1.2",
+    "postcss-mixins": "^5.4.1",
+    "postcss-nested": "^1.0.0",
+    "postcss-short": "^3.0.3",
+    "postcss-simple-vars": "^3.0.0",
+    "pug-lint": "^2.4.0",
+    "pug-lint-config-pustur": "^1.0.4",
+    "stylelint": "^7.5.0",
+    "stylelint-config-standard": "^16.0.0"
+  }
+}

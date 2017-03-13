@@ -1,0 +1,33 @@
+.u-relative { position: relative; }
+.u-absolute { position: absolute; }
+.u-fixed { position: fixed; }
+
+.u-top-0 { top: 0; }
+.u-right-0 { right: 0; }
+.u-bottom-0 { bottom: 0; }
+.u-left-0 { left: 0; }
+
+.u-top-1 { top: var(--space-1); }
+.u-right-1 { right: var(--space-1); }
+.u-bottom-1 { bottom: var(--space-1); }
+.u-left-1 { left: var(--space-1); }
+
+.u-top-2 { top: var(--space-2); }
+.u-right-2 { right: var(--space-2); }
+.u-bottom-2 { bottom: var(--space-2); }
+.u-left-2 { left: var(--space-2); }
+
+.u-top-3 { top: var(--space-3); }
+.u-right-3 { right: var(--space-3); }
+.u-bottom-3 { bottom: var(--space-3); }
+.u-left-3 { left: var(--space-3); }
+
+.u-top-4 { top: var(--space-4); }
+.u-right-4 { right: var(--space-4); }
+.u-bottom-4 { bottom: var(--space-4); }
+.u-left-4 { left: var(--space-4); }
+
+.u-z1 { z-index: var(--z1); }
+.u-z2 { z-index: var(--z2); }
+.u-z3 { z-index: var(--z3); }
+.u-z4 { z-index: var(--z4); }

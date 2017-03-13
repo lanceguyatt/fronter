@@ -1,0 +1,28 @@
+{
+  "site": {
+    "name": "Gulp Starter",
+    "description": "",
+    "url": "",
+    "themeColor": "#081c2f",
+    "lang": "en",
+    "locale": "en_US",
+    "type": "website",
+    "image": {
+      "url": "images/share-facebook.png",
+      "width": "1200",
+      "height": "628",
+      "alt": "Share image"
+    }
+  },
+
+  "app": {
+    "name": "AP Live Community"
+  },
+
+  "paths": {
+    "styles": "styles/",
+    "images": "images/",
+    "scripts": "scripts/",
+    "vendor": "scripts/vendor/"
+  }
+}

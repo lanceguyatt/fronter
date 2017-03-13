@@ -1,0 +1,111 @@
+@import 'settings/_global';
+@import 'settings/_colors';
+@import 'settings/_grid';
+
+#grid {
+  position: fixed 0 * * 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  &:before {
+    display: block;
+    position: fixed 0 * * 0;
+    background-color: var(--white);
+    padding: 1rem;
+    z-index: 1;
+  }
+}
+
+#grid div.vert {
+  background-color: color(green a(.35));
+  lost-column: 1/12 none;
+}
+
+#grid div.vert.first-line {
+  margin-left: 50px;
+}
+
+#grid div.horiz {
+  height: 16px;
+  border-bottom: 1px solid color(red a(.35));
+}
+
+#grid.grid-1 {
+  width: var(--max-width-xs);
+
+  &:before {
+    content: 'breakpoint: xs'
+  }
+
+  div.vert {
+    width: var(--column-width-xs);
+  }
+
+  div.vert.first-line {
+    margin-left: var(--margin-width-xs);
+  }
+}
+
+#grid.grid-2 {
+  width: var(--max-width-sm);
+
+  &:before {
+    content: 'breakpoint: sm'
+  }
+
+  div.vert {
+    width: var(--column-width-sm);
+  }
+
+  div.vert.first-line {
+    margin-left: var(--margin-width-sm);
+  }
+}
+
+#grid.grid-3 {
+  width: var(--max-width-md);
+
+  &:before {
+    content: 'breakpoint: md'
+  }
+
+  div.vert {
+    width: var(--column-width-md);
+  }
+
+  div.vert.first-line {
+    margin-left: var(--margin-width-md);
+  }
+}
+
+#grid.grid-4 {
+  width: var(--max-width-lg);
+
+  &:before {
+    content: 'breakpoint: lg'
+  }
+
+  div.vert {
+    width: var(--column-width-lg);
+  }
+
+  div.vert.first-line {
+    margin-left: var(--margin-width-lg);
+  }
+}
+
+/*#grid.grid-5 {
+  width: var(--max-width-xl);
+
+  &:before {
+    content: 'breakpoint: xl'
+  }
+
+  div.vert {
+    width: var(--column-width-xl);
+  }
+
+  div.vert.first-line {
+    margin-left: var(--margin-width-xl);
+  }
+}*/

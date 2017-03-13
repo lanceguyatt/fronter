@@ -1,0 +1,90 @@
+include ../helpers/_index
+include ../mixins/_index
+
+- title = site.name
+- page = { name: '', description: '', url: '' }
+- meta = { title: site.name, description: site.description, url: '', image: { url: site.image.url, width: site.image.width, height: site.image.height }, video: {}, type: site.type, keywords: 'Associated Press, AP' }
+- site.url = process.env.SITE_BASE_URL
+
+block locals
+
+doctype html
+html(class='no-js' dir=site.dir lang=site.lang)
+
+  head
+
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+
+    title=title
+
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+
+    block styles
+
+      link(rel='stylesheet' href=`${paths.styles}site.css` media='all' type='text/css')
+      // development only
+      link(rel='stylesheet' href=`${paths.styles}hashgrid.css` media='screen' type='text/css')
+      // development only
+
+    meta(name='format-detection' content='telephone=no')
+
+    //-block meta-default
+
+      meta(name='title' content=meta.title)
+      meta(name='description' content=meta.description)
+      meta(name='keywords' content=meta.keywords)
+      meta(name='robots' content)
+
+    block meta-og
+
+      // OG tags
+      meta(property='og:title' content=meta.title)
+      meta(property='og:description' content=meta.description)
+      meta(property='og:image' content=`${site.url}${meta.image.url}`)
+      meta(property='og:image:width' content=meta.image.width)
+      meta(property='og:image:height' content=meta.image.height)
+      meta(property='og:url' content=`${site.url}${meta.url}`)
+      meta(property='og:type' content=meta.type)
+      meta(property='og:site_name' content=site.name)
+      //- meta(property='fb:app_id' content=site.appId)
+
+    block meta-twitter
+
+      // Twitter Card tags
+      meta(name='twitter:card' content='summary_large_image')
+      meta(name='twitter:title' content=meta.title)
+      meta(name='twitter:description' content=meta.description)
+      meta(name='twitter:image' content=`${site.url}${meta.image.url}`)
+      meta(name='twitter:url' content=`${site.url}${meta.url}`)
+      meta(name='twitter:site' content='@ap')
+
+    link(rel='icon' sizes='180x180' href='apple-touch-icon.png')
+    link(rel='icon' type='image/png' href='favicon-32x32.png' sizes='32x32')
+    link(rel='icon' type='image/png' href='favicon-16x16.png' sizes='16x16')
+    link(rel='manifest' href='manifest.json')
+    //-link(rel='mask-icon' href='safari-pinned-tab.svg' color=site.themeColor)
+    meta(name='apple-mobile-web-app-title' content=app.name)
+    meta(name='application-name' content=app.name)
+    meta(name='theme-color' content=site.themeColor)
+
+    block head
+
+  body
+
+    block header
+
+    block content
+
+    block footer
+
+    block scripts
+
+      //- script(src=`${paths.vendor}svg4everybody.min.js`)
+      script(src=`${paths.scripts}site.js`)
+
+      // development only
+      //- script(src=`${paths.vendor}hashgrid.js`)
+      //- script.
+      //-   var grid = new hashgrid({ numberOfGrids: 4 });
+      // development only
