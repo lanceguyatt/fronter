@@ -8,6 +8,8 @@ const { svgMin, svgStore } = require('./tasks/images');
 const { templates, test } = require('./tasks/templates');
 const { clean } = require('./tasks/utils');
 
+gulp.task('clean', clean);
+
 gulp.task('icons', gulp.series(svgMin, svgStore));
 
 gulp.task('test', test);

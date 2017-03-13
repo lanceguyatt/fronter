@@ -7,7 +7,6 @@ module.exports = {
     require('postcss-simple-vars'),
     require('postcss-custom-media'),
     require('postcss-custom-selectors'),
-    require('postcss-media-minmax'),
     require('css-mqpacker', {
       sort: true,
     }),

@@ -5,9 +5,7 @@ const { resolve } = require('path');
 const { paths } = require('../../config');
 
 const files = [
-  resolve(paths.destDir, '*.html'),
-  resolve(paths.scripts.destDir, '*.js'),
-  resolve(paths.styles.destDir, '*.css'),
+  paths.destDir,
 ];
 
 const utils = {
