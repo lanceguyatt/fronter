@@ -1,15 +1,17 @@
-/* eslint-disable comma-dangle */
+const del = require('del');
 const gulp = require('gulp');
-
-const { nodemon, browserSync, watch } = require('./tasks/serve');
-const { scripts } = require('./tasks/scripts');
-const { styles } = require('./tasks/styles');
-const { svgMin, svgStore } = require('./tasks/images');
-const { templates, test } = require('./tasks/templates');
+const path = require('path');
+const pump = require('pump');
 
 const { paths } = require('../config');
 
-const sourceFiles = [
+const serve = require('./tasks/serve');
+const scripts = require('./tasks/scripts');
+const styles = require('./tasks/styles');
+const templates = require('./tasks/templates');
+const images = require('./tasks/images');
+
+const copyFiles = [
   './src/public/android-chrome-192x192.png',
   './src/public/android-chrome-512x512.png',
   './src/public/apple-touch-icon.png',
@@ -21,52 +23,50 @@ const sourceFiles = [
   './src/public/mstile-150x150.png',
 ];
 
-const foo = {
-  bar(done) {
-    gulp.src(sourceFiles)
-      .pipe(gulp.dest(paths.destDir));
-    return done();
-  },
+const clean = (done) => {
+  del(path.resolve(paths.destDir));
+  return done();
 };
 
-gulp.task('copy',
-  gulp.series(foo.bar)
-);
+const copy = (done) => {
+  pump(
+    [
+      gulp.src(copyFiles),
+      gulp.dest(paths.destDir),
+    ],
+    done
+  );
+};
 
-gulp.task('scripts',
-  gulp.series(scripts)
-);
+gulp.task('clean', clean);
+gulp.task('copy', copy);
 
-gulp.task('icons',
+gulp.task('test:scripts', scripts.test);
+gulp.task('test:styles', styles.test);
+gulp.task('test:templates', templates.test);
+
+gulp.task('scripts', scripts.render);
+
+gulp.task('icons', gulp.series(images.svgMin, images.svgStore));
+
+gulp.task('build',
   gulp.series(
-    svgMin,
-    svgStore
-  )
-);
-
-gulp.task('test',
-  gulp.series(
-    test
+    copy,
+    'icons',
+    templates.render,
+    styles.render,
+    scripts.render
   )
 );
 
 gulp.task('default',
   gulp.series(
-    templates,
-    styles,
-    scripts,
-    nodemon,
-    browserSync,
-    watch
-  )
-);
-
-gulp.task('build',
-  gulp.series(
-    'copy',
-    'icons',
-    templates,
-    styles,
-    scripts
+    copy,
+    templates.render,
+    styles.render,
+    scripts.render,
+    serve.nodemon,
+    serve.browserSync,
+    serve.watch
   )
 );

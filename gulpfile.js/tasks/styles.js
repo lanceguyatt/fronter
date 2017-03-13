@@ -1,4 +1,3 @@
-/* eslint-disable comma-dangle */
 const { resolve } = require('path');
 const browserSync = require('browser-sync').get('main');
 const cssnano = require('gulp-cssnano');
@@ -6,11 +5,12 @@ const gulp = require('gulp');
 const gutil = require('gulp-util');
 const postcss = require('gulp-postcss');
 const pump = require('pump');
+const stylelint = require('gulp-stylelint');
 
 const { prod, paths } = require('../../config');
 
 const styles = {
-  styles(done) {
+  render(done) {
     pump(
       [
         gulp.src(resolve(paths.styles.srcDir, '*.css')),
@@ -22,6 +22,22 @@ const styles = {
       done
     );
   },
+  test(done) {
+    pump(
+      [
+        gulp.src(resolve(paths.styles.srcDir, '*.css')),
+        stylelint({
+          reporters: [
+            {
+              formatter: 'string',
+              console: true,
+            }
+          ]
+        }),
+      ],
+      done
+    );
+  }
 };
 
 module.exports = styles;

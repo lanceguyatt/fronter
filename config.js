@@ -5,6 +5,11 @@ const { resolve } = require('path');
 const srcDir = resolve(__dirname, 'src');
 const destDir = resolve(__dirname, 'build');
 
+const styles = 'styles';
+const images = 'images';
+const scripts = 'scripts';
+const templates = 'templates';
+
 const config = {
   port: process.env.PORT || 8081,
   prod: process.env.NODE_ENV === 'production',
@@ -12,23 +17,22 @@ const config = {
     srcDir,
     destDir,
     styles: {
-      srcDir: resolve(srcDir, 'styles'),
-      destDir: resolve(destDir, 'styles'),
+      srcDir: resolve(srcDir, styles),
+      destDir: resolve(destDir, styles),
     },
     images: {
-      srcDir: resolve(srcDir, 'images'),
-      destDir: resolve(destDir, 'images'),
+      srcDir: resolve(srcDir, images),
+      destDir: resolve(destDir, images),
     },
     scripts: {
-      srcDir: resolve(srcDir, 'scripts'),
-      destDir: resolve(destDir, 'scripts'),
+      srcDir: resolve(srcDir, scripts),
+      destDir: resolve(destDir, scripts),
     },
     templates: {
-      srcDir: resolve(srcDir, 'templates'),
+      srcDir: resolve(srcDir, templates),
       destDir,
     },
   },
-
   files: {
     styles: [
       `${srcDir}/styles/site.css`,

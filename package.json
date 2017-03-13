@@ -4,12 +4,9 @@
   "description": "Gulp 4 powered starter kit.",
   "license": "MIT",
   "keywords": [
-    "react",
-    "react-router",
-    "webpack",
+    "gulp",
     "postcss",
-    "css modules",
-    "babel"
+    "pug"
   ],
   "author": "Lance Guyatt",
   "repository": {
@@ -18,11 +15,13 @@
   },
   "scripts": {
     "start": "node app.js",
-    "clean": "rimraf build",
+    "clean": "gulp clean",
     "build": "npm run clean && NODE_ENV=production gulp build",
     "dev": "gulp",
     "icons": "gulp icons",
-    "test:html": "gulp test",
+    "test:html": "gulp test:html",
+    "test:styles": "gulp test:styles",
+    "test:scripts": "gulp test:scripts",
     "deploy": "npm run build && surge -p build -d gulp-starter.surge.sh"
   },
   "dependencies": {
@@ -38,19 +37,21 @@
     "autoprefixer": "^6.7.6",
     "browser-sync": "^2.18.8",
     "css-mqpacker": "^5.0.1",
+    "del": "^2.2.2",
     "eslint": "^3.17.1",
     "eslint-config-airbnb-base": "^11.1.1",
     "eslint-plugin-import": "^2.2.0",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-changed": "^2.0.0",
-    "gulp-clean": "^0.3.2",
     "gulp-copy": "^1.0.0",
     "gulp-cssnano": "^2.1.2",
+    "gulp-eslint": "^3.0.1",
     "gulp-htmlhint": "^0.3.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-postcss": "^6.3.0",
     "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
+    "gulp-stylelint": "^3.9.0",
     "gulp-svgmin": "^1.2.3",
     "gulp-svgstore": "^6.1.0",
     "gulp-uglify": "^2.1.0",

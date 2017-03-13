@@ -13,6 +13,6 @@ const server = createServer((req, res) => {
   serve(req, res, done);
 });
 
-server.listen(port, function () {
+server.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });

@@ -4,15 +4,14 @@ const browserSync = require('browser-sync').create('main');
 const path = require('path');
 
 const { paths, port, prod } = require('../../config');
+
 const scripts = require('./scripts');
 const styles = require('./styles');
 const templates = require('./templates');
 
 const serve = {
-
   nodemon(done) {
     let started = false;
-
     return nodemon({
       script: './app.js',
       ext: 'js json',

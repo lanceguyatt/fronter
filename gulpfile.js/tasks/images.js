@@ -1,4 +1,3 @@
-/* eslint-disable comma-dangle */
 const { resolve } = require('path');
 const gulp = require('gulp');
 const pump = require('pump');
