@@ -7,15 +7,15 @@
   --margin-width-xs: 20px;
   --max-width-xs: 320px;
 
-  --column-width-sm: 21px;
+  --column-width-sm: 31px;
   --gutter-width-sm: 20px;
-  --margin-width-sm: 20px;
-  --max-width-sm: 512px;
+  --margin-width-sm: 24px;
+  --max-width-sm: 640px;
 
-  --column-width-md: 42px;
+  --column-width-md: 47px;
   --gutter-width-md: 20px;
-  --margin-width-md: 22px;
-  --max-width-md: 768px;
+  --margin-width-md: 24px;
+  --max-width-md: 832px;
 
   --column-width-lg: 63px;
   --gutter-width-lg: 20px;

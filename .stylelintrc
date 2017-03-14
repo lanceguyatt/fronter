@@ -11,12 +11,7 @@
         "inside-single-line-block"
       ]
     ],
-    "at-rule-empty-line-before": [
-      "always",
-      "except": [
-        "blockless-after-same-name-blockless"
-      ],
-    ],
+    "at-rule-empty-line-before": "never",
     "property-no-unknown": [
       true,
       "ignoreProperties": [

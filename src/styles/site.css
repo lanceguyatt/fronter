@@ -29,7 +29,7 @@
 @import 'utilities/_position';
 @import 'utilities/_type-scale';
 @import 'utilities/_typography';
-@import 'utilities/grid/_grid';
+@import 'utilities/grid/';
 @import 'utilities/margin/_margin';
 @import 'utilities/padding/_padding';
 
