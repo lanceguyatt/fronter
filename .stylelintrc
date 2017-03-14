@@ -1,5 +1,8 @@
 {
   "extends": "stylelint-config-standard",
+  "plugins": [
+    "stylelint-order"
+  ],
   "rules": {
     "custom-property-empty-line-before": [
       "never",
@@ -19,6 +22,10 @@
       "ignoreProperties": [
         "lost-column"
       ]
+    ],
+    "order/order": [
+      "custom-properties",
+      "declarations"
     ],
   }
 }

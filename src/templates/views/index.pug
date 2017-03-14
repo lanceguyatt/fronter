@@ -3,5 +3,9 @@ extends ../layouts/_default
 block content
 
   +main()
-    +container()
-      h1=site.name
+
+    article
+      +container()
+        header
+          h1=site.name
+        p=site.description

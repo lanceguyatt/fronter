@@ -43,7 +43,8 @@ const tests = {
   templates(done) {
     pump(
       [
-        gulp.src(resolve(paths.destDir, '*.html')),
+        gulp.src(resolve(paths.destDir, '**', '*.html')),
+        htmlhint('.htmlhintrc'),
         htmlhint.reporter(),
       ],
       done
