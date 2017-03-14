@@ -7,20 +7,16 @@ const { scripts } = require('./scripts');
 const { styles } = require('./styles');
 const { templates } = require('./templates');
 
-const { paths, port, prod } = require('../../config');
+const { paths, port } = require('../../config');
 
 const serve = {
   nodemon(done) {
     let started = false;
-    return nodemon({
+
+    nodemon({
       script: './app.js',
       ext: 'js json',
-      env: {
-        NODE_ENV: prod,
-      },
-      ignore: [
-        'node_modules',
-      ],
+      ignore: ['node_modules'],
     }).on('restart', function () {
       return console.log('Nodemon restarted!');
     }).on('start', function () {

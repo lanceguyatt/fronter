@@ -1,9 +1,11 @@
 include ../helpers/_index
 include ../mixins/_index
 
+- isProduction = process.env.NODE_ENV === 'production'
+
 - title = site.name
 - page = { name: '', description: '', url: '' }
-- meta = { title: site.name, description: site.description, url: process.env.SITE_BASE_URL, image: { url: site.image.url, width: site.image.width, height: site.image.height }, video: {}, type: site.type }
+- meta = { title: site.name, description: site.description, url: '', image: { url: site.image.url, width: site.image.width, height: site.image.height }, video: {}, type: site.type }
 
 block locals
 
@@ -28,9 +30,11 @@ html(class='no-js' dir=site.dir lang=site.lang)
     block styles
 
       link(rel='stylesheet' href=`${paths.styles}site.css` media='all')
-      //- development only
-      //- link(rel='stylesheet' href=`${paths.styles}hashgrid.css` media='screen' type='text/css')
-      //- development only
+
+      //-
+        if !isProduction
+
+          link(rel='stylesheet' href=`${paths.styles}hashgrid.css` media='screen' type='text/css')
 
     block meta-og
 
@@ -67,7 +71,7 @@ html(class='no-js' dir=site.dir lang=site.lang)
 
     block banner
 
-    block content
+    block main
 
     block contentinfo
 
@@ -76,14 +80,15 @@ html(class='no-js' dir=site.dir lang=site.lang)
       script(src='https://cdnjs.cloudflare.com/ajax/libs/svg4everybody/2.1.4/svg4everybody.min.js')
       script(src=`${paths.scripts}site.js`)
 
-      if env === 'production'
+      //-
+        if isProduction
+          
+          div(class='o-container') Production mode
         
-        div(class='o-container') Production mode
-      
-      else
-        
-        div(class='o-container') Development mode
+        else
+          
+          div(class='o-container') Development mode
 
-        script(src=`${paths.vendor}hashgrid.js`)
-        script.
-          var grid = new hashgrid({ numberOfGrids: 4 });
+          script(src=`${paths.vendor}hashgrid.js`)
+          script.
+            var grid = new hashgrid({ numberOfGrids: 4 });

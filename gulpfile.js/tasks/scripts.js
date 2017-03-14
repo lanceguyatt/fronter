@@ -5,15 +5,15 @@ const gutil = require('gulp-util');
 const pump = require('pump');
 const uglify = require('gulp-uglify');
 
-const { prod, paths } = require('../../config');
+const { isProduction, paths } = require('../../config');
 
 const scripts = {
   scripts(done) {
     pump([
       gulp.src(resolve(paths.scripts.srcDir, '*.js')),
-      prod ? uglify() : gutil.noop(),
+      isProduction ? uglify() : gutil.noop(),
       gulp.dest(paths.scripts.destDir),
-      prod ? gutil.noop() : browserSync.stream(),
+      isProduction ? gutil.noop() : browserSync.stream(),
     ], done());
   },
 };

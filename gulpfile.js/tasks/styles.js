@@ -6,16 +6,16 @@ const gutil = require('gulp-util');
 const postcss = require('gulp-postcss');
 const pump = require('pump');
 
-const { prod, paths } = require('../../config');
+const { isProduction, paths } = require('../../config');
 
 const styles = {
   styles(done) {
     pump([
       gulp.src(resolve(paths.styles.srcDir, '*.css')),
       postcss(),
-      prod ? cssnano() : gutil.noop(),
+      isProduction ? cssnano() : gutil.noop(),
       gulp.dest(paths.styles.destDir),
-      prod ? gutil.noop() : browserSync.stream(),
+      isProduction ? gutil.noop() : browserSync.stream(),
     ], done());
   },
 };

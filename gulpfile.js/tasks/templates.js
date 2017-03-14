@@ -6,7 +6,7 @@ const gutil = require('gulp-util');
 const pug = require('gulp-pug');
 const pump = require('pump');
 
-const { prod, paths } = require('../../config');
+const { isProduction, paths } = require('../../config');
 const locals = require('../../data/index.json');
 
 const templates = {
@@ -15,11 +15,10 @@ const templates = {
       gulp.src(resolve(paths.templates.srcDir, 'views', '**', '*.pug')),
       pug({
         locals,
-        data: prod,
       }),
-      prod ? gutil.noop() : changed(paths.destDir, { extension: '.html' }),
+      isProduction ? gutil.noop() : changed(paths.destDir, { extension: '.html' }),
       gulp.dest(paths.templates.destDir),
-      prod ? gutil.noop() : browserSync.stream(),
+      isProduction ? gutil.noop() : browserSync.stream(),
     ], done());
   },
 };

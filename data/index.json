@@ -2,21 +2,21 @@
   "site": {
     "name": "Gulp Starter",
     "description": "Gulp 4 powered starter kit.",
-    "url": "",
+    "url": "http://gulpstarter.surge.sh",
     "themeColor": "#000",
     "lang": "en",
     "locale": "en_GB",
     "type": "website",
     "image": {
-      "url": "images/share-facebook.png",
+      "url": "/images/share-facebook.png",
       "width": "1200",
       "height": "628",
       "alt": "Share image"
     }
   },
   "paths": {
-    "styles": "styles/",
-    "images": "images/",
-    "scripts": "scripts/"
+    "styles": "/styles/",
+    "images": "/images/",
+    "scripts": "/scripts/"
   }
 }

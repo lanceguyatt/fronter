@@ -1,5 +1,3 @@
-require('dotenv').load();
-
 const { resolve } = require('path');
 
 const srcDir = resolve(__dirname, 'src');
@@ -12,7 +10,7 @@ const templates = 'templates';
 
 const config = {
   port: process.env.PORT || 8081,
-  prod: process.env.NODE_ENV === 'production',
+  isProduction: process.env.NODE_ENV === 'production',
   paths: {
     srcDir,
     destDir,

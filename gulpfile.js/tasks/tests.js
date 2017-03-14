@@ -19,7 +19,7 @@ const tests = {
 
   styles(done) {
     pump([
-      gulp.src(resolve(paths.styles.srcDir, '*.css')),
+      gulp.src(resolve(paths.styles.destDir, '*.css')),
       stylelint({
         reporters: [
           {
@@ -34,7 +34,7 @@ const tests = {
   templates(done) {
     pump([
       gulp.src(resolve(paths.destDir, '**', '*.html')),
-      htmlhint('.htmlhintrc'),
+      htmlhint(),
       htmlhint.reporter(),
     ], done());
   },
