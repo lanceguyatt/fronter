@@ -63,6 +63,11 @@ Gulp powered starter kit.
 * stylelint-config-standard
 * gulp-htmlhint
 
+## Tasks
+
+* `deploy` 
+
+
 ## Other links
 
 * https://realfavicongenerator.net

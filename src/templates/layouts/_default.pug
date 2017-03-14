@@ -62,13 +62,24 @@ html(class='no-js' dir=site.dir lang=site.lang)
 
     block head
 
-  body
+    body
 
-    block banner
+      +container()
 
-    block main
+        block banner
 
-    block contentinfo
+            div(role='banner')
+                h1: a(href=site.url class='u-color-inherit')=site.name
+                p=site.description
+                a(href='https://github.com/lanceguyatt/gulpstarter' target='_blank' class='u-black')
+                    +icon('github')
+
+
+        main
+
+            block main
+
+        block contentinfo
 
     block scripts
 

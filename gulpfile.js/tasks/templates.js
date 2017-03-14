@@ -8,15 +8,21 @@ const { resolve } = require('path');
 const { isProduction, paths } = require('../../config');
 const locals = require('../../data/index.json');
 
-const templates = (done) => {
-    gulp
-        .src(resolve(paths.templates.srcDir, 'views', '**', '*.pug'))
-        .pipe(pug({ locals }))
-        .pipe(isProduction ? gutil.noop() : changed(paths.destDir, { extension: '.html' }))
-        .pipe(gulp.dest(paths.templates.destDir))
-        .pipe(isProduction ? gutil.noop() : browserSync.stream());
+const templates = {
+    compile(done) {
+        gulp.src(resolve(paths.templates.srcDir, 'views', '**', '*.pug'))
+            .pipe(pug({ locals }))
+            .pipe(isProduction ? gutil.noop() : changed(paths.destDir, { extension: '.html' }))
+            .pipe(gulp.dest(paths.templates.destDir))
+            .pipe(isProduction ? gutil.noop() : browserSync.stream());
 
-    return done();
+        return done();
+    },
+
+    watch(done) {
+        gulp.watch(resolve(paths.templates.srcDir, '**', '*.pug'), templates.compile);
+        return done();
+    },
 };
 
 module.exports = templates;

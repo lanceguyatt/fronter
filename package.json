@@ -1,10 +1,12 @@
 {
-  "name": "gulpstarter",
+  "name": "starter",
   "version": "1.0.0",
-  "description": "Gulp 4 powered starter kit.",
+  "description": "Starter kit.",
   "license": "MIT",
+  "private": "true",
   "keywords": [
     "gulp",
+    "webpack",
     "postcss",
     "pug"
   ],
@@ -15,18 +17,8 @@
   },
   "scripts": {
     "start": "node app.js",
-    "clean": "gulp clean",
-    "copy": "gulp copy",
-    "scripts": "gulp scripts",
-    "styles": "gulp styles",
-    "templates": "gulp templates",
-    "svgmin": "gulp svgmin",
-    "svgstore": "gulp svgstore",
-    "build": "NODE_ENV=production gulp build",
     "dev": "gulp",
-    "test:scripts": "gulp test:scripts",
-    "test:styles": "gulp test:styles",
-    "test:html": "gulp test:html",
+    "build": "NODE_ENV=production gulp build",
     "deploy": "npm run build && surge -p build -d gulpstarter.surge.sh"
   },
   "dependencies": {
