@@ -11,16 +11,16 @@ const locals = require('../../data/index.json');
 
 const templates = {
   templates(done) {
-    pump(
-      [
-        gulp.src(resolve(paths.templates.srcDir, 'views', '**', '*.pug')),
-        pug({ locals }),
-        prod ? gutil.noop() : changed(paths.destDir, { extension: '.html' }),
-        gulp.dest(paths.templates.destDir),
-        prod ? gutil.noop() : browserSync.stream(),
-      ],
-      done
-    );
+    pump([
+      gulp.src(resolve(paths.templates.srcDir, 'views', '**', '*.pug')),
+      pug({
+        locals,
+        data: prod,
+      }),
+      prod ? gutil.noop() : changed(paths.destDir, { extension: '.html' }),
+      gulp.dest(paths.templates.destDir),
+      prod ? gutil.noop() : browserSync.stream(),
+    ], done());
   },
 };
 

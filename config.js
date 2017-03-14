@@ -32,6 +32,10 @@ const config = {
       srcDir: resolve(srcDir, templates),
       destDir,
     },
+    public: {
+      srcDir: resolve(srcDir, 'public'),
+      destDir,
+    },
   },
   files: {
     styles: [

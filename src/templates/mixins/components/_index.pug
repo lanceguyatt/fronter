@@ -1,7 +1,4 @@
-mixin icon(id)
+mixin icon(name)
 
-  svg(
-    class=`c-icon c-icon--${id}`
-    role='img'
-  )&attributes(attributes)
-    use(xlink:href=`${paths.images}icons.svg#i-${id}`)
+  svg(class=`c-icon c-icon--${name}` role='img' title=name)&attributes(attributes)
+    use(xlink:href=`${paths.images}icons.svg#i-${name}`)

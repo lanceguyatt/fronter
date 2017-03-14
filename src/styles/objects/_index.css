@@ -1,6 +1,6 @@
 .o-container {
-  max-width: var(--max-width-lg);
   margin: * auto;
+  max-width: var(--max-width-lg);
   padding: * var(--margin-width-xs);
   width: 100%;
 
@@ -16,20 +16,3 @@
     padding: * var(--margin-width-lg);
   }
 }
-
-.o-responsive-image {
-  background-color: #ccc;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100%;
-  overflow: hidden;
-  position: relative;
-  size: 100%;
-}
-
-.o-responsive-image--1x1 { padding-top: calc(100% / 1 * 1); }
-.o-responsive-image--3x2 { padding-top: calc(100% / 3 * 2); }
-.o-responsive-image--4x3 { padding-top: calc(100% / 4 * 3); }
-.o-responsive-image--16x9 { padding-top: calc(100% / 16 * 9); }
-.o-responsive-image--21x9 { padding-top: calc(100% / 21 * 9); }

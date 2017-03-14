@@ -6,15 +6,15 @@ const pump = require('pump');
 const { paths } = require('../../config');
 
 const files = [
-  resolve(paths.srcDir, 'public', 'android-chrome-192x192.png'),
-  resolve(paths.srcDir, 'public', 'android-chrome-512x512.png'),
-  resolve(paths.srcDir, 'public', 'apple-touch-icon.png'),
-  resolve(paths.srcDir, 'public', 'browserconfig.xml'),
-  resolve(paths.srcDir, 'public', 'favicon-16x16.png'),
-  resolve(paths.srcDir, 'public', 'favicon-32x32.png'),
-  resolve(paths.srcDir, 'public', 'favicon.ico'),
-  resolve(paths.srcDir, 'public', 'manifest.json'),
-  resolve(paths.srcDir, 'public', 'mstile-150x150.png'),
+  resolve(paths.public.srcDir, 'android-chrome-192x192.png'),
+  resolve(paths.public.srcDir, 'android-chrome-512x512.png'),
+  resolve(paths.public.srcDir, 'apple-touch-icon.png'),
+  resolve(paths.public.srcDir, 'browserconfig.xml'),
+  resolve(paths.public.srcDir, 'favicon-16x16.png'),
+  resolve(paths.public.srcDir, 'favicon-32x32.png'),
+  resolve(paths.public.srcDir, 'favicon.ico'),
+  resolve(paths.public.srcDir, 'manifest.json'),
+  resolve(paths.public.srcDir, 'mstile-150x150.png'),
 ];
 
 const utils = {
@@ -24,13 +24,10 @@ const utils = {
   },
 
   copy(done) {
-    pump(
-      [
-        gulp.src(files),
-        gulp.dest(paths.destDir),
-      ],
-      done
-    );
+    pump([
+      gulp.src(files),
+      gulp.dest(paths.destDir),
+    ], done());
   },
 };
 

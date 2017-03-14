@@ -12,37 +12,31 @@ const files = [
 ];
 
 const images = {
-  svgMin(done) {
-    pump(
-      [
-        gulp.src(files),
-        svgmin({
-          plugins: [
-            {
-              mergePaths: true,
-            }, {
-              convertColors: {
-                currentColor: true,
-              },
+  svgmin(done) {
+    pump([
+      gulp.src(files),
+      svgmin({
+        plugins: [
+          {
+            mergePaths: true,
+          }, {
+            convertColors: {
+              currentColor: true,
             },
-          ],
-        }),
-        gulp.dest(resolve(paths.images.srcDir, 'icons')),
-      ],
-      done
-    );
+          },
+        ],
+      }),
+      gulp.dest(resolve(paths.images.srcDir, 'icons')),
+    ], done());
   },
 
-  svgStore(done) {
-    pump(
-      [
-        gulp.src(files),
-        rename({ prefix: 'i-' }),
-        svgstore(),
-        gulp.dest(resolve(paths.images.destDir)),
-      ],
-      done
-    );
+  svgstore(done) {
+    pump([
+      gulp.src(files),
+      rename({ prefix: 'i-' }),
+      svgstore(),
+      gulp.dest(resolve(paths.images.destDir)),
+    ], done());
   },
 };
 

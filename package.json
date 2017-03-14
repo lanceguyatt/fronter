@@ -8,7 +8,7 @@
     "postcss",
     "pug"
   ],
-  "author": "Lance Guyatt",
+  "author": "Lance Guyatt <lance@lanceguyatt.com>",
   "repository": {
     "type": "git",
     "url": "git@github.com:lanceguyatt/gulpstarter.git"
@@ -16,12 +16,17 @@
   "scripts": {
     "start": "node app.js",
     "clean": "gulp clean",
+    "copy": "gulp copy",
+    "scripts": "gulp scripts",
+    "styles": "gulp styles",
+    "templates": "gulp templates",
+    "svgmin": "gulp svgmin",
+    "svgstore": "gulp svgstore",
     "build": "npm run clean && NODE_ENV=production gulp build",
     "dev": "gulp",
-    "icons": "gulp icons",
-    "test:html": "gulp test:html",
-    "test:styles": "gulp test:styles",
     "test:scripts": "gulp test:scripts",
+    "test:styles": "gulp test:styles",
+    "test:html": "gulp test:html",
     "deploy": "npm run build && surge -p build -d gulpstarter.surge.sh"
   },
   "dependencies": {

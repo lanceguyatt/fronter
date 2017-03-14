@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "Gulp Starter",
-    "description": "Gulp powered starter kit.",
+    "description": "Gulp 4 powered starter kit.",
     "url": "",
     "themeColor": "#000",
     "lang": "en",
@@ -14,11 +14,9 @@
       "alt": "Share image"
     }
   },
-
   "paths": {
     "styles": "styles/",
     "images": "images/",
-    "scripts": "scripts/",
-    "vendor": "scripts/vendor/"
+    "scripts": "scripts/"
   }
 }

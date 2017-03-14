@@ -4,8 +4,10 @@ block content
 
   +main()
 
-    article
-      +container()
-        header
-          h1=site.name
-        p=site.description
+    article(class='o-container u-py3')
+      header
+        h1=site.name
+      p=site.description
+
+      a(href='https://github.com/lanceguyatt/gulpstarter' target='_blank' class='u-black')
+        +icon('github')

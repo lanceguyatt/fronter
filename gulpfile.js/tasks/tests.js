@@ -10,47 +10,34 @@ const { paths } = require('../../config');
 
 const tests = {
   scripts(done) {
-    pump(
-      [
-        gulp.src([
-          resolve('**', '*.js'),
-          '!node_modules/**']
-        ),
-        eslint(),
-        eslint.format(),
-      ],
-      done
-    );
+    pump([
+      gulp.src([resolve('**', '*.js'), '!node_modules/**', '!build/**']),
+      eslint(),
+      eslint.format(),
+    ], done());
   },
 
   styles(done) {
-    pump(
-      [
-        gulp.src(resolve(paths.styles.srcDir, '*.css')),
-        stylelint({
-          reporters: [
-            {
-              formatter: 'string',
-              console: true,
-            }
-          ]
-        }),
-      ],
-      done
-    );
+    pump([
+      gulp.src(resolve(paths.styles.srcDir, '*.css')),
+      stylelint({
+        reporters: [
+          {
+            formatter: 'string',
+            console: true,
+          },
+        ],
+      }),
+    ], done());
   },
 
   templates(done) {
-    pump(
-      [
-        gulp.src(resolve(paths.destDir, '**', '*.html')),
-        htmlhint('.htmlhintrc'),
-        htmlhint.reporter(),
-      ],
-      done
-    );
+    pump([
+      gulp.src(resolve(paths.destDir, '**', '*.html')),
+      htmlhint('.htmlhintrc'),
+      htmlhint.reporter(),
+    ], done());
   },
-
 };
 
 module.exports = tests;

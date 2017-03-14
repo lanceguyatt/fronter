@@ -10,14 +10,13 @@ const { prod, paths } = require('../../config');
 
 const styles = {
   styles(done) {
-    pump(
+    pump([
       gulp.src(resolve(paths.styles.srcDir, '*.css')),
       postcss(),
       prod ? cssnano() : gutil.noop(),
       gulp.dest(paths.styles.destDir),
       prod ? gutil.noop() : browserSync.stream(),
-      done
-    );
+    ], done());
   },
 };
 

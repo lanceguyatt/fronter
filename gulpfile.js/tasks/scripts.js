@@ -9,15 +9,12 @@ const { prod, paths } = require('../../config');
 
 const scripts = {
   scripts(done) {
-    pump(
-      [
-        gulp.src(resolve(paths.scripts.srcDir, '*.js')),
-        prod ? uglify() : gutil.noop(),
-        gulp.dest(paths.scripts.destDir),
-        prod ? gutil.noop() : browserSync.stream(),
-      ],
-      done
-    );
+    pump([
+      gulp.src(resolve(paths.scripts.srcDir, '*.js')),
+      prod ? uglify() : gutil.noop(),
+      gulp.dest(paths.scripts.destDir),
+      prod ? gutil.noop() : browserSync.stream(),
+    ], done());
   },
 };
 

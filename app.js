@@ -1,7 +1,6 @@
 const finalhandler = require('finalhandler');
 const { createServer } = require('http');
 const serveStatic = require('serve-static');
-
 const { paths, port } = require('./config');
 
 const serve = serveStatic(paths.destDir, {

@@ -30,7 +30,6 @@ Gulp powered starter kit.
 [`gulp-cssnano`]: https://github.com/postcss/autoprefixer
 [`gulp-postcss`]: https://github.com/postcss/postcss
 
-
 ### Javascript
 
 
@@ -62,7 +61,7 @@ Gulp powered starter kit.
 * gulp-stylelint
 * stylelint
 * stylelint-config-standard
-* gulp-htmlhint 
+* gulp-htmlhint
 
 ## Other links
 
@@ -70,4 +69,4 @@ Gulp powered starter kit.
 * https://realfavicongenerator.net/social/
 * https://richardstoolbox.com
 
-
+* http://steelbrain.me/2017/03/13/linter-v2-released.html
