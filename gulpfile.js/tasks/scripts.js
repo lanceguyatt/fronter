@@ -2,7 +2,7 @@
 const webpack = require('webpack');
 const { isProduction } = require('../../config');
 
-const webpackConfig = require(`../../tools/webpack.config.${isProduction ? 'prod' : 'dev'}`);
+const webpackConfig = require(`../../webpack/webpack.config.${isProduction ? 'prod' : 'dev'}`);
 
 const scripts = (done) => {
     webpack(webpackConfig)

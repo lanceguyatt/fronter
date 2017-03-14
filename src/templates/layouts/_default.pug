@@ -9,7 +9,7 @@ include ../mixins/_index
 
 block locals
 
-doctype html
+doctype
 html(class='no-js' dir=site.dir lang=site.lang)
 
   head
@@ -30,11 +30,6 @@ html(class='no-js' dir=site.dir lang=site.lang)
     block styles
 
       link(rel='stylesheet' href=`${paths.styles}site.css` media='all')
-
-      //-
-        if !isProduction
-
-          link(rel='stylesheet' href=`${paths.styles}hashgrid.css` media='screen' type='text/css')
 
     block meta-og
 
@@ -77,18 +72,4 @@ html(class='no-js' dir=site.dir lang=site.lang)
 
     block scripts
 
-      script(src='https://cdnjs.cloudflare.com/ajax/libs/svg4everybody/2.1.4/svg4everybody.min.js')
       script(src=`${paths.scripts}site.js`)
-
-      //-
-        if isProduction
-          
-          div(class='o-container') Production mode
-        
-        else
-          
-          div(class='o-container') Development mode
-
-          script(src=`${paths.vendor}hashgrid.js`)
-          script.
-            var grid = new hashgrid({ numberOfGrids: 4 });

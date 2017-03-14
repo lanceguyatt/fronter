@@ -1,4 +1,4 @@
 mixin icon(name)
 
-  svg(class=`c-icon c-icon--${name}` role='img' title=name)&attributes(attributes)
+  svg(class=`c-icon c-icon--${name}` role='img')&attributes(attributes)
     use(xlink:href=`${paths.images}icons.svg#i-${name}`)
