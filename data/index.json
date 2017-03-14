@@ -1,11 +1,11 @@
 {
   "site": {
     "name": "Gulp Starter",
-    "description": "",
+    "description": "Gulp powered starter kit.",
     "url": "",
-    "themeColor": "#081c2f",
+    "themeColor": "#000",
     "lang": "en",
-    "locale": "en_US",
+    "locale": "en_GB",
     "type": "website",
     "image": {
       "url": "images/share-facebook.png",
@@ -13,10 +13,6 @@
       "height": "628",
       "alt": "Share image"
     }
-  },
-
-  "app": {
-    "name": "AP Live Community"
   },
 
   "paths": {

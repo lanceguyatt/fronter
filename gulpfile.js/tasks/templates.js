@@ -14,7 +14,7 @@ const templates = {
     pump(
       [
         gulp.src(resolve(paths.templates.srcDir, 'views', '**', '*.pug')),
-        pug({ locals, pretty: prod ? false : true }),
+        pug({ locals }),
         prod ? gutil.noop() : changed(paths.destDir, { extension: '.html' }),
         gulp.dest(paths.templates.destDir),
         prod ? gutil.noop() : browserSync.stream(),

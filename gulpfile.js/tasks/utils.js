@@ -1,4 +1,3 @@
-const { resolve } = require('path');
 const del = require('del');
 const gulp = require('gulp');
 const pump = require('pump');
@@ -19,8 +18,8 @@ const copyFiles = [
 
 const utils = {
   clean(done) {
-    del(resolve(paths.destDir));
-    return done();
+    del(paths.destDir);
+    done();
   },
 
   copy(done) {
@@ -31,7 +30,7 @@ const utils = {
       ],
       done
     );
-  }
+  },
 };
 
 module.exports = utils;
