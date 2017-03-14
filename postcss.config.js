@@ -15,6 +15,7 @@ module.exports = {
       precision: 5,
       preserve: true,
     }),
+    require('postcss-media-minmax'),
     require('postcss-custom-properties'),
     require('postcss-color-function'),
     require('autoprefixer', {

@@ -71,6 +71,7 @@
     "postcss-custom-properties": "^5.0.2",
     "postcss-custom-selectors": "^3.0.0",
     "postcss-import": "^9.1.0",
+    "postcss-media-minmax": "^2.1.2",
     "postcss-mixins": "^5.4.1",
     "postcss-nested": "^1.0.0",
     "postcss-short": "^3.0.3",
