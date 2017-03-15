@@ -24,7 +24,7 @@ const styles = {
     },
 
     lint(done) {
-        gulp.src(resolve(paths.styles.srcDir, '**', '*.css'))
+        gulp.src(resolve(paths.styles.srcDir, '*.css'))
             .pipe(stylelint({
                 reporters: [
                     {

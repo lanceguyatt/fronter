@@ -1,77 +1,86 @@
 # Gulpstarter [![dependencies Status](https://david-dm.org/lanceguyatt/gulpstarter/status.svg)](https://david-dm.org/lanceguyatt/gulpstarter) [![devDependency Status](https://david-dm.org/lanceguyatt/gulpstarter/dev-status.svg?style=flat-square)](https://david-dm.org/lanceguyatt/gulpstarter#info=devDependencies)
 
-Gulp powered starter kit.
+> Gulp powered front-end starter kit.
 
 ## Features
 
 ### Runners
 
-* [https://github.com/gulpjs/gulp/tree/4.0](https://github.com/gulpjs/gulp/tree/4.0)
+* [`gulp`] The streaming build system.
+* [`webpack`] A bundler for javascript and friends. Packs many modules into a few bundled assets. Code Splitting allows to load parts for the application on demand. Through "loaders," modules can be CommonJs, AMD, ES6 modules, CSS, Images, JSON, Coffeescript, LESS, ... and your custom stuff.
 
-### Stylesheets
+[`gulp`]: https://github.com/gulpjs/gulp/tree/4.0
+[`webpack`]: https://github.com/webpack/webpack
 
-* [`gulp-postcss`] Transforming styles with JS plugins.
-* [`autoprefixer`] adds vendor prefixes, using data from Can I Use.
-* [`gulp-cssnano`] is a modular CSS minifier.
+### Serve
+
+* [`gulp-nodemon`] gulp + nodemon + convenience
+* [`browser-sync`] Keep multiple browsers & devices in sync when building websites
+
+[`gulp-nodemon`]: https://github.com/JacksonGariety/gulp-nodemon
+[`browser-sync`]: https://github.com/BrowserSync/browser-sync
+
+### Scripts
+
+* [`babel-core`] Babel compiler core
+* [`babel-loader`] Webpack plugin for Babel
+* [`babel-preset-es2015`] Babel preset for all es2015 plugins.
+* hashgrid https//github.com/dotjay/hashgrid.git
+* jquery
+* svg4everybody
+
+[`babel-core`]: https://github.com/babel/babel/tree/master/packages/babel-core
+[`babel-loader`]: https://github.com/babel/babel-loader
+`babel-preset-es2015`]: https://github.com/babel/babel/tree/master/packages/babel-preset-es2015
+
+### Styles
+
+* autoprefixer
 * css-mqpacker
 * gulp-cssnano
+* gulp-postcss
+* lost
 * postcss-calc
 * postcss-color-function
 * postcss-custom-media
 * postcss-custom-properties
 * postcss-custom-selectors
 * postcss-import
+* postcss-media-minmax
 * postcss-mixins
 * postcss-nested
-* postcss-short"
+* postcss-short
 * postcss-simple-vars
-
-[`autoprefixer`]: https://github.com/postcss/autoprefixer
-[`gulp-cssnano`]: https://github.com/postcss/autoprefixer
-[`gulp-postcss`]: https://github.com/postcss/postcss
-
-### Javascript
-
 
 ### Templates
 
-* [`gulp-pug`] robust, elegant, feature rich template engine for Node.js.
-
-[`gulp-pug`]: https://github.com/pugjs/pug
+* gulp-pug
 
 ### Images
 
-* [`gulp-svgmin`] Minify SVG with SVGO.
-* [`gulp-svgstore`] Combine svg files into one with <symbol> elements.
+* gulp-svgmin
+* gulp-svgstore
 
-[`gulp-svgmin`]: https://github.com/ben-eb/gulp-svgmin
-[`gulp-svgstore`]: https://github.com/w0rm/gulp-svgstore
-
-### Server
-
-* gulp-nodemon
-* browser-sync
-
-### Linters
+### Lint
 
 * eslint
-* eslint-config-airbnb-base
+* eslint-config-airbnb
 * eslint-plugin-import
+* eslint-plugin-jsx-a11y
+* eslint-plugin-react
 * gulp-eslint
+* gulp-htmlhint
 * gulp-stylelint
 * stylelint
 * stylelint-config-standard
-* gulp-htmlhint
+* stylelint-order
 
-## Tasks
+### Utils
 
-* `deploy` 
-
-
-## Other links
-
-* https://realfavicongenerator.net
-* https://realfavicongenerator.net/social/
-* https://richardstoolbox.com
-
-* http://steelbrain.me/2017/03/13/linter-v2-released.html
+* del
+* gulp-copy
+* gulp-changed
+* gulp-cli
+* gulp-rename
+* gulp-size
+* gulp-util

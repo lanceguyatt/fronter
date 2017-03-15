@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "Gulp Starter",
-    "description": "Gulp 4 powered starter kit.",
+    "description": "Gulp powered front-end starter kit.",
     "url": "http://gulpstarter.surge.sh",
     "themeColor": "#000",
     "lang": "en",

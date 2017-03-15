@@ -6,18 +6,17 @@ const { port } = require('../../config');
 
 const server = {
     prestart(done) {
-        let started = false;
         nodemon({
             ext: 'js json',
-            ignore: ['node_modules'],
-        })
-            .on('restart', () => console.log('Nodemon restarted'))
-            .on('start', () => {
-                if (!started) {
-                    console.log('Nodemon started');
-                    started = true;
-                }
-            });
+            watch: [
+                'app.js',
+                'config.js',
+                'postcss.config.js',
+                'data/**/*',
+                'gulpfile.js/**/*',
+                'webpack/**/*',
+            ],
+        });
         return done();
     },
 

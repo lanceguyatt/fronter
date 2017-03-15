@@ -94,22 +94,6 @@
   }
 }
 
-/*#grid.grid-5 {
-  width: var(--max-width-xl);
-
-  &:before {
-    content: 'breakpoint: xl'
-  }
-
-  div.vert {
-    width: var(--column-width-xl);
-  }
-
-  div.vert.first-line {
-    margin-left: var(--margin-width-xl);
-  }
-}*/
-
 :root {
   --red:
 }
