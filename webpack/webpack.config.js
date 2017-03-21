@@ -14,6 +14,10 @@ module.exports = {
 
     plugins: [],
 
+    externals: {
+        svg4everybody: 'svg4everybody',
+    },
+
     module: {
         rules: [
             {

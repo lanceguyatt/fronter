@@ -17,5 +17,6 @@ module.exports = {
         height: 512,
     },
     dateModified: moment().format(),
+    copyrightYear: moment().format('YYYY'),
     datePublished: '2017-3-13',
 };

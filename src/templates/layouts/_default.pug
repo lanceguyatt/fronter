@@ -1,5 +1,7 @@
-include ../helpers/_index
-include ../mixins/_index
+include ../helpers/
+include ../mixins/
+
+- view = { name: site.name, description: site.description, url: site.url, image: { url: site.image.url, width: site.image.width, height: site.image.height }, type: site.type }
 
 block locals
 
@@ -20,6 +22,11 @@ html(class='no-js' dir=site.dir lang=site.lang itemscope itemtype='http://schema
     block meta-default
 
       meta(name='description' content=view.description)
+
+    meta(itemprop='name' content=view.name)
+    meta(itemprop='description' content=view.description)
+    meta(itemprop='url' content=view.url)
+    meta(itemprop='image' content=view.image.url)
 
     block meta-og
 
@@ -62,31 +69,22 @@ html(class='no-js' dir=site.dir lang=site.lang itemscope itemtype='http://schema
 
   body
 
-    +container()
+    +container(class='u-p3')
 
       div(role='banner')
-        h1
-          a(href=site.url class='u-color-inherit' itemprop='name')=site.name
-
-        p(itemprop='description')=site.description
-
-        a(href='https://github.com/lanceguyatt/gulpstarter' target='_blank' class='u-black')
-          +icon('github')
+        a(href=site.url class='u-color-inherit u-h1')=site.name
+        p=site.description
 
       block view
 
       div(role='contentinfo')
 
-        meta(itemprop='url' content=site.url)
-
-        div(itemprop='image' itemscope itemtype='http://schema.org/ImageObject')
-          meta(itemprop='contentUrl' content=site.image.url)
-          meta(itemprop='width' content=site.image.width)
-          meta(itemprop='height' content=site.image.height)
-
-        meta(itemprop='dateCreated' content=site.dateCreated)
+        meta(itemprop='copyrightYear' content=site.copyrightYear)
         meta(itemprop='datePublished' content=site.datePublished)
         meta(itemprop='dateModified' content=site.dateModified)
+
+        a(href='https://github.com/lanceguyatt/gulpstarter' target='_blank' class='u-black' title=`View ${site.name} on Github`)
+          +icon('github')(class='u-block')
 
         if author
 

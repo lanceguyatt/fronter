@@ -4,16 +4,11 @@ const gulp = require('gulp');
 const runSequence = require('run-sequence');
 
 require('./tasks/server');
-
 require('./tasks/images');
 require('./tasks/scripts');
 require('./tasks/styles');
 require('./tasks/templates');
 require('./tasks/utils');
-
-gulp.task('images', () => {
-    runSequence('icons');
-});
 
 gulp.task('default', () => {
     runSequence(
