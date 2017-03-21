@@ -1,4 +1,4 @@
-@import 'grid';
-@import 'grid-sm';
-@import 'grid-md';
-@import 'grid-lg';
+@import '_grid-xs';
+@import '_grid-sm';
+@import '_grid-md';
+@import '_grid-lg';

@@ -3,7 +3,7 @@ const config = {
 
     rules: {
         "indent": [2, 4],
-        "import/no-extraneous-dependencies": 0
+        "import/no-extraneous-dependencies": 0,
     },
 
     env: {

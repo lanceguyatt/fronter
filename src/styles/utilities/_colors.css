@@ -1,5 +1,4 @@
 .u-color-inherit { color: inherit; }
 .u-muted { opacity: 0.5; }
-
 @add-mixin colors black, var(--black);
 @add-mixin colors white, var(--white);

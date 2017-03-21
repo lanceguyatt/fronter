@@ -1,5 +1,4 @@
 @define-mixin colors $name, $color {
-
   .u-$(name) { color: $color; }
   .u-bg-$(name) { background-color: $color; }
   .u-border-$(name) { border-color: $color; }

@@ -1,33 +1,34 @@
-/* eslint-disable no-console */
-const nodemon = require('gulp-nodemon');
+const config = require('../../config');
+
+const gulp = require('gulp');
 const browserSync = require('browser-sync').create('main');
+const nodemon = require('gulp-nodemon');
 
-const { port } = require('../../config');
+gulp.task('server:start', () => {
+    let started = false;
 
-const server = {
-    prestart(done) {
-        nodemon({
-            ext: 'js json',
-            watch: [
-                'app.js',
-                'config.js',
-                'postcss.config.js',
-                'data/**/*',
-                'gulpfile.js/**/*',
-                'webpack/**/*',
-            ],
-        });
-        return done();
-    },
+    nodemon({
+        script: './app.js',
+        ext: 'js json',
+        watch: [
+            'app.js',
+            'config.js',
+            'postcss.config.js',
+            'data/**/*',
+            'gulpfile.js/**/*',
+            'webpack/**/*',
+        ],
+    }).on('start', () => {
+        if (!started) {
+            started = true;
+        }
+    });
+});
 
-    start(done) {
-        browserSync.init(null, {
-            open: false,
-            notify: false,
-            proxy: `http://localhost:${port}`,
-        });
-        return done();
-    },
-};
-
-module.exports = server;
+gulp.task('server:poststart', () => {
+    browserSync.init(null, {
+        open: false,
+        notify: false,
+        proxy: `http://localhost:${config.port}`,
+    });
+});

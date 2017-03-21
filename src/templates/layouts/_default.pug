@@ -1,16 +1,10 @@
 include ../helpers/_index
 include ../mixins/_index
 
-- isProduction = process.env.NODE_ENV === 'production'
-
-- title = site.name
-- page = { name: '', description: '', url: '' }
-- meta = { title: site.name, description: site.description, url: '', image: { url: site.image.url, width: site.image.width, height: site.image.height }, video: {}, type: site.type }
-
 block locals
 
 doctype
-html(class='no-js' dir=site.dir lang=site.lang)
+html(class='no-js' dir=site.dir lang=site.lang itemscope itemtype='http://schema.org/WebPage')
 
   head
 
@@ -19,67 +13,93 @@ html(class='no-js' dir=site.dir lang=site.lang)
 
     block title
 
-      title=title
-
-    block meta-default
-
-      meta(name='description' content=meta.description)
+      title=`${view.name} - ${site.name}`
 
     meta(name='viewport' content='width=device-width, initial-scale=1')
 
-    block styles
+    block meta-default
 
-      link(rel='stylesheet' href=`${paths.styles}site.css` media='all')
+      meta(name='description' content=view.description)
 
     block meta-og
 
-      meta(property='og:title' content=meta.title)
-      meta(property='og:description' content=meta.description)
-      meta(property='og:image' content=`${site.url}${meta.image.url}`)
-      meta(property='og:image:width' content=meta.image.width)
-      meta(property='og:image:height' content=meta.image.height)
-      meta(property='og:url' content=`${site.url}${meta.url}`)
-      meta(property='og:type' content=meta.type)
-      meta(property='og:site_name' content=site.name)
+      meta(property='og:title' content=view.name)
+      meta(property='og:description' content=view.description)
+      meta(property='og:image' content=view.image.url)
+      meta(property='og:image:width' content=view.image.width)
+      meta(property='og:image:height' content=view.image.height)
+      meta(property='og:url' content=view.url)
+      meta(property='og:type' content=view.type)
+      meta(property='og:site_name' content=view.name)
 
     block meta-twitter
 
       meta(name='twitter:card' content='summary_large_image')
-      meta(name='twitter:title' content=meta.title)
-      meta(name='twitter:description' content=meta.description)
-      meta(name='twitter:image' content=`${site.url}${meta.image.url}`)
-      meta(name='twitter:url' content=`${site.url}${meta.url}`)
+      meta(name='twitter:site' content='@lanceguyatt')
+      meta(name='twitter:title' content=view.name)
+      meta(name='twitter:description' content=view.description)
+      meta(name='twitter:image' content=view.image.url)
+      meta(name='twitter:url' content=view.url)
 
     link(rel='icon' sizes='180x180' href='/apple-touch-icon.png')
     link(rel='icon' type='image/png' href='/favicon-32x32.png' sizes='32x32')
     link(rel='icon' type='image/png' href='/favicon-16x16.png' sizes='16x16')
-
     link(rel='manifest' href='/manifest.json')
+    link(rel='mask-icon' href='/safari-pinned-tab.svg' color=site.themeColor)
 
     meta(name='apple-mobile-web-app-title' content=site.name)
     meta(name='application-name' content=site.name)
+    meta(name='msapplication-config' content='/browserconfig.xml')
     meta(name='theme-color' content=site.themeColor)
+
+    link(rel='author' href='/humans.txt' type='text/plain')
+
+    block styles
+
+      link(rel='stylesheet' href=`${paths.styles}site.css` type='text/css')
 
     block head
 
-    body
+  body
 
-      +container()
+    +container()
 
-        block banner
+      div(role='banner')
+        h1
+          a(href=site.url class='u-color-inherit' itemprop='name')=site.name
 
-            div(role='banner')
-                h1: a(href=site.url class='u-color-inherit')=site.name
-                p=site.description
-                a(href='https://github.com/lanceguyatt/gulpstarter' target='_blank' class='u-black')
-                    +icon('github')
+        p(itemprop='description')=site.description
 
+        a(href='https://github.com/lanceguyatt/gulpstarter' target='_blank' class='u-black')
+          +icon('github')
 
-        main
+      block view
 
-            block main
+      div(role='contentinfo')
 
-        block contentinfo
+        meta(itemprop='url' content=site.url)
+
+        div(itemprop='image' itemscope itemtype='http://schema.org/ImageObject')
+          meta(itemprop='contentUrl' content=site.image.url)
+          meta(itemprop='width' content=site.image.width)
+          meta(itemprop='height' content=site.image.height)
+
+        meta(itemprop='dateCreated' content=site.dateCreated)
+        meta(itemprop='datePublished' content=site.datePublished)
+        meta(itemprop='dateModified' content=site.dateModified)
+
+        if author
+
+          div(itemprop='author' itemscope itemtype='http://schema.org/Person')
+            meta(itemprop='name' content=author.name)
+            meta(itemprop='description' content=author.description)
+            meta(itemprop='jobTitle' content=author.jobTitle)
+            meta(itemprop='url' content=author.url)
+            meta(itemprop='email' content=author.email)
+            div(itemprop='image' itemscope itemtype='http://schema.org/ImageObject')
+              meta(itemprop='contentUrl' content=author.image.url)
+              meta(itemprop='width' content=author.image.width)
+              meta(itemprop='height' content=author.image.height)
 
     block scripts
 

@@ -1,9 +1,16 @@
 extends ../layouts/_default
 
-block main
+block locals
+
+    - view.name = '404'
+    - view.description = 'Page not found.'
+    - view.url = `${site.url}/404.html`
+
+block view
 
   +main()
 
-    +container(class='u-py3')
-
-      h1 404
+    article
+      header
+        h2=view.name
+      p=view.description

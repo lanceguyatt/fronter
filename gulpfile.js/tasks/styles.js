@@ -1,40 +1,40 @@
 const gulp = require('gulp');
 const postcss = require('gulp-postcss');
-const cssnano = require('gulp-cssnano');
-const stylelint = require('gulp-stylelint');
-const gutil = require('gulp-util');
+const path = require('path');
+const csscomb = require('gulp-csscomb');
 const browserSync = require('browser-sync').get('main');
-const { resolve } = require('path');
+const stylelint = require('gulp-stylelint');
+const plumber = require('gulp-plumber');
 
-const { isProduction, paths } = require('../../config');
+const config = require('../../config');
 
-const styles = {
-    compile(done) {
-        gulp.src(resolve(paths.styles.srcDir, '*.css'))
-            .pipe(postcss())
-            .pipe(isProduction ? cssnano() : gutil.noop())
-            .pipe(gulp.dest(paths.styles.destDir))
-            .pipe(isProduction ? gutil.noop() : browserSync.stream());
-        return done();
-    },
+gulp.task('styles:compile', () => {
+    gulp.src(config.files.styles)
+        .pipe(postcss())
+        .pipe(plumber(config.onError))
+        .pipe(gulp.dest(config.paths.styles.destDir))
+        .pipe(browserSync.stream());
+});
 
-    watch(done) {
-        gulp.watch(resolve(paths.styles.srcDir, '**', '*.css'), styles.compile);
-        return done();
-    },
+gulp.task('styles:tidy', () => {
+    gulp.src(path.join(config.paths.styles.destDir, '*.css'))
+        .pipe(csscomb())
+        .pipe(gulp.dest(config.paths.styles.destDir))
+        .pipe(browserSync.stream());
+});
 
-    lint(done) {
-        gulp.src(resolve(paths.styles.srcDir, '*.css'))
-            .pipe(stylelint({
-                reporters: [
-                    {
-                        formatter: 'string',
-                        console: true,
-                    },
-                ],
-            }));
-        return done();
-    },
-};
+gulp.task('styles:watch', () => {
+    gulp.watch(path.join(config.paths.styles.srcDir, '**', '*.css'), ['styles:compile']);
+});
 
-module.exports = styles;
+gulp.task('styles:lint', () => {
+    gulp.src(path.join(config.paths.styles.srcDir, '*.css'))
+        .pipe(stylelint({
+            reporters: [
+                {
+                    formatter: 'string',
+                    console: true,
+                },
+            ],
+        }));
+});

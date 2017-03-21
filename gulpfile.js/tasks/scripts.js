@@ -1,39 +1,49 @@
-/* eslint-disable import/no-dynamic-require, no-console */
+/* eslint import/no-dynamic-require: 0 */
 const gulp = require('gulp');
+const path = require('path');
+const modernizr = require('gulp-modernizr');
 const webpack = require('webpack');
 const eslint = require('gulp-eslint');
-const { resolve } = require('path');
+const browserSync = require('browser-sync').get('main');
 
-const { isProduction, paths } = require('../../config');
+const config = require('../../config');
 
-const webpackConfig = require(`../../webpack/webpack.config.${isProduction ? 'prod' : 'dev'}`);
+const webpackConfig = require(`../../webpack/webpack.config.${config.prod ? 'prod' : 'dev'}`);
 
-const scripts = {
-    compile(done) {
-        return webpack(webpackConfig).run((err) => {
-            if (err) {
-                console.error(err);
-                if (err.details) {
-                    console.error(err.details);
-                }
-                return;
+gulp.task('scripts:compile', () => {
+    webpack(webpackConfig).run((err) => {
+        if (err) {
+            console.error(err);
+            if (err.details) {
+                console.error(err.details);
             }
-            done();
-        });
-    },
+        }
+    });
+});
 
-    lint(done) {
-        gulp.src(['**/*.js', '!./build/**', '!node_modules/**'])
-            .pipe(eslint())
-            .pipe(eslint.format())
-            .pipe(eslint.failAfterError());
-        return done();
-    },
+gulp.task('scripts:watch', () => {
+    gulp.watch(path.join(config.paths.scripts.srcDir, '**', '*.js'), ['scripts:compile'])
+        .on('change', browserSync.reload);
+});
 
-    watch(done) {
-        gulp.watch(resolve(paths.scripts.srcDir, '**', '*.js'), scripts.compile);
-        return done();
-    },
-};
+gulp.task('scripts:lint', () => {
+    gulp.src(['**/*.js'])
+       .pipe(eslint())
+       .pipe(eslint.format())
+       .pipe(eslint.failAfterError());
+});
 
-module.exports = scripts;
+gulp.task('scripts:modernizr', () => {
+    const files = [
+        path.join(config.paths.scripts.destDir, 'site.js'),
+        path.join(config.paths.styles.destDir, 'site.css'),
+    ];
+
+    gulp.src(files)
+        .pipe(modernizr({
+            options: [
+                'setClasses',
+            ],
+        }))
+        .pipe(gulp.dest(path.join(config.paths.scripts.destDir, 'vendor')));
+});

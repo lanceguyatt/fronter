@@ -1,48 +1,52 @@
-const { resolve } = require('path');
-
-const srcDir = resolve(__dirname, 'src');
-const destDir = resolve(__dirname, 'build');
-
-const styles = 'styles';
-const images = 'images';
-const scripts = 'scripts';
-const templates = 'templates';
+const path = require('path');
+const gutil = require('gulp-util');
 
 const port = process.env.PORT || 8081;
+const prod = process.env.NODE_ENV === 'production';
 
-module.exports = {
+const srcDir = path.join(__dirname, 'src');
+const destDir = path.join(__dirname, 'build');
+
+const styles = 'styles';
+
+const config = {
     port,
-    isProduction: process.env.NODE_ENV === 'production',
+    prod,
     paths: {
         srcDir,
         destDir,
         styles: {
-            srcDir: resolve(srcDir, styles),
-            destDir: resolve(destDir, styles),
+            srcDir: path.join(srcDir, styles),
+            destDir: path.join(destDir, styles),
         },
         images: {
-            srcDir: resolve(srcDir, images),
-            destDir: resolve(destDir, images),
+            srcDir: path.join(srcDir, 'images', 'icons'),
+            destDir: path.join(destDir, 'images'),
         },
         scripts: {
-            srcDir: resolve(srcDir, scripts),
-            destDir: resolve(destDir, scripts),
+            srcDir: path.join(srcDir, 'scripts'),
+            destDir: path.join(destDir, 'scripts'),
         },
         templates: {
-            srcDir: resolve(srcDir, templates),
-            destDir,
-        },
-        public: {
-            srcDir: resolve(srcDir, 'public'),
+            srcDir: path.join(srcDir, 'templates'),
             destDir,
         },
     },
     files: {
         styles: [
-            `${srcDir}/styles/site.css`,
+            './src/styles/site.css',
+            './src/styles/hashgrid.css',
         ],
         scripts: [
-            `${srcDir}/scripts/site.js`,
+            './src/scripts/site.js',
         ],
     },
+    onError(err) {
+        gutil.beep();
+        gutil.log(err.message);
+        // console.log(err);
+        this.emit('end');
+    },
 };
+
+module.exports = config;
