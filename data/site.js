@@ -4,7 +4,7 @@ const pkg = require('../package.json');
 const { description } = pkg;
 
 module.exports = {
-    name: 'Gulp Starter',
+    name: 'Gulpstarter',
     description,
     url: 'http://gulpstarter.surge.sh',
     themeColor: '#000',
