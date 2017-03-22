@@ -9,20 +9,18 @@ body {
 }
 
 /* https://css-tricks.com/eliminate-jumps-in-horizontal-centering-by-forcing-a-scroll-bar */
+
 body {
   overflow-y: scroll;
 }
 
 /* Clearfix body */
+
 body::after {
   display: table;
   clear: both;
   content: '';
 }
-
-/* ::selection {
-  background: color(var(--color-link) a(.25));
-} */
 
 img {
   display: inline-block;
@@ -31,7 +29,6 @@ img {
 }
 
 a {
-  /* color: var(--blue); */
   transition: color 0.2s;
   text-decoration: none;
 }
@@ -43,7 +40,7 @@ ul,
 p,
 pre,
 table {
-  margin-bottom: calc(20 / 16) em;
+  margin-bottom: 1.25em;
 }
 
 ol,

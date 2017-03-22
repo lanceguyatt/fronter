@@ -32,54 +32,85 @@
 
 ## Styles
 
+* [`postcss`] Transforming styles with JS plugins
+* [`gulp-postcss`] Pipe CSS through PostCSS processors with a single parse
+* [`postcss-import`] PostCSS plugin to inline @import rules content
+* [`postcss-nested`] PostCSS plugin to unwrap nested rules like how Sass does it.
+* [`postcss-short`] Use advanced shorthand properties in CSS
+* [`postcss-mixins`] PostCSS plugin for mixins
+* [`postcss-simple-vars`] PostCSS plugin for Sass-like variables
+* [`postcss-custom-media`] PostCSS plugin to transform W3C CSS Custom Media Queries to more compatible CSS
+* [`postcss-custom-selectors`] PostCSS Custom Selectors
+* [`css-mqpacker`] A tool for packing same CSS media query rules into one with PostCSS
+* [`lost`] LostGrid is a powerful grid system built in PostCSS that works with any preprocessor and even vanilla CSS
+* [`postcss-calc`] PostCSS plugin to reduce calc()
+* [`postcss-media-minmax`] Writing simple and graceful Media Queries!
+* [`postcss-custom-properties`] PostCSS plugin to transform W3C CSS Custom Properties for cascading variables
+* [`postcss-color-function`] PostCSS plugin to transform W3C CSS color function to more compatible CSS
 * [`autoprefixer`] Parse CSS and add vendor prefixes to rules by Can I Use
-* css-mqpacker
-* gulp-cssnano
-* gulp-postcss
-* lost
-* postcss-calc
-* postcss-color-function
-* postcss-custom-media
-* postcss-custom-properties
-* postcss-custom-selectors
-* postcss-import
-* postcss-media-minmax
-* postcss-mixins
-* postcss-nested
-* postcss-short
-* postcss-simple-vars
+* [`gulp-cssnano`] Minify CSS with cssnano
 
 [`autoprefixer`]: https://github.com/postcss/autoprefixer
+[`css-mqpacker`]: https://github.com/hail2u/node-css-mqpacker
+[`postcss`]: https://github.com/postcss/postcss
+[`gulp-cssnano`]: https://github.com/ben-eb/gulp-cssnano
+[`gulp-postcss`]: https://github.com/postcss/gulp-postcss
+[`lost`]: https://github.com/peterramsing/lost
+[`postcss-calc`]: https://github.com/postcss/postcss-calc
+[`postcss-color-function`]: https://github.com/postcss/postcss-color-function
+[`postcss-custom-media`]: https://github.com/postcss/postcss-custom-media
+[`postcss-custom-properties`]: https://github.com/postcss/postcss-custom-properties
+[`postcss-custom-selectors`]: https://github.com/postcss/postcss-custom-selectors
+[`postcss-import`]: https://github.com/postcss/postcss-import
+[`postcss-media-minmax`]: https://github.com/postcss/postcss-media-minmax
+[`postcss-mixins`]: https://github.com/postcss/postcss-mixins
+[`postcss-nested`]: https://github.com/postcss/postcss-nested
+[`postcss-short`]: https://github.com/jonathantneal/postcss-short
+[`postcss-simple-vars`]: https://github.com/postcss/postcss-simple-vars
 
 ## Templates
 
-* gulp-pug
+* [`pug`] Pug – robust, elegant, feature rich template engine for Node.js
+* [`gulp-pug`] Gulp plugin for compiling Pug templates
+
+[`pug`]: https://github.com/pugjs/pug
+[`gulp-pug`]: https://github.com/pugjs/gulp-pug
 
 ## Images
 
-* gulp-svgmin
-* gulp-svgstore
+* [`gulp-svgmin`] Minify SVG files with gulp.
+* [`gulp-svgstore`] Combine svg files into one with <symbol> elements
+
+[`gulp-svgmin`]: https://github.com/ben-eb/gulp-svgmin
+[`gulp-svgstore`]: https://github.com/w0rm/gulp-svgstore
 
 ## Linters
 
-* eslint
-* eslint-config-airbnb
-* eslint-plugin-import
-* eslint-plugin-jsx-a11y
-* eslint-plugin-react
-* gulp-eslint
-* gulp-htmlhint
-* gulp-stylelint
-* stylelint
-* stylelint-config-standard
-* [`stylelint-order`] A plugin pack of order related linting rules for stylelint.
+* [`eslint`] The pluggable linting utility for JavaScript and JSX
+* [`eslint-config-airbnb`] This package provides Airbnb's .eslintrc as an extensible shared config
+* [`eslint-plugin-import`] ESLint plugin with rules that help validate proper imports
+* [`eslint-plugin-jsx-a11y`] Static AST checker for a11y rules on JSX elements.
+* [`eslint-plugin-react`] React specific linting rules for ESLint
+* [`gulp-eslint`] A Gulp plugin for identifying and reporting on patterns found in ECMAScript/JavaScript code.
+* [`gulp-htmlhint`] htmlhint wrapper for gulp to validate your HTML
+* [`gulp-stylelint`] Gulp plugin for running Stylelint results through various reporters
+* [`stylelint`] A mighty, modern CSS linter 
+* [`stylelint-config-standard`] The standard shareable config for stylelint
 
-[`stylelint-order`]: https://github.com/hudochenkov/stylelint-order
+[`eslint`]: http://eslint.org/
+[`eslint-config-airbnb`]: https://www.npmjs.com/package/eslint-config-airbnb
+[`eslint-plugin-import`]: https://github.com/benmosher/eslint-plugin-import
+[`eslint-plugin-jsx-a11y`]: https://github.com/evcohen/eslint-plugin-jsx-a11y
+[`eslint-plugin-react`]: https://github.com/yannickcr/eslint-plugin-react
+[`gulp-eslint`]: https://github.com/adametry/gulp-eslint
+[`gulp-htmlhint`]: https://github.com/bezoerb/gulp-htmlhint
+[`gulp-stylelint`]: https://github.com/olegskl/gulp-stylelint
+[`stylelint`]: https://github.com/stylelint/stylelint
+[`stylelint-config-standard`]: https://github.com/stylelint/stylelint-config-standard
 
 ## Utils
 
 * del
-* gulp-copy
 * gulp-changed
 * gulp-cli
 * gulp-rename
@@ -89,4 +120,3 @@
 ## License
 
 [MIT](./LICENSE) &copy; [Lance Guyatt](https://lanceguyatt.com)
-

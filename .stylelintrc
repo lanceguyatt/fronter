@@ -1,26 +1,12 @@
 {
   "extends": "stylelint-config-standard",
-  "plugins": [
-    "stylelint-order"
-  ],
   "rules": {
-    "custom-property-empty-line-before": [
-      "never",
-      ignore: [
-        "after-comment",
-        "inside-single-line-block"
-      ]
-    ],
-    "at-rule-empty-line-before": "never",
+    "rule-empty-line-before": "always-multi-line",
     "property-no-unknown": [
       true,
       "ignoreProperties": [
         "lost-column"
       ]
-    ],
-    "order/order": [
-      "custom-properties",
-      "declarations"
     ],
   }
 }

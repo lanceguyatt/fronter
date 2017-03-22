@@ -5,12 +5,21 @@ const csscomb = require('gulp-csscomb');
 const browserSync = require('browser-sync').get('main');
 const stylelint = require('gulp-stylelint');
 const plumber = require('gulp-plumber');
+const cssnano = require('gulp-cssnano');
 
 const config = require('../../config');
 
 gulp.task('styles:compile', () => {
     gulp.src(config.files.styles)
         .pipe(postcss())
+        .pipe(plumber(config.onError))
+        .pipe(gulp.dest(config.paths.styles.destDir))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('styles:cssnano', () => {
+    gulp.src(path.join(config.paths.styles.destDir, '*.css'))
+        .pipe(cssnano())
         .pipe(plumber(config.onError))
         .pipe(gulp.dest(config.paths.styles.destDir))
         .pipe(browserSync.stream());

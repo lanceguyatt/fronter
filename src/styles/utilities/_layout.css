@@ -5,7 +5,9 @@
 .u-table-cell { display: table-cell; }
 
 /* http://danisadesigner.com/blog/flexbox-clear-fix-pseudo-elements/ */
+
 .u-clearfix {
+
   &::before,
   &::after {
     content: " ";
