@@ -211,7 +211,7 @@ npm start
 
 ## License
 
-[MIT](./LICENSE) &copy; [Lance Guyatt](https://lanceguyatt.com)
+[MIT](./LICENSE) &copy; [Lance Guyatt](http://lanceguyatt.com)
 
 [npm]: https://www.npmjs.com/
 [yarn]: https://www.npmjs.com/package/yarn
