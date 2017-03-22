@@ -35,7 +35,7 @@
 * [`postcss`] Transforming styles with JS plugins
 * [`gulp-postcss`] Pipe CSS through PostCSS processors with a single parse
 * [`postcss-import`] PostCSS plugin to inline @import rules content
-* [`postcss-nested`] PostCSS plugin to unwrap nested rules like how Sass does it.
+* [`postcss-nested`] PostCSS plugin to unwrap nested rules like how Sass does it
 * [`postcss-short`] Use advanced shorthand properties in CSS
 * [`postcss-mixins`] PostCSS plugin for mixins
 * [`postcss-simple-vars`] PostCSS plugin for Sass-like variables
@@ -94,7 +94,7 @@
 * [`gulp-eslint`] A Gulp plugin for identifying and reporting on patterns found in ECMAScript/JavaScript code.
 * [`gulp-htmlhint`] htmlhint wrapper for gulp to validate your HTML
 * [`gulp-stylelint`] Gulp plugin for running Stylelint results through various reporters
-* [`stylelint`] A mighty, modern CSS linter 
+* [`stylelint`] A mighty, modern CSS linter
 * [`stylelint-config-standard`] The standard shareable config for stylelint
 
 [`eslint`]: http://eslint.org/
@@ -110,13 +110,19 @@
 
 ## Utils
 
-* del
-* gulp-changed
-* gulp-cli
-* gulp-rename
-* gulp-size
-* gulp-util
+* [`del`] Delete files and folders using globs
+* [`gulp-changed`] Only pass through changed files
+* [`gulp-cli`] CLI for gulp
+* [`gulp-rename`] Rename files easily
+* [`gulp-size`] Display the size of your project
+* [`gulp-util`] Utilities for gulp plugins
 
+[`del`]: https://github.com/sindresorhus/del
+[`gulp-changed`]: https://github.com/sindresorhus/gulp-changed
+[`gulp-cli`]: https://github.com/gulpjs/gulp-cli
+[`gulp-rename`]: https://github.com/hparra/gulp-rename
+[`gulp-size`]: https://github.com/sindresorhus/gulp-size
+[`gulp-util`]: https://github.com/gulpjs/gulp-util
 ## License
 
 [MIT](./LICENSE) &copy; [Lance Guyatt](https://lanceguyatt.com)
