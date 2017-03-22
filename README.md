@@ -2,6 +2,73 @@
 
 > Gulp powered front-end starter kit.
 
+# Quick-Start Guide
+
+- [Installation](#installation)
+- [Development Workflow](#development-workflow)
+- [Builders](#builders)
+- [Servers](#servers)
+- [Scripts](#scripts)
+- [Styles](#styles)
+- [Templates](#templates)
+- [Images](#images)
+- [Linters](#linters)
+
+## Installation
+
+**1. Clone this repo:**
+
+```sh
+git clone git@github.com:lanceguyatt/gulpstarter.git my-app
+cd my-app
+```
+
+**2. Make it your own**
+
+```sh
+rm -rf .git && git init && npm init
+```
+> This re-initializes the repo and sets up your NPM project.
+
+**3. Install the dependencies:**
+
+Install via [yarn]
+
+```sh
+yarn
+```
+Or via [npm]
+
+```sh
+npm install
+```
+> You're done installing! Now let's get started developing.
+
+## Development Workflow
+
+**4. Start a [`browser-sync`] development server**
+
+```sh
+gulp
+```
+> Browser sync
+
+**5. Generate a production build in `./build`:**
+
+```sh
+gulp build
+```
+> Build
+
+**6. Start local production server with [`serve`]:**
+
+```sh
+npm start
+```
+> Serve
+
+---
+
 ## Builders
 
 * [`gulp`] The streaming build system
@@ -10,13 +77,19 @@
 [`gulp`]: https://github.com/gulpjs/gulp/tree/4.0
 [`webpack`]: https://github.com/webpack/webpack
 
+---
+
 ## Servers
 
 * [`gulp-nodemon`] gulp + nodemon + convenience
 * [`browser-sync`] Keep multiple browsers & devices in sync when building websites
+* [`serve`] Static file serving and directory listing
 
 [`gulp-nodemon`]: https://github.com/JacksonGariety/gulp-nodemon
 [`browser-sync`]: https://github.com/BrowserSync/browser-sync
+[`serve`]: https://github.com/zeit/serve
+
+---
 
 ## Scripts
 
@@ -29,6 +102,8 @@
 [`babel-loader`]: https://github.com/babel/babel-loader
 [`babel-preset-es2015`]: https://github.com/babel/babel/tree/master/packages/babel-preset-es2015
 [`svg4everybody`]: https://github.com/jonathantneal/svg4everybody
+
+---
 
 ## Styles
 
@@ -68,6 +143,8 @@
 [`postcss-short`]: https://github.com/jonathantneal/postcss-short
 [`postcss-simple-vars`]: https://github.com/postcss/postcss-simple-vars
 
+---
+
 ## Templates
 
 * [`pug`] Pug – robust, elegant, feature rich template engine for Node.js
@@ -76,6 +153,8 @@
 [`pug`]: https://github.com/pugjs/pug
 [`gulp-pug`]: https://github.com/pugjs/gulp-pug
 
+---
+
 ## Images
 
 * [`gulp-svgmin`] Minify SVG files with gulp.
@@ -83,6 +162,8 @@
 
 [`gulp-svgmin`]: https://github.com/ben-eb/gulp-svgmin
 [`gulp-svgstore`]: https://github.com/w0rm/gulp-svgstore
+
+---
 
 ## Linters
 
@@ -94,7 +175,7 @@
 * [`gulp-eslint`] A Gulp plugin for identifying and reporting on patterns found in ECMAScript/JavaScript code.
 * [`gulp-htmlhint`] htmlhint wrapper for gulp to validate your HTML
 * [`gulp-stylelint`] Gulp plugin for running Stylelint results through various reporters
-* [`stylelint`] A mighty, modern CSS linter 
+* [`stylelint`] A mighty, modern CSS linter
 * [`stylelint-config-standard`] The standard shareable config for stylelint
 
 [`eslint`]: http://eslint.org/
@@ -108,15 +189,29 @@
 [`stylelint`]: https://github.com/stylelint/stylelint
 [`stylelint-config-standard`]: https://github.com/stylelint/stylelint-config-standard
 
+---
+
 ## Utils
 
-* del
-* gulp-changed
-* gulp-cli
-* gulp-rename
-* gulp-size
-* gulp-util
+* [`del`] Delete files and folders using globs
+* [`gulp-changed`] Only pass through changed files
+* [`gulp-cli`] CLI for gulp
+* [`gulp-rename`] Rename files easily
+* [`gulp-size`] Display the size of your project
+* [`gulp-util`] Utilities for gulp plugins
+
+[`del`]: https://github.com/sindresorhus/del
+[`gulp-changed`]: https://github.com/sindresorhus/gulp-changed
+[`gulp-cli`]: https://github.com/gulpjs/gulp-cli
+[`gulp-rename`]: https://github.com/hparra/gulp-rename
+[`gulp-size`]: https://github.com/sindresorhus/gulp-size
+[`gulp-util`]: https://github.com/gulpjs/gulp-util
+
+---
 
 ## License
 
 [MIT](./LICENSE) &copy; [Lance Guyatt](https://lanceguyatt.com)
+
+[npm]: https://www.npmjs.com/
+[yarn]: https://www.npmjs.com/package/yarn
