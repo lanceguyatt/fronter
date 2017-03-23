@@ -15,6 +15,7 @@ module.exports = {
         url: 'http://gulpstarter.surge.sh/android-chrome-512x512.png',
         width: 512,
         height: 512,
+        alt: 'Gulpstarter',
     },
     dateModified: moment().format('MMMM Do YYYY, h:mma'),
     copyrightYear: moment().format('YYYY'),
