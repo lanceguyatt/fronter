@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const base = require('./webpack.config.js');
+const base = require('./webpack.config');
 
 /**
  * Development Webpack config, with dev-workflow optimisations.
