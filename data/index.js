@@ -1,9 +1,13 @@
-const site = require('./site');
-const paths = require('./paths');
-const author = require('./author');
+import site from './site';
+import paths from './paths';
+import author from './author';
+import views from './views/';
 
-module.exports = {
-    site,
-    paths,
-    author,
+const gulpstarter = {
+  site,
+  paths,
+  author,
+  views,
 };
+
+export default gulpstarter;

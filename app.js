@@ -1,18 +1,10 @@
-const finalhandler = require('finalhandler');
-const { createServer } = require('http');
-const serveStatic = require('serve-static');
+require('dotenv').config();
 
-const { paths, port } = require('./config');
+const { resolve } = require('path');
+const serve = require('serve');
 
-const serve = serveStatic(paths.destDir, {
-    index: ['index.html'],
-});
+const port = process.env.PORT || 8081;
 
-const server = createServer((req, res) => {
-    const done = finalhandler(req, res);
-    serve(req, res, done);
-});
+const app = serve(resolve(__dirname, 'build'), { port });
 
-server.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
-});
+module.exports = app;

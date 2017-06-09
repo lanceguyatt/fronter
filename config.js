@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const gutil = require('gulp-util');
 
@@ -7,8 +8,6 @@ const prod = process.env.NODE_ENV === 'production';
 const srcDir = path.join(__dirname, 'src');
 const destDir = path.join(__dirname, 'build');
 
-const styles = 'styles';
-
 const config = {
     port,
     prod,
@@ -16,8 +15,8 @@ const config = {
         srcDir,
         destDir,
         styles: {
-            srcDir: path.join(srcDir, styles),
-            destDir: path.join(destDir, styles),
+            srcDir: path.join(srcDir, 'styles'),
+            destDir: path.join(destDir, 'styles'),
         },
         images: {
             srcDir: path.join(srcDir, 'images', 'icons'),
