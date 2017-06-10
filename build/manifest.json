@@ -1,5 +1,6 @@
 {
-    "name": "",
+    "name": "fronter",
+    "short_name": "fronter",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

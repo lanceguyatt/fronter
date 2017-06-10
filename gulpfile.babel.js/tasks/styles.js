@@ -1,4 +1,5 @@
 import gulp from 'gulp';
+import gutil from 'gulp-util';
 import postcss from 'gulp-postcss';
 import { resolve } from 'path';
 import csscomb from 'gulp-csscomb';
@@ -8,7 +9,7 @@ import plumber from 'gulp-plumber';
 import cssnano from 'gulp-cssnano';
 import sourcemaps from 'gulp-sourcemaps';
 
-const { paths, onError } = require('../../config');
+const { paths, onError, isProduction } = require('../../config');
 
 const bs = browserSync.get('main');
 
@@ -16,17 +17,11 @@ gulp.task('styles:compile', () => {
   gulp.src(resolve(paths.styles.srcDir, '*.css'))
     .pipe(sourcemaps.init())
     .pipe(postcss())
+    .pipe(isProduction ? cssnano() : gutil.noop())
     .pipe(plumber(onError))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.styles.destDir))
     .pipe(bs.stream());
-});
-
-gulp.task('styles:cssnano', () => {
-  gulp.src(resolve(paths.styles.destDir, '*.css'))
-    .pipe(cssnano())
-    .pipe(plumber(onError))
-    .pipe(gulp.dest(paths.styles.destDir));
 });
 
 gulp.task('styles:tidy', () => {

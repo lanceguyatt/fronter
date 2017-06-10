@@ -19,7 +19,7 @@ gulp.task('templates:compile', () => {
     .pipe(plumber(onError))
     .pipe(pug({
       locals,
-      pretty: true,
+      pretty: !isProduction,
     }))
     .pipe(gulp.dest(paths.templates.destDir))
     .pipe(bs.stream());

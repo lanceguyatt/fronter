@@ -5,7 +5,8 @@ body {
 }
 
 body {
-  font-family: San Francisco, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif;
+  /* font-family: San Francisco, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif; */
+  font-family: Avenir Next, Avenir Next LT Pro, sans-serif;
 }
 
 /* https://css-tricks.com/eliminate-jumps-in-horizontal-centering-by-forcing-a-scroll-bar */
