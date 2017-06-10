@@ -19,7 +19,7 @@
 **1. Clone this repo:**
 
 ```sh
-git clone git@github.com:lanceguyatt/gulpstarter.git my-app
+git clone git@github.com:lanceguyatt/fronter.git my-app
 cd my-app
 ```
 
