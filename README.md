@@ -149,9 +149,10 @@ npm start
 
 * [`pug`] Pug – robust, elegant, feature rich template engine for Node.js
 * [`gulp-pug`] Gulp plugin for compiling Pug templates
-
+* [`jstransformer-markdown-it`] Markdown-It support for JSTransformers.
 [`pug`]: https://github.com/pugjs/pug
 [`gulp-pug`]: https://github.com/pugjs/gulp-pug
+[`jstransformer-markdown-it`]: https://github.com/jstransformers/jstransformer-markdown-it
 
 ---
 
