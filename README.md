@@ -1,6 +1,6 @@
-# Gulpstarter [![dependencies Status](https://david-dm.org/lanceguyatt/gulpstarter/status.svg)](https://david-dm.org/lanceguyatt/gulpstarter) [![devDependency Status](https://david-dm.org/lanceguyatt/gulpstarter/dev-status.svg?style=flat-square)](https://david-dm.org/lanceguyatt/gulpstarter#info=devDependencies)
+# Fronter [![dependencies Status](https://david-dm.org/lanceguyatt/fronter/status.svg)](https://david-dm.org/lanceguyatt/fronter) [![devDependency Status](https://david-dm.org/lanceguyatt/fronter/dev-status.svg?style=flat-square)](https://david-dm.org/lanceguyatt/fronter#info=devDependencies)
 
-> Gulp powered front-end starter kit.
+> Front-end starter kit.
 
 # Quick-Start Guide
 
