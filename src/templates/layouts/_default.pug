@@ -23,7 +23,7 @@ html(class='no-js' dir=site.dir lang=site.lang itemscope itemtype='http://schema
 
     meta(itemprop='name' content=view.title)
     meta(itemprop='description' content=view.description)
-    meta(itemprop='url' content=view.url)
+    meta(itemprop='url' content=`${site.url}${view.url}`)
     meta(itemprop='image' content=view.image.url)
 
     block meta-og
@@ -33,7 +33,7 @@ html(class='no-js' dir=site.dir lang=site.lang itemscope itemtype='http://schema
       meta(property='og:image' content=view.image.url)
       meta(property='og:image:width' content=view.image.width)
       meta(property='og:image:height' content=view.image.height)
-      meta(property='og:url' content=view.url)
+      meta(property='og:url' content=`${site.url}${view.url}`)
       meta(property='og:type' content=view.type)
       meta(property='og:site_name' content=site.name)
 
@@ -46,7 +46,7 @@ html(class='no-js' dir=site.dir lang=site.lang itemscope itemtype='http://schema
       //- meta(name='twitter:creator' content='@lanceguyatt')
       meta(name='twitter:image:src' content=view.image.url)
       meta(name='twitter:image:alt' content=view.image.alt)
-      meta(name='twitter:url' content=view.url)
+      meta(name='twitter:url' content=`${site.url}${view.url}`)
       //- meta(name='twitter:domain' content=site.url.replace('http://', ''))
 
     link(rel='icon' sizes='180x180' href='/apple-touch-icon.png')
@@ -74,34 +74,41 @@ html(class='no-js' dir=site.dir lang=site.lang itemscope itemtype='http://schema
     +container(class='u-p3')
 
       div(role='banner')
-        a(href=site.url class='u-color-inherit u-h1')=site.name
-        p=site.description
+        a(href=views.home.url class='u-color-inherit u-h4 u-bold')=site.name
 
       block view
 
       div(role='contentinfo')
 
-        meta(itemprop='copyrightYear' content=site.copyrightYear)
+        | &copy;  
+
+        span(itemprop='copyrightYear')=site.copyrightYear
+
         meta(itemprop='datePublished' content=site.datePublished)
         meta(itemprop='dateModified' content=site.dateModified)
 
-        a(href='https://github.com/lanceguyatt/gulpstarter' target='_blank' class='u-black' title=`View ${site.name} on Github`)
-          +icon('github')(class='u-block')
-
         if author
 
-          div(itemprop='author' itemscope itemtype='http://schema.org/Person')
-            meta(itemprop='name' content=author.name)
+          span(itemprop='author' itemscope itemtype='http://schema.org/Person')
+            a(
+              href=author.url
+              itemprop='name'
+              target='_blank'
+              class='u-color-inherit'
+              rel='noopener'
+            )=author.name
+
             meta(itemprop='description' content=author.description)
             meta(itemprop='jobTitle' content=author.jobTitle)
             meta(itemprop='url' content=author.url)
             meta(itemprop='email' content=author.email)
-            div(itemprop='image' itemscope itemtype='http://schema.org/ImageObject')
+
+            span(itemprop='image' itemscope itemtype='http://schema.org/ImageObject')
               meta(itemprop='contentUrl' content=author.image.url)
               meta(itemprop='width' content=author.image.width)
               meta(itemprop='height' content=author.image.height)
 
-      +stringify(locals, null, ' ')
+      //- +stringify(locals, null, ' ')
 
     block scripts
 

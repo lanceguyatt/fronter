@@ -21,7 +21,6 @@ gulp.task('build', () => {
   runSequence(
     'utils:clean',
     'styles:compile',
-    'styles:tidy',
     'templates:compile',
     'scripts:compile',
     'scripts:modernizr',

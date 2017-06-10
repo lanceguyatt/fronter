@@ -1,7 +1,8 @@
-import { name } from '../../site';
+import { name, description } from '../../site';
 
 const home = {
   name,
+  description,
   url: '/',
 };
 

@@ -8,7 +8,7 @@ const image = {
   url: `${homepage}/android-chrome-512x512.png`,
   width: 512,
   height: 512,
-  alt: 'Gulpstarter logo',
+  alt: 'Fronter logo',
 };
 
 const type = 'website';

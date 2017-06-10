@@ -6,7 +6,7 @@ const author = {
   email: 'lance@lanceguyatt.com',
   twitter: '@lanceguyatt',
   image: {
-    url: 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/1/005/097/18a/2b5292f.jpg',
+    url: 'https://s.gravatar.com/avatar/ac81508ccc67db1b23b80f71ee8affde?s=200',
     width: 200,
     height: 200,
     alt: 'Photo of Lance Guyatt',
