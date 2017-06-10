@@ -9,7 +9,11 @@ const author = {
     url: 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/1/005/097/18a/2b5292f.jpg',
     width: 200,
     height: 200,
-    alt: '',
+    alt: 'Photo of Lance Guyatt',
+  },
+  address: {
+    addressLocality: 'London',
+    addressCountry: 'United Kingdom',
   },
 };
 

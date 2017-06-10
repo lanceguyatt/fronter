@@ -1,8 +1,8 @@
 {
-  "name": "gulpstarter",
-  "description": "Gulp powered front-end starter kit.",
+  "name": "fronter",
+  "description": "Front-end starter kit.",
   "version": "1.0.0",
-  "homepage": "https://gulpstarter.surge.sh",
+  "homepage": "https://fronter.surge.sh",
   "license": "MIT",
   "keywords": [
     "gulp",
@@ -13,13 +13,13 @@
   "author": "Lance Guyatt <lance@lanceguyatt.com>",
   "repository": {
     "type": "git",
-    "url": "git@github.com:lanceguyatt/gulpstarter.git"
+    "url": "git@github.com:lanceguyatt/fronter.git"
   },
   "scripts": {
     "start": "node app.js",
     "dev": "gulp",
     "build": "NODE_ENV=production gulp build",
-    "deploy": "npm run build && surge -p build -d gulpstarter.surge.sh"
+    "deploy": "npm run build && surge -p build -d fronter.surge.sh"
   },
   "engines": {
     "node": "^6.8.0",

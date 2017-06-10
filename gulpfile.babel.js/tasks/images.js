@@ -5,7 +5,7 @@ import { resolve } from 'path';
 import size from 'gulp-size';
 import rename from 'gulp-rename';
 
-import { paths, prod } from '../../config';
+import { paths, isProduction } from '../../config';
 
 gulp.task('images:compile', () => {
   gulp.src(resolve(paths.images.srcDir, 'icons', '*.svg'))
@@ -13,6 +13,6 @@ gulp.task('images:compile', () => {
     .pipe(svgmin())
     .pipe(svgstore())
     .pipe(rename('icons.svg'))
-    .pipe(size({ title: 'SVG', gzip: prod }))
+    .pipe(size({ title: 'SVG', gzip: isProduction }))
     .pipe(gulp.dest(paths.images.destDir));
 });

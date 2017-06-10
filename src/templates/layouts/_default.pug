@@ -1,8 +1,6 @@
 include ../helpers/index
 include ../mixins/index
 
-- view = { title: site.name, name: site.name, description: site.description, url: site.url, image: { url: site.image.url, width: site.image.width, height: site.image.height, alt: site.image.alt }, type: site.type }
-
 block locals
 
 doctype
@@ -37,19 +35,19 @@ html(class='no-js' dir=site.dir lang=site.lang itemscope itemtype='http://schema
       meta(property='og:image:height' content=view.image.height)
       meta(property='og:url' content=view.url)
       meta(property='og:type' content=view.type)
-      meta(property='og:site_name' content=view.name)
+      meta(property='og:site_name' content=site.name)
 
     block meta-twitter
 
       meta(name='twitter:card' content='summary_large_image')
-      meta(name='twitter:site' content='@lanceguyatt')
+      //- meta(name='twitter:site' content='@lanceguyatt')
       meta(name='twitter:title' content=view.title)
       meta(name='twitter:description' content=view.description)
-      meta(name='twitter:creator' content='@lanceguyatt')
+      //- meta(name='twitter:creator' content='@lanceguyatt')
       meta(name='twitter:image:src' content=view.image.url)
       meta(name='twitter:image:alt' content=view.image.alt)
       meta(name='twitter:url' content=view.url)
-      meta(name='twitter:domain' content=site.url.replace('http://', ''))
+      //- meta(name='twitter:domain' content=site.url.replace('http://', ''))
 
     link(rel='icon' sizes='180x180' href='/apple-touch-icon.png')
     link(rel='icon' type='image/png' href='/favicon-32x32.png' sizes='32x32')
@@ -102,6 +100,8 @@ html(class='no-js' dir=site.dir lang=site.lang itemscope itemtype='http://schema
               meta(itemprop='contentUrl' content=author.image.url)
               meta(itemprop='width' content=author.image.width)
               meta(itemprop='height' content=author.image.height)
+
+      +stringify(locals, null, ' ')
 
     block scripts
 

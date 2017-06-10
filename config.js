@@ -1,51 +1,49 @@
-require('dotenv').config();
-const path = require('path');
-const gutil = require('gulp-util');
+import dotenv from 'dotenv/config';
+import { resolve } from 'path';
+import gutil from 'gulp-util';
 
 const port = process.env.PORT || 8081;
-const prod = process.env.NODE_ENV === 'production';
 
-const srcDir = path.join(__dirname, 'src');
-const destDir = path.join(__dirname, 'build');
+const isProduction = process.env.NODE_ENV === 'production';
 
-const config = {
-    port,
-    prod,
-    paths: {
-        srcDir,
-        destDir,
-        styles: {
-            srcDir: path.join(srcDir, 'styles'),
-            destDir: path.join(destDir, 'styles'),
-        },
-        images: {
-            srcDir: path.join(srcDir, 'images', 'icons'),
-            destDir: path.join(destDir, 'images'),
-        },
-        scripts: {
-            srcDir: path.join(srcDir, 'scripts'),
-            destDir: path.join(destDir, 'scripts'),
-        },
-        templates: {
-            srcDir: path.join(srcDir, 'templates'),
-            destDir,
-        },
-    },
-    files: {
-        styles: [
-            './src/styles/site.css',
-            './src/styles/hashgrid.css',
-        ],
-        scripts: [
-            './src/scripts/site.js',
-        ],
-    },
-    onError(err) {
-        gutil.beep();
-        gutil.log(err.message);
-        // console.log(err);
-        this.emit('end');
-    },
+const srcDir = resolve(__dirname, 'src');
+const destDir = resolve(__dirname, 'build');
+
+const paths = {
+  srcDir,
+  destDir,
+  styles: {
+    srcDir: resolve(srcDir, 'styles'),
+    destDir: resolve(destDir, 'styles'),
+  },
+  images: {
+    srcDir: resolve(srcDir, 'images'),
+    destDir: resolve(destDir, 'images'),
+  },
+  scripts: {
+    srcDir: resolve(srcDir, 'scripts'),
+    destDir: resolve(destDir, 'scripts'),
+  },
+  templates: {
+    srcDir: resolve(srcDir, 'templates'),
+    destDir,
+  },
 };
 
-module.exports = config;
+const onError = ({ err }) => {
+  gutil.beep();
+  gutil.log(err.message);
+  // console.log(err);
+  this.emit('end');
+};
+
+const config = {
+  port,
+  isProduction,
+  paths,
+  onError,
+};
+
+export { dotenv, port, isProduction, paths, onError };
+
+export default config;

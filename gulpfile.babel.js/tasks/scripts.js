@@ -5,9 +5,9 @@ import modernizr from 'gulp-modernizr';
 import webpack from 'webpack';
 import eslint from 'gulp-eslint';
 import browserSync from 'browser-sync';
-import { paths, prod } from '../../config';
+import { paths, isProduction } from '../../config';
 
-const webpackConfig = require(`../../webpack/webpack.config.${prod ? 'prod' : 'dev'}`);
+const webpackConfig = require(`../../webpack/webpack.config.${isProduction ? 'prod' : 'dev'}`);
 
 const bs = browserSync.get('main');
 

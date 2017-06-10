@@ -2,10 +2,7 @@ extends ../layouts/_default
 
 block locals
 
-    - view.name = '404'
-    - view.title = `${view.name} - ${site.name}`
-    - view.description = 'Page not found.'
-    - view.url = `${site.url}/404.html`
+  +view(views.pageNotFound)
 
 block view
 

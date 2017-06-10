@@ -10,3 +10,18 @@ mixin main
   div(id='main' class='u-sr')
     main&attributes(attributes)
       block
+
+
+mixin stringify(item, replacer, space)
+
+  code
+    pre=JSON.stringify(item, replacer, space)
+
+
+mixin view(item)
+
+  - item.title ? view.title = item.title : `${item.name} - ${site.name}`
+  - item.name ? view.name = item.name : site.name
+  - item.description ? view.description = item.description : site.description
+  - item.url ? view.url = item.url : site.url
+  - item.image ? view.image = item.image : site.image
