@@ -3,3 +3,8 @@
 
 @add-mixin colors black, var(--black);
 @add-mixin colors white, var(--white);
+
+:root {
+  --black: #000;
+  --white: #fff;
+}

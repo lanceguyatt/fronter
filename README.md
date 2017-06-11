@@ -95,20 +95,22 @@ npm start
 
 * [`babel-core`] Babel compiler core
 * [`babel-loader`] Webpack plugin for Babel
-* [`babel-preset-es2015`] Babel preset for all es2015 plugins
+* [`babel-preset-env`] Autoprefixer for Babel: compile less
 * [`svg4everybody`] Use external SVG spritemaps today
 
 [`babel-core`]: https://github.com/babel/babel/tree/master/packages/babel-core
 [`babel-loader`]: https://github.com/babel/babel-loader
-[`babel-preset-es2015`]: https://github.com/babel/babel/tree/master/packages/babel-preset-es2015
+[`babel-preset-env`]: https://github.com/babel/babel-preset-env
 [`svg4everybody`]: https://github.com/jonathantneal/svg4everybody
 
 ---
 
 ## Styles
 
+* [`autoprefixer`] Parse CSS and add vendor prefixes to rules by Can I Use
+* [`css-mqpacker`] A tool for packing same CSS media query rules into one with PostCSS
+* [`lost`] LostGrid is a powerful grid system built in PostCSS that works with any preprocessor and even vanilla CSS
 * [`postcss`] Transforming styles with JS plugins
-* [`gulp-postcss`] Pipe CSS through PostCSS processors with a single parse
 * [`postcss-import`] PostCSS plugin to inline @import rules content
 * [`postcss-nested`] PostCSS plugin to unwrap nested rules like how Sass does it.
 * [`postcss-short`] Use advanced shorthand properties in CSS
@@ -116,14 +118,12 @@ npm start
 * [`postcss-simple-vars`] PostCSS plugin for Sass-like variables
 * [`postcss-custom-media`] PostCSS plugin to transform W3C CSS Custom Media Queries to more compatible CSS
 * [`postcss-custom-selectors`] PostCSS Custom Selectors
-* [`css-mqpacker`] A tool for packing same CSS media query rules into one with PostCSS
-* [`lost`] LostGrid is a powerful grid system built in PostCSS that works with any preprocessor and even vanilla CSS
 * [`postcss-calc`] PostCSS plugin to reduce calc()
 * [`postcss-media-minmax`] Writing simple and graceful Media Queries!
 * [`postcss-custom-properties`] PostCSS plugin to transform W3C CSS Custom Properties for cascading variables
 * [`postcss-color-function`] PostCSS plugin to transform W3C CSS color function to more compatible CSS
-* [`autoprefixer`] Parse CSS and add vendor prefixes to rules by Can I Use
 * [`gulp-cssnano`] Minify CSS with cssnano
+* [`gulp-postcss`] Pipe CSS through PostCSS processors with a single parse
 
 [`autoprefixer`]: https://github.com/postcss/autoprefixer
 [`css-mqpacker`]: https://github.com/hail2u/node-css-mqpacker
@@ -150,6 +150,7 @@ npm start
 * [`pug`] Pug – robust, elegant, feature rich template engine for Node.js
 * [`gulp-pug`] Gulp plugin for compiling Pug templates
 * [`jstransformer-markdown-it`] Markdown-It support for JSTransformers.
+
 [`pug`]: https://github.com/pugjs/pug
 [`gulp-pug`]: https://github.com/pugjs/gulp-pug
 [`jstransformer-markdown-it`]: https://github.com/jstransformers/jstransformer-markdown-it

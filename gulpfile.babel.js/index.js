@@ -1,28 +1,19 @@
 import gulp from 'gulp';
-import runSequence from 'run-sequence';
 
-require('./tasks/server');
-require('./tasks/images');
-require('./tasks/scripts');
-require('./tasks/styles');
-require('./tasks/templates');
-require('./tasks/utils');
+import watch from './watch/';
+import images from './images/';
+import scripts from './scripts/';
+import styles from './styles/';
+import templates from './templates/';
 
-gulp.task('default', () => {
-  runSequence(
-    'server:start',
-    'server:poststart',
-    'scripts:watch',
-    'styles:watch',
-    'templates:watch');
-});
+const start = gulp.series(
+  watch);
 
-gulp.task('build', () => {
-  runSequence(
-    'utils:clean',
-    'styles:compile',
-    'templates:compile',
-    'scripts:compile',
-    'scripts:modernizr',
-    'images:compile');
-});
+const build = gulp.parallel(
+  scripts,
+  styles,
+  templates);
+
+export { watch, build, images, scripts, styles, templates };
+
+export default start;

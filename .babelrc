@@ -1,5 +1,15 @@
 {
-    "presets": [
-      "env"
-    ]
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "> 1%",
+            "IE 11"
+          ]
+        }
+      }
+    ],
+  ]
 }

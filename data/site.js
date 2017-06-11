@@ -25,6 +25,7 @@ const site = {
   dateModified: moment().format('MMMM Do YYYY, h:mma'),
   copyrightYear: moment().format('YYYY'),
   datePublished: '2017-3-13',
+  googleSiteVerification: 'jNaVpvjnburtcKbiFL0zWb4wCaUuZ0hqgtWZkucp1TM',
 };
 
 export { name, description, url, type, image };

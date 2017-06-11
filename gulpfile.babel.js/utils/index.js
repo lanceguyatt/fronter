@@ -9,4 +9,8 @@ const files = [
   resolve(paths.styles.destDir, '*.css'),
 ];
 
-gulp.task('utils:clean', () => gulp.src(files, { read: false }).pipe(clean()));
+const clear = () => (
+  gulp.src(files, { read: false })
+    .pipe(clean()));
+
+export default clear;

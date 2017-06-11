@@ -7,12 +7,13 @@ import rename from 'gulp-rename';
 
 import { paths, isProduction } from '../../config';
 
-gulp.task('images:compile', () => {
+const images = () => (
   gulp.src(resolve(paths.images.srcDir, 'icons', '*.svg'))
     .pipe(rename({ prefix: 'i-' }))
     .pipe(svgmin())
     .pipe(svgstore())
     .pipe(rename('icons.svg'))
     .pipe(size({ title: 'SVG', gzip: isProduction }))
-    .pipe(gulp.dest(paths.images.destDir));
-});
+    .pipe(gulp.dest(paths.images.destDir)));
+
+export default images;

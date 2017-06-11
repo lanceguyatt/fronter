@@ -1,13 +1,10 @@
 import webpack from 'webpack';
-import base from './webpack.config';
+import webpackBase from './webpack.config';
 
-/**
- * Development Webpack config, with dev-workflow optimisations.
- */
-module.exports = Object.assign({}, base, {
+module.exports = Object.assign({}, webpackBase, {
   devtool: 'inline-source-map',
 
-  plugins: base.plugins.concat([
+  plugins: webpackBase.plugins.concat([
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
@@ -15,9 +12,6 @@ module.exports = Object.assign({}, base, {
     }),
   ]),
 
-  // Turn off performance hints during development because we don't do any
-  // splitting or minification in interest of speed. These warnings become
-  // cumbersome.
   performance: {
     hints: false,
   },

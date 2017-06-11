@@ -44,6 +44,13 @@ const config = {
   onError,
 };
 
-export { dotenv, port, isProduction, paths, onError };
+const browserSyncOptions = {
+  open: false,
+  notify: false,
+  server: destDir,
+  port,
+};
+
+export { dotenv, port, isProduction, paths, onError, browserSyncOptions };
 
 export default config;

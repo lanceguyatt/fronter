@@ -1,13 +1,10 @@
 import webpack from 'webpack';
-import base from './webpack.config';
+import webpackBase from './webpack.config';
 
-/**
- * Production Webpack config, with performance optimisations.
- */
-module.exports = Object.assign({}, base, {
+module.exports = Object.assign({}, webpackBase, {
   devtool: 'source-map',
 
-  plugins: base.plugins.concat([
+  plugins: webpackBase.plugins.concat([
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),

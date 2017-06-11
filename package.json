@@ -1,7 +1,7 @@
 {
   "name": "fronter",
-  "description": "Front-end starter kit.",
   "version": "1.0.0",
+  "description": "Front-end starter kit.",
   "homepage": "https://fronter.surge.sh",
   "license": "MIT",
   "keywords": [
@@ -43,7 +43,7 @@
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
-    "gulp": "^3.9.1",
+    "gulp": "gulpjs/gulp.git#4.0",
     "gulp-changed": "^3.1.0",
     "gulp-clean": "^0.3.2",
     "gulp-cli": "^1.3.0",

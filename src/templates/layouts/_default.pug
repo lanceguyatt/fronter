@@ -40,14 +40,14 @@ html(class='no-js' dir=site.dir lang=site.lang itemscope itemtype='http://schema
     block meta-twitter
 
       meta(name='twitter:card' content='summary_large_image')
-      //- meta(name='twitter:site' content='@lanceguyatt')
+      meta(name='twitter:site' content=author.twitter.name)
       meta(name='twitter:title' content=view.title)
       meta(name='twitter:description' content=view.description)
-      //- meta(name='twitter:creator' content='@lanceguyatt')
+      meta(name='twitter:creator' content=author.twitter.name)
       meta(name='twitter:image:src' content=view.image.url)
       meta(name='twitter:image:alt' content=view.image.alt)
       meta(name='twitter:url' content=`${site.url}${view.url}`)
-      //- meta(name='twitter:domain' content=site.url.replace('http://', ''))
+      meta(name='twitter:domain' content=author.twitter.domain)
 
     link(rel='icon' sizes='180x180' href='/apple-touch-icon.png')
     link(rel='icon' type='image/png' href='/favicon-32x32.png' sizes='32x32')
@@ -61,6 +61,8 @@ html(class='no-js' dir=site.dir lang=site.lang itemscope itemtype='http://schema
     meta(name='msapplication-config' content='/browserconfig.xml')
     meta(name='theme-color' content=site.themeColor)
 
+    meta(name='google-site-verification' content=site.googleSiteVerification)
+
     link(rel='author' href='/humans.txt' type='text/plain')
 
     block styles
@@ -69,9 +71,9 @@ html(class='no-js' dir=site.dir lang=site.lang itemscope itemtype='http://schema
 
     block head
 
-  body
+  body(class='u-flex u-flex-column u-justify-center u-items-center')
 
-    +container(class='u-p3')
+    div(class='u-p3 u-bg-black u-white u-flex u-flex-column u-justify-center u-col-12')
 
       div(role='banner')
         a(href=views.home.url class='u-color-inherit u-h4 u-bold')=site.name
@@ -80,7 +82,7 @@ html(class='no-js' dir=site.dir lang=site.lang itemscope itemtype='http://schema
 
       div(role='contentinfo')
 
-        | &copy;  
+        | &copy;
 
         span(itemprop='copyrightYear')=site.copyrightYear
 
@@ -89,7 +91,7 @@ html(class='no-js' dir=site.dir lang=site.lang itemscope itemtype='http://schema
 
         if author
 
-          span(itemprop='author' itemscope itemtype='http://schema.org/Person')
+          span(class='u-pl1' itemprop='author' itemscope itemtype='http://schema.org/Person')
             a(
               href=author.url
               itemprop='name'

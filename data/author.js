@@ -4,7 +4,10 @@ const author = {
   description: '21st Century Digital Boy',
   url: 'http://lanceguyatt.com',
   email: 'lance@lanceguyatt.com',
-  twitter: '@lanceguyatt',
+  twitter: {
+    name: '@lanceguyatt',
+    domain: 'lanceguyatt.com',
+  },
   image: {
     url: 'https://s.gravatar.com/avatar/ac81508ccc67db1b23b80f71ee8affde?s=200',
     width: 200,
