@@ -1,9 +1,7 @@
 import { name, description } from '../../site';
 
-const home = {
+export default {
   name,
   description,
   url: '/',
 };
-
-export default home;

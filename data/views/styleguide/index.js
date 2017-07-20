@@ -1,7 +1,5 @@
-const styleguide = {
+export default {
   name: 'Styleguide',
   description: 'Styleguide description',
   url: '/styleguide',
 };
-
-export default styleguide;

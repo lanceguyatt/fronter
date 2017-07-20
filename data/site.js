@@ -28,6 +28,12 @@ const site = {
   googleSiteVerification: 'jNaVpvjnburtcKbiFL0zWb4wCaUuZ0hqgtWZkucp1TM',
 };
 
-export { name, description, url, type, image };
+export {
+  name,
+  description,
+  url,
+  type,
+  image,
+};
 
 export default site;

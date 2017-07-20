@@ -3,7 +3,7 @@ import paths from './paths';
 import author from './author';
 import views from './views/';
 
-const view = {
+export const view = {
   name,
   description,
   url,
@@ -11,12 +11,10 @@ const view = {
   image,
 };
 
-const gulpstarter = {
+export default {
   site,
   paths,
   author,
   views,
   view,
 };
-
-export default gulpstarter;

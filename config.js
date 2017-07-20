@@ -7,26 +7,26 @@ const port = process.env.PORT || 8081;
 const isProduction = process.env.NODE_ENV === 'production';
 
 const srcDir = resolve(__dirname, 'src');
-const destDir = resolve(__dirname, 'build');
+const buildDir = resolve(__dirname, 'build');
 
 const paths = {
   srcDir,
-  destDir,
+  buildDir,
   styles: {
     srcDir: resolve(srcDir, 'styles'),
-    destDir: resolve(destDir, 'styles'),
+    buildDir: resolve(buildDir, 'styles'),
   },
   images: {
     srcDir: resolve(srcDir, 'images'),
-    destDir: resolve(destDir, 'images'),
+    buildDir: resolve(buildDir, 'images'),
   },
   scripts: {
     srcDir: resolve(srcDir, 'scripts'),
-    destDir: resolve(destDir, 'scripts'),
+    buildDir: resolve(buildDir, 'scripts'),
   },
   templates: {
     srcDir: resolve(srcDir, 'templates'),
-    destDir,
+    buildDir,
   },
 };
 
@@ -47,7 +47,7 @@ const config = {
 const browserSyncOptions = {
   open: false,
   notify: false,
-  server: destDir,
+  server: buildDir,
   port,
 };
 

@@ -1,4 +1,4 @@
-const author = {
+export default {
   name: 'Lance Guyatt',
   jobTitle: 'Web Developer',
   description: '21st Century Digital Boy',
@@ -19,5 +19,3 @@ const author = {
     addressCountry: 'United Kingdom',
   },
 };
-
-export default author;

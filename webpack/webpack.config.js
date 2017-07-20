@@ -10,7 +10,7 @@ const webpackBase = {
   },
 
   output: {
-    path: paths.scripts.destDir,
+    path: paths.scripts.buildDir,
     filename: '[name].js',
   },
 

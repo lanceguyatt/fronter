@@ -74,7 +74,7 @@ npm start
 * [`gulp`] The streaming build system
 * [`webpack`] A bundler for javascript and friends. Packs many modules into a few bundled assets. Code Splitting allows to load parts for the application on demand. Through "loaders," modules can be CommonJs, AMD, ES6 modules, CSS, Images, JSON, Coffeescript, LESS, ... and your custom stuff.
 
-[`gulp`]: https://github.com/gulpjs/gulp/tree/4.0
+[`gulp`]: https://github.com/gulpjs/gulp
 [`webpack`]: https://github.com/webpack/webpack
 
 ---

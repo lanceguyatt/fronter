@@ -1,7 +1,5 @@
-const paths = {
+export default {
   styles: '/styles/',
   scripts: '/scripts/',
   images: '/images/',
 };
-
-export default paths;

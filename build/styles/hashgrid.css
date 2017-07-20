@@ -1,2 +1,93 @@
-#grid{left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);z-index:2}#grid,#grid:before{top:0;position:fixed}#grid:before{background-color:#fff;display:block;padding:1rem;left:0;z-index:1}#grid div.vert{background-color:rgba(0,128,0,.35);width:calc(8.325% - 18.33333px)}#grid div.vert:nth-child(1n){float:left;margin-right:20px;clear:none}#grid div.vert:last-child{margin-right:0}#grid div.vert:nth-child(12 nonen){margin-right:0;float:right}#grid div.vert:nth-child(12 nonen+1){clear:both}#grid div.vert.first-line{margin-left:50px}#grid div.horiz{height:16px;border-bottom:1px solid rgba(255,0,0,.35)}#grid.grid-1{width:320px}#grid.grid-1:before{content:"breakpoint: xs"}#grid.grid-1 div.vert{width:5px}#grid.grid-1 div.vert.first-line{margin-left:20px}#grid.grid-2{width:640px}#grid.grid-2:before{content:"breakpoint: sm"}#grid.grid-2 div.vert{width:31px}#grid.grid-2 div.vert.first-line{margin-left:24px}#grid.grid-3{width:832px}#grid.grid-3:before{content:"breakpoint: md"}#grid.grid-3 div.vert{width:47px}#grid.grid-3 div.vert.first-line{margin-left:24px}#grid.grid-4{width:1024px}#grid.grid-4:before{content:"breakpoint: lg"}#grid.grid-4 div.vert{width:63px}#grid.grid-4 div.vert.first-line{margin-left:24px}
+#grid {
+  top: 0;
+  left: 50%;
+  position: fixed;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 2;
+}
+#grid::before {
+    background-color: #fff;
+    display: block;
+    padding: 1rem;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1;
+  }
+#grid div.vert {
+  background-color: rgba(0, 128, 0, 0.35);
+  width: calc(8.325% - 18.33333px);
+}
+#grid div.vert:nth-child(1n) {
+  float: left;
+  margin-right: 20px;
+  clear: none;
+}
+#grid div.vert:last-child {
+  margin-right: 0;
+}
+#grid div.vert:nth-child(12 nonen) {
+  margin-right: 0;
+  float: right;
+}
+#grid div.vert:nth-child(12 nonen + 1) {
+  clear: both;
+}
+#grid div.vert.first-line {
+  margin-left: 50px;
+}
+#grid div.horiz {
+  height: 16px;
+  border-bottom: 1px solid rgba(255, 0, 0, 0.35);
+}
+#grid.grid-1 {
+  width: 320px;
+}
+#grid.grid-1::before {
+    content: 'breakpoint: xs';
+  }
+#grid.grid-1 div.vert {
+    width: 5px;
+  }
+#grid.grid-1 div.vert.first-line {
+    margin-left: 20px;
+  }
+#grid.grid-2 {
+  width: 640px;
+}
+#grid.grid-2::before {
+    content: 'breakpoint: sm';
+  }
+#grid.grid-2 div.vert {
+    width: 31px;
+  }
+#grid.grid-2 div.vert.first-line {
+    margin-left: 24px;
+  }
+#grid.grid-3 {
+  width: 832px;
+}
+#grid.grid-3::before {
+    content: 'breakpoint: md';
+  }
+#grid.grid-3 div.vert {
+    width: 47px;
+  }
+#grid.grid-3 div.vert.first-line {
+    margin-left: 24px;
+  }
+#grid.grid-4 {
+  width: 1024px;
+}
+#grid.grid-4::before {
+    content: 'breakpoint: lg';
+  }
+#grid.grid-4 div.vert {
+    width: 63px;
+  }
+#grid.grid-4 div.vert.first-line {
+    margin-left: 24px;
+  }
+
 /*# sourceMappingURL=hashgrid.css.map */

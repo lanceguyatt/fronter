@@ -1,9 +1,7 @@
 const name = '404';
 
-const pageNotFound = {
+export default {
   name,
   description: 'Page not found',
   url: '/404',
 };
-
-export default pageNotFound;
