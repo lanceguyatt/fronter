@@ -27,11 +27,11 @@
 #grid div.vert:last-child {
   margin-right: 0;
 }
-#grid div.vert:nth-child(12 nonen) {
+#grid div.vert:nth-child(12n) {
   margin-right: 0;
   float: right;
 }
-#grid div.vert:nth-child(12 nonen + 1) {
+#grid div.vert:nth-child(12n + 1) {
   clear: both;
 }
 #grid div.vert.first-line {

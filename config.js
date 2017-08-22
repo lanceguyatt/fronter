@@ -30,27 +30,23 @@ const paths = {
   },
 };
 
-const onError = ({ err }) => {
+export function onError(err) {
   gutil.beep();
   gutil.log(err.message);
-  // console.log(err);
+  console.log(err);
   this.emit('end');
-};
+}
 
-const config = {
-  port,
-  isProduction,
-  paths,
-  onError,
-};
-
-const browserSyncOptions = {
+export const browserSyncOptions = {
   open: false,
   notify: false,
   server: buildDir,
   port,
 };
 
-export { dotenv, port, isProduction, paths, onError, browserSyncOptions };
-
-export default config;
+export {
+  dotenv,
+  port,
+  isProduction,
+  paths,
+};
