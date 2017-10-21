@@ -8,11 +8,11 @@ include utilities/_index
 mixin main
 
   div(id='main' class='u-sr' itemprop='mainEntityOfPage')
-  main&attributes(attributes)
+  main(class='c-main')&attributes(attributes)
     block
 
 
-mixin stringify(item, replacer, space)
+mixin stringify(item, replacer = null, space = ' ')
 
   code
     pre=JSON.stringify(item, replacer, space)

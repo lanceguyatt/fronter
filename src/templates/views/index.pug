@@ -13,17 +13,19 @@ block view
   +main()
 
     article(class='u-mb3')
-      header(class='u-hide')
-        h1=view.name
+      +container()
+        header(class='u-hide')
+          h1=view.name
 
-      p=view.description
+        p=view.description
 
-      footer
-        a(
-          href='https://github.com/lanceguyatt/fronter'
-          target='_blank'
-          class='u-color-inherit'
-          rel='noopener'
-          title=`View ${site.name} on Github`
-        )
-          +icon('github')
+        //-+stringify(locals)
+
+        footer
+          a(
+            href='https://github.com/lanceguyatt/fronter'
+            target='_blank'
+            rel='noopener'
+            title=`View ${site.name} on Github`
+          )
+            +icon('github')

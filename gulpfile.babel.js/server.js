@@ -1,12 +1,11 @@
-/* eslint import/no-dynamic-require: 0 */
 import gulp from 'gulp';
 import webpack from 'webpack';
 import { resolve } from 'path';
 import browserSync from 'browser-sync';
 
-import { port, paths, isProduction } from '../../config';
+import { port, paths, isProduction } from '../config';
 
-const webpackConfig = require(`../../webpack/webpack.config.${isProduction ? 'prod' : 'dev'}`);
+const webpackConfig = require(`../webpack/webpack.config.${isProduction ? 'prod' : 'dev'}`);
 
 const bs = browserSync.create('main');
 gulp.task('server:start', () => {

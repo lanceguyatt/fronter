@@ -1,3 +1,5 @@
+/* TODO minimise */
+
 html,
 body {
   height: 100%;
@@ -5,17 +7,17 @@ body {
 }
 
 body {
-  /* font-family: San Francisco, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif; */
-  font-family: Avenir Next, Avenir Next LT Pro, sans-serif;
-}
-
-/* https://css-tricks.com/eliminate-jumps-in-horizontal-centering-by-forcing-a-scroll-bar */
-
-body {
+  color: var(--dark);
+  font-family: var(--font-family-sans-serif);
+  font-size: 1rem;
+  line-height: 1.5;
   overflow-y: scroll;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
 }
-
-/* Clearfix body */
 
 body::after {
   display: table;
@@ -30,6 +32,7 @@ img {
 }
 
 a {
+  color: inherit;
   transition: color 0.2s;
   text-decoration: none;
 }
@@ -46,7 +49,7 @@ table {
 
 ol,
 ul {
-  padding-left: 24px;
+  padding-left: 1.5rem;
 }
 
 table {

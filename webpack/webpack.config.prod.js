@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+
 import webpackBase from './webpack.config';
 
 module.exports = Object.assign({}, webpackBase, {

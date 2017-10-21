@@ -1,4 +1,3 @@
-/* eslint global-require: 0 */
 module.exports = {
   plugins: [
     require('postcss-import'),
@@ -16,7 +15,6 @@ module.exports = {
       precision: 5,
       preserve: true,
     }),
-    require('postcss-media-minmax'),
     require('postcss-custom-properties'),
     require('postcss-color-function'),
     require('autoprefixer', {

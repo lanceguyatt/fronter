@@ -8,34 +8,34 @@ import gutil from 'gulp-util';
 import puglint from 'gulp-pug-lint';
 import htmlhint from 'gulp-htmlhint';
 
-import { onError, paths, isProduction } from '../../config';
-import locals from '../../data/';
+import { onError, paths, isProduction } from '../config';
+import locals from '../src/data';
 
 const bs = browserSync.get('main');
 
-gulp.task('pug:compile', () => {
+gulp.task('templates:compile', () => {
   gulp.src(resolve(paths.templates.srcDir, 'views', '**', '*.pug'))
     .pipe(isProduction ? gutil.noop() : changed(paths.buildDir, { extension: '.html' }))
     .pipe(plumber(onError))
     .pipe(pug({
       locals,
-      pretty: true,
+      pretty: !isProduction,
     }))
     .pipe(gulp.dest(paths.templates.buildDir))
     .pipe(bs.stream());
 });
 
-gulp.task('pug:lint', () => {
+gulp.task('templates:lint', () => {
   gulp.src(resolve(paths.templates.srcDir, '**', '*.pug'))
     .pipe(puglint());
 });
 
-gulp.task('html:lint', () => {
+gulp.task('templates:lint', () => {
   gulp.src(resolve(paths.templates.buildDir, '**', '*.html'))
     .pipe(htmlhint('.htmlhintrc'))
     .pipe(htmlhint.reporter());
 });
 
-gulp.task('pug:watch', () => {
-  gulp.watch(resolve(paths.templates.srcDir, '**', '*.pug'), ['pug:compile']);
+gulp.task('templates:watch', () => {
+  gulp.watch(resolve(paths.templates.srcDir, '**', '*.pug'), ['templates:compile']);
 });

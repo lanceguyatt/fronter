@@ -2,25 +2,29 @@ import dotenv from 'dotenv';
 import gulp from 'gulp';
 import runSequence from 'run-sequence';
 
-import './tasks/server';
-import './tasks/images';
-import './tasks/scripts';
-import './tasks/styles';
-import './tasks/templates';
+import './server';
+import './images';
+import './scripts';
+import './styles';
+import './templates';
+import './utils';
 
 dotenv.load();
 
 gulp.task('default', () => {
   runSequence(
     'server:start',
-    'css:watch',
-    'pug:watch');
+    'styles:watch',
+    'templates:watch',
+  );
 });
 
 gulp.task('build', () => {
   runSequence(
     'svg:compile',
-    'js:compile',
-    'css:compile',
-    'pug:compile');
+    'scripts:compile',
+    'styles:compile',
+    'templates:compile',
+    'utils:sitemap',
+  );
 });

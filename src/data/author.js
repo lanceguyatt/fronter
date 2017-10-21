@@ -9,9 +9,9 @@ export default {
     domain: 'lanceguyatt.com',
   },
   image: {
-    url: 'https://s.gravatar.com/avatar/ac81508ccc67db1b23b80f71ee8affde?s=200',
-    width: 200,
-    height: 200,
+    url: 'http://github.com/lanceguyatt.png',
+    width: 333,
+    height: 333,
     alt: 'Photo of Lance Guyatt',
   },
   address: {

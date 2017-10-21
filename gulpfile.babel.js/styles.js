@@ -5,22 +5,25 @@ import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
 import gulpStylelint from 'gulp-stylelint';
+import cleanCSS from 'gulp-clean-css';
+import gutil from 'gulp-util';
 
-import { onError, paths } from '../../config';
+import { isProduction, onError, paths } from '../config';
 
 const bs = browserSync.get('main');
 
-gulp.task('css:compile', () => {
+gulp.task('styles:compile', () => {
   gulp.src(resolve(paths.styles.srcDir, '*.css'))
     .pipe(sourcemaps.init())
     .pipe(postcss())
+    .pipe(isProduction ? cleanCSS() : gutil.noop())
     .pipe(plumber(onError))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.styles.buildDir))
     .pipe(bs.stream());
 });
 
-gulp.task('css:lint', () => {
+gulp.task('styles:lint', () => {
   gulp.src(resolve(paths.styles.buildDir, '*.css'))
     .pipe(gulpStylelint({
       reporters: [
@@ -32,6 +35,6 @@ gulp.task('css:lint', () => {
     }));
 });
 
-gulp.task('css:watch', () => {
-  gulp.watch(resolve(paths.styles.srcDir, '**', '*.css'), ['css:compile']);
+gulp.task('styles:watch', () => {
+  gulp.watch(resolve(paths.styles.srcDir, '**', '*.css'), ['styles:compile']);
 });

@@ -3,11 +3,14 @@
 @import 'settings/_colors';
 @import 'settings/_grid';
 @import 'tools/_mixins';
+
+/*
 @import 'generic/_normalize';
+*/
 @import 'generic/_boxsizing';
 @import 'generic/_index';
-@import 'elements/_headings';
-@import 'elements/_forms';
+/*@import 'elements/_headings';*/
+/*@import 'elements/_forms';*/
 @import 'components/_btn';
 @import 'components/_icons';
 @import 'objects/_grid';
@@ -26,3 +29,9 @@
 @import 'utilities/grid/';
 @import 'utilities/margin/';
 @import 'utilities/padding/';
+
+.c-banner,
+.c-main,
+.c-contentinfo {
+  padding: 2rem *;
+}

@@ -54,14 +54,14 @@ html(class='no-js' dir=site.dir lang=site.lang itemscope itemtype='http://schema
     link(rel='icon' type='image/png' href='/favicon-16x16.png' sizes='16x16')
     link(rel='shortcut icon' href='favicon.ico')
     link(rel='manifest' href='/manifest.json')
-    //- link(rel='mask-icon' href='/safari-pinned-tab.svg' color=site.themeColor)
+    link(rel='mask-icon' href='/safari-pinned-tab.svg' color=site.themeColor)
 
     meta(name='apple-mobile-web-app-title' content=site.name)
     meta(name='application-name' content=site.name)
     meta(name='msapplication-config' content='/browserconfig.xml')
     meta(name='theme-color' content=site.themeColor)
 
-    meta(name='google-site-verification' content=site.googleSiteVerification)
+    meta(name='google-site-verification' content=process.env.GOOGLE_SITE_VERIFICATION)
 
     link(rel='author' href='/humans.txt' type='text/plain')
 
@@ -71,44 +71,47 @@ html(class='no-js' dir=site.dir lang=site.lang itemscope itemtype='http://schema
 
     block head
 
-  body(class='u-flex u-flex-column u-justify-center u-items-center')
+  body
 
-    div(class='u-p3 u-bg-black u-white u-flex u-flex-column u-justify-center u-col-12')
+    div(class='o-wrapper')
 
-      div(role='banner')
-        a(href=views.home.url class='u-color-inherit u-h4 u-bold')=site.name
+      div(class='c-banner' role='banner')
+        +container()
+          a(href=views.home.url class='u-h4 u-bold')=site.name
 
       block view
 
-      div(role='contentinfo')
+      div(class='c-contentinfo' role='contentinfo')
+        +container()
 
-        | &copy;
+          | &copy;
+          |  
 
-        span(itemprop='copyrightYear')=site.copyrightYear
+          span(itemprop='copyrightYear')=site.copyrightYear
 
-        meta(itemprop='datePublished' content=site.datePublished)
-        meta(itemprop='dateModified' content=site.dateModified)
+          meta(itemprop='datePublished' content=site.datePublished)
+          meta(itemprop='dateModified' content=site.dateModified)
 
-        if author
+          if author
 
-          span(class='u-pl1' itemprop='author' itemscope itemtype='http://schema.org/Person')
-            a(
-              href=author.url
-              itemprop='name'
-              target='_blank'
-              class='u-color-inherit'
-              rel='noopener'
-            )=author.name
+            span(itemprop='author' itemscope itemtype='http://schema.org/Person')
+              a(
+                href=author.url
+                itemprop='name'
+                target='_blank'
+                class='u-color-inherit'
+                rel='noopener'
+              )=author.name
 
-            meta(itemprop='description' content=author.description)
-            meta(itemprop='jobTitle' content=author.jobTitle)
-            meta(itemprop='url' content=author.url)
-            meta(itemprop='email' content=author.email)
+              meta(itemprop='description' content=author.description)
+              meta(itemprop='jobTitle' content=author.jobTitle)
+              meta(itemprop='url' content=author.url)
+              meta(itemprop='email' content=author.email)
 
-            span(itemprop='image' itemscope itemtype='http://schema.org/ImageObject')
-              meta(itemprop='contentUrl' content=author.image.url)
-              meta(itemprop='width' content=author.image.width)
-              meta(itemprop='height' content=author.image.height)
+              span(itemprop='image' itemscope itemtype='http://schema.org/ImageObject')
+                meta(itemprop='contentUrl' content=author.image.url)
+                meta(itemprop='width' content=author.image.width)
+                meta(itemprop='height' content=author.image.height)
 
       //- +stringify(locals, null, ' ')
 

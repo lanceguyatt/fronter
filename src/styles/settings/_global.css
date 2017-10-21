@@ -1,39 +1,29 @@
 :root {
   --font-family-mono-space: Roboto Mono, Source Code Pro, Menlo, Consolas, Liberation Mono, monospace;
+  --font-family-sans-serif: Avenir Next, Avenir Next LT Pro, sans-serif;
   --font-weight-normal: 400;
   --font-weight-bold: 600;
-
   --darken-2: rgba(0, 0, 0, 0.125);
   --darken-3: rgba(0, 0, 0, 0.25);
   --darken-4: rgba(0, 0, 0, 0.05);
-
-  --space-1: 5px;
-  --space-2: 10px;
-  --space-3: 20px;
-  --space-4: 40px;
-
-  --aspect-ratio-4x3: 1.33;
-  --aspect-ratio-3x2: 1.5;
-  --aspect-ratio-16x9: 1.77;
-  --aspect-ratio-21x9: 2.33;
-
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 2rem;
+  --space-4: 4rem;
   --line-height-1: 1;
   --line-height-2: 1.125;
   --line-height-3: 1.25;
   --line-height-4: 1.5;
   --letter-spacing: 0;
   --caps-letter-spacing: var(--letter-spacing);
-
   --border-width: 1px;
   --border-radius: 2px;
-
   --h1: 2rem;
   --h2: 1.5rem;
   --h3: 1.25rem;
   --h4: 1rem;
   --h5: 16px;
   --h6: 12px;
-
   --z1: 1;
   --z2: 2;
   --z3: 3;

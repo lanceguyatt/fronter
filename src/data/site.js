@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-import { name, description, homepage } from '../package.json';
+import { name, description, homepage } from '../../package.json';
 
 const url = homepage;
 

@@ -5,7 +5,7 @@ import svgmin from 'gulp-svgmin';
 import size from 'gulp-size';
 import rename from 'gulp-rename';
 
-import { paths, isProduction } from '../../config';
+import { paths, isProduction } from '../config';
 
 gulp.task('svg:compile', () => {
   gulp.src(resolve(paths.images.srcDir, 'icons', '*.svg'))
