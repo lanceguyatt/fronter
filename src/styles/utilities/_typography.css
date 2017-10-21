@@ -6,10 +6,7 @@
 .u-regular { font-weight: normal; }
 .u-italic { font-style: italic; }
 
-.u-caps {
-  text-transform: uppercase;
-  letter-spacing: var(--caps-letter-spacing);
-}
+.u-caps { text-transform: uppercase; }
 
 .u-left-align { text-align: left; }
 .u-center { text-align: center; }

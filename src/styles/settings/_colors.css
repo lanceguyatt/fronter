@@ -1,4 +1,10 @@
 :root {
   --dark: #222;
   --light: #fff;
+  --primary: #eeac57;
+  --secondary: #468cc8;
+  --danger: #ff0036;
+  --info: #17a2b8;
+  --success: #28a745;
+  --warning: #f5a623;
 }

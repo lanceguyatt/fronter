@@ -3,3 +3,9 @@
 
 @add-mixin colors dark, var(--dark);
 @add-mixin colors light, var(--light);
+@add-mixin colors primary, var(--primary);
+@add-mixin colors secondary, var(--secondary);
+@add-mixin colors danger, var(--danger);
+@add-mixin colors info, var(--info);
+@add-mixin colors success, var(--success);
+@add-mixin colors warning, var(--warning);
