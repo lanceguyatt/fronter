@@ -13,6 +13,7 @@ dotenv.load();
 
 gulp.task('default', () => {
   runSequence(
+    'styles:compile',
     'server:start',
     'styles:watch',
     'templates:watch',
