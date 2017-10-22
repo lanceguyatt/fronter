@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import webpack from 'webpack';
 import { resolve } from 'path';
 import browserSync from 'browser-sync';
+import gutil from 'gulp-util';
 
 import { port, paths, isProduction } from '../config';
 
@@ -15,6 +16,13 @@ gulp.task('server:start', () => {
     server: paths.buildDir,
     port,
   }, () => {
+    gutil.log(gutil.colors.magenta(`
+      :::===== :::====  :::====  :::= === :::==== :::===== :::====
+      :::      :::  === :::  === :::===== :::==== :::      :::  ===
+      ======   =======  ===  === ========   ===   ======   =======
+      ===      === ===  ===  === === ====   ===   ===      === ===
+      ===      ===  ===  ======  ===  ===   ===   ======== ===  ===
+    `));
     webpack(webpackConfig).watch({}, (err, stats) => {
       const hasErrors = err || stats.hasErrors();
       if (err) {

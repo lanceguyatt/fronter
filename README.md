@@ -119,16 +119,13 @@ npm start
 * [`postcss-custom-media`] PostCSS plugin to transform W3C CSS Custom Media Queries to more compatible CSS
 * [`postcss-custom-selectors`] PostCSS Custom Selectors
 * [`postcss-calc`] PostCSS plugin to reduce calc()
-* [`postcss-media-minmax`] Writing simple and graceful Media Queries!
 * [`postcss-custom-properties`] PostCSS plugin to transform W3C CSS Custom Properties for cascading variables
 * [`postcss-color-function`] PostCSS plugin to transform W3C CSS color function to more compatible CSS
-* [`gulp-cssnano`] Minify CSS with cssnano
 * [`gulp-postcss`] Pipe CSS through PostCSS processors with a single parse
 
 [`autoprefixer`]: https://github.com/postcss/autoprefixer
 [`css-mqpacker`]: https://github.com/hail2u/node-css-mqpacker
 [`postcss`]: https://github.com/postcss/postcss
-[`gulp-cssnano`]: https://github.com/ben-eb/gulp-cssnano
 [`gulp-postcss`]: https://github.com/postcss/gulp-postcss
 [`lost`]: https://github.com/peterramsing/lost
 [`postcss-calc`]: https://github.com/postcss/postcss-calc
@@ -137,7 +134,6 @@ npm start
 [`postcss-custom-properties`]: https://github.com/postcss/postcss-custom-properties
 [`postcss-custom-selectors`]: https://github.com/postcss/postcss-custom-selectors
 [`postcss-import`]: https://github.com/postcss/postcss-import
-[`postcss-media-minmax`]: https://github.com/postcss/postcss-media-minmax
 [`postcss-mixins`]: https://github.com/postcss/postcss-mixins
 [`postcss-nested`]: https://github.com/postcss/postcss-nested
 [`postcss-short`]: https://github.com/jonathantneal/postcss-short
@@ -195,14 +191,12 @@ npm start
 
 ## Utils
 
-* [`del`] Delete files and folders using globs
 * [`gulp-changed`] Only pass through changed files
 * [`gulp-cli`] CLI for gulp
 * [`gulp-rename`] Rename files easily
 * [`gulp-size`] Display the size of your project
 * [`gulp-util`] Utilities for gulp plugins
 
-[`del`]: https://github.com/sindresorhus/del
 [`gulp-changed`]: https://github.com/sindresorhus/gulp-changed
 [`gulp-cli`]: https://github.com/gulpjs/gulp-cli
 [`gulp-rename`]: https://github.com/hparra/gulp-rename

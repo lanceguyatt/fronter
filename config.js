@@ -37,13 +37,6 @@ export function onError(err) {
   this.emit('end');
 }
 
-export const browserSyncOptions = {
-  open: false,
-  notify: false,
-  server: buildDir,
-  port,
-};
-
 export {
   dotenv,
   port,
