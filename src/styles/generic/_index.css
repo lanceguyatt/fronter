@@ -19,22 +19,16 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-body::after {
-  display: table;
-  clear: both;
-  content: '';
+a {
+  color: inherit;
+  transition: color 0.2s;
+  text-decoration: none;
 }
 
 img {
   display: inline-block;
   max-width: 100%;
   height: auto;
-}
-
-a {
-  color: inherit;
-  transition: color 0.2s;
-  text-decoration: none;
 }
 
 blockquote,
@@ -49,7 +43,7 @@ table {
 
 ol,
 ul {
-  padding-left: 1.5rem;
+  padding-left: 1.25rem;
 }
 
 table {

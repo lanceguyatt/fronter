@@ -9,8 +9,11 @@
 */
 @import 'generic/_boxsizing';
 @import 'generic/_index';
-/*@import 'elements/_headings';*/
-/*@import 'elements/_forms';*/
+
+/*
+@import 'elements/_headings';
+@import 'elements/_forms';
+*/
 @import 'components/_btn';
 @import 'components/_icons';
 @import 'objects/_grid';
@@ -35,3 +38,5 @@
 .c-contentinfo {
   padding: 1.25rem *;
 }
+
+/* TODO print styles */
