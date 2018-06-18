@@ -3,6 +3,8 @@ import { resolve } from 'path';
 import { paths } from '../config';
 
 const webpackBase = {
+  mode: 'development',
+
   entry: {
     site: [
       resolve(paths.scripts.srcDir, 'site.js'),
@@ -10,8 +12,8 @@ const webpackBase = {
   },
 
   output: {
-    path: paths.scripts.buildDir,
     filename: '[name].js',
+    path: paths.scripts.buildDir,
   },
 
   plugins: [],

@@ -1,3 +1,5 @@
+const postCSSCustomProperties = require('postcss-custom-properties');
+
 module.exports = {
   plugins: [
     require('postcss-import'),
@@ -15,7 +17,11 @@ module.exports = {
       precision: 5,
       preserve: true,
     }),
-    require('postcss-custom-properties'),
+    postCSSCustomProperties({
+      strict: false,
+      preserve: false,
+      warnings: true,
+    }),
     require('postcss-color-function'),
     require('autoprefixer', {
       remove: false,
