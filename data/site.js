@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-import { name, description, homepage } from '../../package.json';
+import { name, description, homepage } from '../package.json';
 
 const url = homepage;
 
@@ -28,12 +28,6 @@ const site = {
   googleSiteVerification: 'jNaVpvjnburtcKbiFL0zWb4wCaUuZ0hqgtWZkucp1TM',
 };
 
-export {
-  name,
-  description,
-  url,
-  type,
-  image,
-};
+export { name, description, url, type, image };
 
 export default site;

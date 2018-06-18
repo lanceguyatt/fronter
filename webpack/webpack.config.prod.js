@@ -5,7 +5,6 @@ import webpackBase from './webpack.config';
 module.exports = Object.assign({}, webpackBase, {
   mode: 'production',
   devtool: 'source-map',
-
   optimization: {
     minimizer: [
       new UglifyJsPlugin({

@@ -6,10 +6,10 @@ import { homepage } from '../package.json';
 import { paths } from '../config';
 
 gulp.task('utils:sitemap', () => {
-  gulp.src(resolve(paths.buildDir, '**', '*.html'), {
-    read: false,
-  }).pipe(sitemap({
-    siteUrl: homepage,
-  }))
+  gulp
+    .src(resolve(paths.buildDir, '**', '*.html'), {
+      read: false,
+    })
+    .pipe(sitemap({ siteUrl: homepage }))
     .pipe(gulp.dest(paths.buildDir));
 });

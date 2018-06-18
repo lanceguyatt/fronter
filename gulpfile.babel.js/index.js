@@ -11,16 +11,17 @@ import './utils';
 
 dotenv.load();
 
-gulp.task('default', () => {
+gulp.task('default', (done) => {
   runSequence(
     'styles:compile',
     'server:start',
     'styles:watch',
     'templates:watch',
   );
+  done();
 });
 
-gulp.task('build', () => {
+gulp.task('build', (done) => {
   runSequence(
     'svg:compile',
     'scripts:compile',
@@ -28,4 +29,5 @@ gulp.task('build', () => {
     'templates:compile',
     'utils:sitemap',
   );
+  done();
 });

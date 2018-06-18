@@ -13,7 +13,8 @@ import { isProduction, onError, paths } from '../config';
 const bs = browserSync.get('main');
 
 gulp.task('styles:compile', () => {
-  gulp.src(resolve(paths.styles.srcDir, '*.css'))
+  gulp
+    .src(resolve(paths.styles.srcDir, '*.css'))
     .pipe(sourcemaps.init())
     .pipe(postcss())
     .pipe(isProduction ? cleanCSS() : gutil.noop())
@@ -24,15 +25,14 @@ gulp.task('styles:compile', () => {
 });
 
 gulp.task('styles:lint', () => {
-  gulp.src(resolve(paths.styles.buildDir, '*.css'))
-    .pipe(gulpStylelint({
-      reporters: [
-        {
-          formatter: 'string',
-          console: true,
-        },
-      ],
-    }));
+  gulp.src(resolve(paths.styles.buildDir, '*.css')).pipe(gulpStylelint({
+    reporters: [
+      {
+        formatter: 'string',
+        console: true,
+      },
+    ],
+  }));
 });
 
 gulp.task('styles:watch', () => {

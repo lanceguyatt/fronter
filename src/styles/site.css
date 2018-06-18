@@ -29,9 +29,12 @@
 @import 'utilities/_position';
 @import 'utilities/_type-scale';
 @import 'utilities/_typography';
+
+/*
 @import 'utilities/grid/';
 @import 'utilities/margin/';
 @import 'utilities/padding/';
+*/
 
 .c-banner,
 .c-main,

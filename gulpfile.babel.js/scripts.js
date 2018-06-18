@@ -3,7 +3,9 @@ import webpack from 'webpack';
 
 import { isProduction } from '../config';
 
-const webpackConfig = require(`../webpack/webpack.config.${isProduction ? 'prod' : 'dev'}`);
+const webpackConfig = require(`../webpack/webpack.config.${
+  isProduction ? 'prod' : 'dev'
+}`);
 
 gulp.task('scripts:compile', () => {
   webpack(webpackConfig).run((err) => {

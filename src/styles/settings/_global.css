@@ -6,10 +6,10 @@
   --darken-2: rgba(0, 0, 0, 0.125);
   --darken-3: rgba(0, 0, 0, 0.25);
   --darken-4: rgba(0, 0, 0, 0.05);
-  --space-1: 0.5rem;
-  --space-2: 1rem;
-  --space-3: 2rem;
-  --space-4: 4rem;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 32px;
+  --space-4: 64px;
   --line-height-1: 1;
   --line-height-2: 1.125;
   --line-height-3: 1.25;

@@ -4,30 +4,28 @@ import { paths } from '../config';
 
 const webpackBase = {
   mode: 'development',
-
   entry: {
-    site: [
-      resolve(paths.scripts.srcDir, 'site.js'),
-    ],
+    site: [resolve(paths.scripts.srcDir, 'site.js')],
   },
-
   output: {
     filename: '[name].js',
     path: paths.scripts.buildDir,
   },
-
   plugins: [],
-
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: ['babel-loader'],
-        exclude: [/node_modules/],
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
     ],
   },
-
   stats: {
     chunks: false,
     hash: false,
@@ -35,7 +33,6 @@ const webpackBase = {
     reasons: false,
     version: false,
   },
-
   node: {
     fs: 'empty',
     net: 'empty',
