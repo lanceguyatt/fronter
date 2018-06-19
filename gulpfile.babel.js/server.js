@@ -1,3 +1,4 @@
+/* eslint no-console: 0 */
 import gulp from 'gulp';
 import webpack from 'webpack';
 import { resolve } from 'path';
@@ -21,13 +22,15 @@ gulp.task('server:start', () => {
       port,
     },
     () => {
-      gutil.log(gutil.colors.magenta(`
+      gutil.log(
+        gutil.colors.magenta(`
           :::===== :::====  :::====  :::= === :::==== :::===== :::====
           :::      :::  === :::  === :::===== :::==== :::      :::  ===
           ======   =======  ===  === ========   ===   ======   =======
           ===      === ===  ===  === === ====   ===   ===      === ===
           ===      ===  ===  ======  ===  ===   ===   ======== ===  ===
-        `));
+        `),
+      );
       webpack(webpackConfig).watch({}, (err, stats) => {
         const hasErrors = err || stats.hasErrors();
         if (err) {

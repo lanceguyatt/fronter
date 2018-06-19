@@ -1,14 +1,14 @@
 {
-    "extends": "airbnb",
-    "rules": {
-        "global-require": 0,
-        "import/no-dynamic-require": 0,
-        "import/no-extraneous-dependencies": 0,
-        "indent": ["error", 2],
-        "no-console": 0,
-        "function-paren-newline": ["error", "multiline"]
-    },
-    "globals": {
-        "svg4everybody": true
-    }
+  "extends": [
+    "eslint:recommended",
+    "standard",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error"
+  },
+  "plugins": ["prettier"],
+  "globals": {
+    "svg4everybody": true
+  }
 }

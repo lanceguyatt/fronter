@@ -24,13 +24,23 @@
     "dev": "gulp",
     "build": "NODE_ENV=production gulp build",
     "deploy": "npm run build && surge -p build -d fronter.surge.sh",
-    "lint": "eslint 'src/**/*.js', 'gulpfile.babel.js/**/*.js', 'webpack/**/*.js', 'app.js', 'config.js', 'postcss.config.js'",
+    "lint": "eslint src/**/*.js gulpfile.babel.js/**/*.js webpack/**/*.js app.js config.js postcss.config.js",
     "format": "prettier --write 'src/**/*.js' 'gulpfile.babel.js/*.js'",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "postcommit": "npm run deploy",
+    "eslint-check": "eslint --print-config .eslintrc | eslint-config-prettier-check"
   },
   "lint-staged": {
-    "*.scss": ["postcss --config .stylelintrc --replace", "stylelint", "git add"],
-    "*.js": ["prettier --write", "eslint --fix", "git add"]
+    "*.css": [
+      "postcss --config .stylelintrc --replace",
+      "stylelint",
+      "git add"
+    ],
+    "*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "dotenv": "^6.0.0",
@@ -46,10 +56,13 @@
     "browser-sync": "^2.24.4",
     "css-mqpacker": "^6.0.2",
     "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.9.1",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
     "gulp": "^3.9.1",
     "gulp-changed": "^3.2.0",
     "gulp-clean-css": "^3.9.4",

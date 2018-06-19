@@ -33,13 +33,9 @@ const paths = {
 export function onError(err) {
   gutil.beep();
   gutil.log(err.message);
+  /* eslint no-console: 0 */
   console.log(err);
   this.emit('end');
 }
 
-export {
-  dotenv,
-  port,
-  isProduction,
-  paths,
-};
+export { dotenv, port, isProduction, paths };

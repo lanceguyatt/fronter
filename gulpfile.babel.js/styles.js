@@ -25,14 +25,16 @@ gulp.task('styles:compile', () => {
 });
 
 gulp.task('styles:lint', () => {
-  gulp.src(resolve(paths.styles.buildDir, '*.css')).pipe(gulpStylelint({
-    reporters: [
-      {
-        formatter: 'string',
-        console: true,
-      },
-    ],
-  }));
+  gulp.src(resolve(paths.styles.buildDir, '*.css')).pipe(
+    gulpStylelint({
+      reporters: [
+        {
+          formatter: 'string',
+          console: true,
+        },
+      ],
+    }),
+  );
 });
 
 gulp.task('styles:watch', () => {
