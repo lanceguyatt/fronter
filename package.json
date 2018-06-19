@@ -24,21 +24,14 @@
     "dev": "gulp",
     "build": "NODE_ENV=production gulp build",
     "deploy": "npm run build && surge -p build -d fronter.surge.sh",
-    "lint": "eslint src/**/*.js gulpfile.babel.js/**/*.js webpack/**/*.js app.js config.js postcss.config.js",
-    "format": "prettier --write 'src/**/*.js' 'gulpfile.babel.js/*.js'",
+    "lint": "eslint \"src/**/*.js\" \"gulpfile.babel.js/**/*.js\" \"webpack/**/*.js\" \"app.js\" \"config.js\" \"postcss.config.js\"",
+    "format": "prettier-eslint --write --list-different \"src/**/*.js\" \"gulpfile.babel.js/**/*.js\" \"webpack/**/*.js\" \"app.js\" \"config.js\" \"postcss.config.js\"",
     "precommit": "lint-staged",
-    "postcommit": "npm run deploy",
     "eslint-check": "eslint --print-config .eslintrc | eslint-config-prettier-check"
   },
   "lint-staged": {
-    "*.css": [
-      "postcss --config .stylelintrc --replace",
-      "stylelint",
-      "git add"
-    ],
     "*.js": [
-      "prettier --write",
-      "eslint --fix",
+      "prettier-eslint",
       "git add"
     ]
   },
@@ -67,7 +60,6 @@
     "gulp-changed": "^3.2.0",
     "gulp-clean-css": "^3.9.4",
     "gulp-cli": "^2.0.1",
-    "gulp-eslint": "^4.0.2",
     "gulp-htmlhint": "^2.1.1",
     "gulp-modernizr": "^2.0.4",
     "gulp-nodemon": "^2.2.1",
@@ -100,6 +92,8 @@
     "postcss-short": "^4.1.0",
     "postcss-simple-vars": "^4.1.0",
     "prettier": "1.13.5",
+    "prettier-eslint": "^8.8.1",
+    "prettier-eslint-cli": "^4.7.1",
     "run-sequence": "^2.2.1",
     "stylelint": "^9.3.0",
     "stylelint-config-standard": "^18.2.0",

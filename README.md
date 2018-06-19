@@ -166,26 +166,30 @@ npm start
 ## Linters
 
 * [`eslint`] The pluggable linting utility for JavaScript and JSX
-* [`eslint-config-airbnb`] This package provides Airbnb's .eslintrc as an extensible shared config
 * [`eslint-plugin-import`] ESLint plugin with rules that help validate proper imports
-* [`eslint-plugin-jsx-a11y`] Static AST checker for a11y rules on JSX elements.
-* [`eslint-plugin-react`] React specific linting rules for ESLint
-* [`gulp-eslint`] A Gulp plugin for identifying and reporting on patterns found in ECMAScript/JavaScript code.
+
+* https://github.com/prettier/eslint-config-prettier
+
 * [`gulp-htmlhint`] htmlhint wrapper for gulp to validate your HTML
 * [`gulp-stylelint`] Gulp plugin for running Stylelint results through various reporters
 * [`stylelint`] A mighty, modern CSS linter
 * [`stylelint-config-standard`] The standard shareable config for stylelint
 
 [`eslint`]: http://eslint.org/
-[`eslint-config-airbnb`]: https://www.npmjs.com/package/eslint-config-airbnb
 [`eslint-plugin-import`]: https://github.com/benmosher/eslint-plugin-import
-[`eslint-plugin-jsx-a11y`]: https://github.com/evcohen/eslint-plugin-jsx-a11y
-[`eslint-plugin-react`]: https://github.com/yannickcr/eslint-plugin-react
-[`gulp-eslint`]: https://github.com/adametry/gulp-eslint
+https://github.com/prettier/eslint-config-prettier
 [`gulp-htmlhint`]: https://github.com/bezoerb/gulp-htmlhint
 [`gulp-stylelint`]: https://github.com/olegskl/gulp-stylelint
 [`stylelint`]: https://github.com/stylelint/stylelint
 [`stylelint-config-standard`]: https://github.com/stylelint/stylelint-config-standard
+
+---
+
+## Formatters
+
+* [`prettier`] Prettier is an opinionated code formatter.
+
+[`prettier`]: https://github.com/prettier/prettier
 
 ---
 
