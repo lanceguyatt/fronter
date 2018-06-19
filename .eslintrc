@@ -5,9 +5,8 @@
     "prettier/standard"
   ],
   "plugins": [
-    "prettier",
     "standard",
-    "prettier/recommended"
+    "prettier",
   ],
   "parserOptions": {
     "sourceType": "module",
