@@ -29,7 +29,7 @@ input,
 textarea,
 select {
   appearance: none;
-  background-color: var(--light);
+  background-color: var(--color-light);
   border-color: var(--form-border-color);
   border-radius: var(--form-border-radius);
   border-style: solid;

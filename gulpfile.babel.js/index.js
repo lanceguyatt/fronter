@@ -1,33 +1,46 @@
-import dotenv from 'dotenv';
 import gulp from 'gulp';
-import runSequence from 'run-sequence';
 
-import './server';
-import './images';
-import './scripts';
-import './styles';
-import './templates';
-import './utils';
+import server from './tasks/server';
+import images from './tasks/images';
+import scripts from './tasks/scripts';
+import styles from './tasks/styles';
+import templates from './tasks/templates';
+import utils from './tasks/utils';
 
-dotenv.load();
+gulp.task('server:start', server.start);
 
-gulp.task('default', (done) => {
-  runSequence(
-    'styles:compile',
-    'server:start',
-    'styles:watch',
-    'templates:watch',
-  );
-  done();
-});
+gulp.task('images:compile', images.compile);
 
-gulp.task('build', (done) => {
-  runSequence(
-    'svg:compile',
-    'scripts:compile',
-    'styles:compile',
-    'templates:compile',
-    'utils:sitemap',
-  );
-  done();
-});
+gulp.task('scripts:compile', scripts.compile);
+
+gulp.task('styles:compile', styles.compile);
+gulp.task('styles:watch', styles.watch);
+
+gulp.task('templates:compile', templates.compile);
+gulp.task('templates:test', templates.test);
+gulp.task('templates:watch', templates.watch);
+
+gulp.task('utils:clean', utils.clean);
+gulp.task('utils:copy', utils.copy);
+gulp.task('utils:relative', utils.relative);
+gulp.task('utils:sitemap', utils.sitemap);
+gulp.task('utils:test', utils.test);
+
+const build = gulp.series(
+  'utils:copy',
+  'images:compile',
+  'scripts:compile',
+  'styles:compile',
+  'templates:compile',
+  'utils:sitemap',
+);
+
+export { build };
+
+export default gulp.series(
+  'styles:compile',
+  'scripts:compile',
+  'server:start',
+  'styles:watch',
+  'templates:watch',
+);

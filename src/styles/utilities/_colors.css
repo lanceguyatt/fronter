@@ -1,11 +1,11 @@
 .u-color-inherit { color: inherit; }
 .u-muted { opacity: 0.5; }
 
-@add-mixin colors dark, var(--dark);
-@add-mixin colors light, var(--light);
-@add-mixin colors primary, var(--primary);
-@add-mixin colors secondary, var(--secondary);
-@add-mixin colors danger, var(--danger);
-@add-mixin colors info, var(--info);
-@add-mixin colors success, var(--success);
-@add-mixin colors warning, var(--warning);
+@add-mixin colors dark, var(--color-dark);
+@add-mixin colors light, var(--color-light);
+@add-mixin colors primary, var(--color-primary);
+@add-mixin colors secondary, var(--color-secondary);
+@add-mixin colors danger, var(--color-danger);
+@add-mixin colors info, var(--color-info);
+@add-mixin colors success, var(--color-success);
+@add-mixin colors warning, var(--color-warning);

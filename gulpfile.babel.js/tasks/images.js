@@ -2,18 +2,34 @@ import gulp from 'gulp';
 import { resolve } from 'path';
 import svgstore from 'gulp-svgstore';
 import svgmin from 'gulp-svgmin';
-import size from 'gulp-size';
 import rename from 'gulp-rename';
 
-import { paths, isProduction } from '../config';
+import { paths } from '../../config';
 
-gulp.task('svg:compile', () => {
+const compile = (done) => {
   gulp
     .src(resolve(paths.images.srcDir, 'icons', '*.svg'))
     .pipe(rename({ prefix: 'i-' }))
-    .pipe(svgmin())
+    .pipe(
+      svgmin({
+        plugins: [
+          {
+            convertColors: {
+              currentColor: true,
+            },
+          },
+          {
+            removeTitle: true,
+          },
+        ],
+      }),
+    )
     .pipe(svgstore())
     .pipe(rename('icons.svg'))
-    .pipe(size({ title: 'SVG', gzip: isProduction }))
     .pipe(gulp.dest(paths.images.buildDir));
-});
+  done();
+};
+
+export default {
+  compile,
+};

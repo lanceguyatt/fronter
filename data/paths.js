@@ -1,5 +1,5 @@
 export default {
-  styles: '/styles/',
-  scripts: '/scripts/',
-  images: '/images/',
+  styles: '/assets/styles/',
+  scripts: '/assets/scripts/',
+  images: '/assets/images/',
 };

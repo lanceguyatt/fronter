@@ -28,13 +28,13 @@ input {
     cursor: pointer;
 
     &:focus {
-      box-shadow: 0 0 0 3px var(--darken-3);
+      box-shadow: 0 0 0 3px var(--color-darken-3);
       outline: none;
     }
 
     &:hover {
-      color: var(--light);
-      box-shadow: inset 0 0 0 999px var(--darken-3);
+      color: var(--color-light);
+      box-shadow: inset 0 0 0 999px var(--color-darken-3);
     }
   }
 }
@@ -42,7 +42,7 @@ input {
 :root {
   --button-border-width: 0;
   --button-border-radius: var(--border-radius);
-  --button-color: var(--light);
+  --button-color: var(--color-light);
   --button-font-family: inherit;
   --button-font-size: 16px;
   --button-font-weight: normal;

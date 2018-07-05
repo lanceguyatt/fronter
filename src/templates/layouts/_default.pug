@@ -23,7 +23,10 @@ html(class='no-js' dir=site.dir lang=site.lang itemscope itemtype='http://schema
 
     meta(itemprop='name' content=view.title)
     meta(itemprop='description' content=view.description)
-    meta(itemprop='url' content=`${site.url}${view.url}`)
+    meta(
+      itemprop='url'
+      content=`${site.url}${view.url}`
+    )
     meta(itemprop='image' content=view.image.url)
 
     block meta-og

@@ -2,8 +2,8 @@ import webpackBase from './webpack.config';
 
 module.exports = Object.assign({}, webpackBase, {
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: 'none',
   performance: {
-    hints: false,
+    hints: 'error',
   },
 });

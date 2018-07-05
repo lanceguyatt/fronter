@@ -1,18 +1,18 @@
-/* eslint no-console: 0 */
-import gulp from 'gulp';
+/* eslint import/no-dynamic-require: 0,  no-console: 0 */
 import webpack from 'webpack';
 import { resolve } from 'path';
 import browserSync from 'browser-sync';
 import gutil from 'gulp-util';
 
-import { port, paths, isProduction } from '../config';
+import { isProduction, port, paths } from '../../config';
 
-const webpackConfig = require(`../webpack/webpack.config.${
+const webpackConfig = require(`../../webpack/webpack.config.${
   isProduction ? 'prod' : 'dev'
 }`);
 
 const bs = browserSync.create('main');
-gulp.task('server:start', () => {
+
+const start = (done) => {
   bs.init(
     null,
     {
@@ -61,4 +61,9 @@ gulp.task('server:start', () => {
       });
     },
   );
-});
+  done();
+};
+
+export default {
+  start,
+};

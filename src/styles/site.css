@@ -1,7 +1,4 @@
-@import 'settings/_global';
-@import 'settings/_media-queries';
-@import 'settings/_colors';
-@import 'settings/_grid';
+@import 'settings/_index';
 @import 'tools/_mixins';
 
 /*

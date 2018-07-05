@@ -1,3 +1,4 @@
+import webpack from 'webpack';
 import { resolve } from 'path';
 
 import { paths } from '../config';
@@ -11,7 +12,13 @@ const webpackBase = {
     filename: '[name].js',
     path: paths.scripts.buildDir,
   },
-  plugins: [],
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+    }),
+  ],
   module: {
     rules: [
       {

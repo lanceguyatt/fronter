@@ -7,7 +7,7 @@ body {
 }
 
 body {
-  color: var(--dark);
+  color: var(--color-dark);
   font-family: var(--font-family-sans-serif);
   font-size: 1rem;
   line-height: 1.5;

@@ -1,0 +1,5 @@
+:root {
+  @custom-media --breakpoint-sm (min-width: 512px);
+  @custom-media --breakpoint-md (min-width: 768px);
+  @custom-media --breakpoint-lg (min-width: 1024px);
+}
