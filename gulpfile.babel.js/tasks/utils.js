@@ -2,7 +2,6 @@ import gulp from 'gulp';
 import gulpClean from 'gulp-clean';
 import { resolve } from 'path';
 import gulpSitemap from 'gulp-sitemap';
-import htmlhint from 'gulp-htmlhint';
 
 import relative from '../plugins/document-relative';
 import { homepage } from '../../package.json';
@@ -45,18 +44,9 @@ const sitemap = (done) => {
   done();
 };
 
-const test = (done) => {
-  gulp
-    .src(resolve(paths.templates.buildDir, '**', '*.html'))
-    .pipe(htmlhint('.htmlhintrc'))
-    .pipe(htmlhint.reporter());
-  done();
-};
-
 export default {
   clean,
   copy,
   relativePath,
   sitemap,
-  test,
 };

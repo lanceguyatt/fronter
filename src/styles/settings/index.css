@@ -1,0 +1,11 @@
+@import 'colors';
+@import 'breakpoints';
+@import 'grids';
+@import 'space';
+@import 'typography';
+@import 'zindex';
+
+:root {
+  --border-width: 1px;
+  --border-radius: 2px;
+}

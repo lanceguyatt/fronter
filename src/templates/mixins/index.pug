@@ -1,9 +1,6 @@
-include objects/_index
-
-include components/_form
-include components/_index
-
-include utilities/_index
+include objects/index
+include components/index
+include utilities/index
 
 mixin main
 
@@ -11,12 +8,10 @@ mixin main
   main(class='c-main')&attributes(attributes)
     block
 
-
 mixin stringify(item, replacer = null, space = ' ')
 
   code
     pre=JSON.stringify(item, replacer, space)
-
 
 mixin view(item)
 

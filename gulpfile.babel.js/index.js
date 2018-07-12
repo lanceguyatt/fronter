@@ -6,6 +6,7 @@ import scripts from './tasks/scripts';
 import styles from './tasks/styles';
 import templates from './tasks/templates';
 import utils from './tasks/utils';
+import test from './tasks/test';
 
 gulp.task('server:start', server.start);
 
@@ -24,7 +25,9 @@ gulp.task('utils:clean', utils.clean);
 gulp.task('utils:copy', utils.copy);
 gulp.task('utils:relative', utils.relative);
 gulp.task('utils:sitemap', utils.sitemap);
-gulp.task('utils:test', utils.test);
+
+gulp.task('test:css', test.css);
+gulp.task('test:html', test.html);
 
 const build = gulp.series(
   'utils:copy',

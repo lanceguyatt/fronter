@@ -1,0 +1,8 @@
+@import 'btn';
+@import 'icons';
+
+.c-banner,
+.c-main,
+.c-contentinfo {
+  padding: 1.25rem *;
+}

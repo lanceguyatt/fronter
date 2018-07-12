@@ -1,4 +1,4 @@
-/* TODO minimise */
+@import 'boxsizing';
 
 html,
 body {
@@ -8,8 +8,7 @@ body {
 
 body {
   color: var(--color-dark);
-  font-family: var(--font-family-sans-serif);
-  font-size: 1rem;
+  font: 1rem var(--font-avenir);
   line-height: 1.5;
   overflow-y: scroll;
   text-rendering: optimizeLegibility;
@@ -78,23 +77,13 @@ code,
 pre,
 samp {
   font-family: var(--font-family-mono-space);
+  font-size: 87.5%;
 }
 
 code,
 samp {
   padding: 0.125em;
 }
-
-code,
-pre,
-samp {
-  font-size: 87.5%;
-}
-
-/* code {
-  color: var(--blue);
-  background-image: linear-gradient(transparent, transparent 87.5%, color(var(--blue) a(0.125)) 0);
-} */
 
 pre code {
   background-image: none;

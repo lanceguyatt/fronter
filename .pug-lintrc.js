@@ -1,4 +1,4 @@
-{
+module.exports = {
   disallowBlockExpansion: true,
   disallowIdLiterals: true,
   disallowDuplicateAttributes: true,
@@ -6,4 +6,4 @@
   disallowLegacyMixinCall: true,
   disallowMultipleLineBreaks: true,
   validateTemplateString: true,
-}
+};
