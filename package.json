@@ -16,15 +16,15 @@
     "url": "git@github.com:lanceguyatt/fronter.git"
   },
   "scripts": {
-    "serve": "http-server build -o",
+    "serve": "http-server public -o",
     "dev": "gulp",
-    "build": "NODE_ENV=production gulp build",
-    "deploy": "npm run build && surge -p build -d fronter.surge.sh",
+    "build": "NODE_ENV=production gulp public",
+    "deploy": "npm run build && surge -p public -d fronter.surge.sh",
     "webpack:prod": "webpack-cli --mode=production --config ./webpack/webpack.config.prod.js",
     "js:diff": "prettier --config .prettierrc --list-different \"**/*.js\"",
     "js:format": "prettier --config .prettierrc --write  \"**/*.js\"",
     "js:test": "eslint --config .eslintrc.js \"**/*.js\"",
-    "html:test": "htmlhint \"build**/*.html\"",
+    "html:test": "htmlhint \"public**/*.html\"",
     "css:test": "stylelint \"**/*.css\" --fix --config .stylelintrc > foo.txt",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "pug:test": "pug-lint --config .puglintrc -reporter inline \"src**/*.pug\""

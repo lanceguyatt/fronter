@@ -41,8 +41,11 @@ const build = gulp.series(
 export { build }
 
 export default gulp.series(
-  'styles:compile',
+  'utils:copy',
+  'images:compile',
   'scripts:compile',
+  'styles:compile',
+  'templates:compile',
   'server:start',
   'styles:watch',
   'templates:watch'

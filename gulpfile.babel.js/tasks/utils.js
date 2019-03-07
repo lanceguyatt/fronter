@@ -13,7 +13,7 @@ const copy = done => {
 }
 
 const clean = done => {
-  gulp.src(resolve(paths.buildDir, '**', '**', '*.html')).pipe(gulpClean())
+  gulp.src(resolve(paths.buildDir)).pipe(gulpClean())
   done()
 }
 
@@ -22,11 +22,11 @@ const relativePath = done => {
     .src(resolve(paths.buildDir, '**', '**', '**', '**', '*.html'))
     .pipe(
       relative({
-        directory: 'build',
+        directory: 'public',
         url: 'http://localhost:3000',
       })
     )
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest('public'))
   done()
 }
 

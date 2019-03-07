@@ -5,7 +5,7 @@ import gutil from 'gulp-util'
 const port = process.env.PORT || 8081
 const isProduction = process.env.NODE_ENV === 'production'
 
-const buildDir = resolve(__dirname, 'build')
+const buildDir = resolve(__dirname, 'public')
 const srcDir = resolve(__dirname, 'src')
 const staticDir = resolve(__dirname, 'static')
 
