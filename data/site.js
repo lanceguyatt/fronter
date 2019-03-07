@@ -1,17 +1,17 @@
-import moment from 'moment';
+import moment from 'moment'
 
-import { name, description, homepage } from '../package.json';
+import { name, description, homepage } from '../package.json'
 
-const url = homepage;
+const url = homepage
 
 const image = {
   url: `${homepage}/android-chrome-512x512.png`,
   width: 512,
   height: 512,
   alt: 'Fronter logo',
-};
+}
 
-const type = 'website';
+const type = 'website'
 
 const site = {
   name,
@@ -26,8 +26,8 @@ const site = {
   copyrightYear: moment().format('YYYY'),
   datePublished: '2017-3-13',
   googleSiteVerification: 'jNaVpvjnburtcKbiFL0zWb4wCaUuZ0hqgtWZkucp1TM',
-};
+}
 
-export { name, description, url, type, image };
+export { name, description, url, type, image }
 
-export default site;
+export default site

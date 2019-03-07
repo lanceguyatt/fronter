@@ -1,7 +1,7 @@
-import site, { name, description, url, type, image } from './site';
-import paths from './paths';
-import author from './author';
-import views from './views';
+import site, { name, description, url, type, image } from './site'
+import paths from './paths'
+import author from './author'
+import views from './views'
 
 export const view = {
   name,
@@ -9,7 +9,7 @@ export const view = {
   url,
   type,
   image,
-};
+}
 
 export default {
   site,
@@ -17,4 +17,4 @@ export default {
   author,
   views,
   view,
-};
+}

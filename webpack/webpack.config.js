@@ -1,7 +1,7 @@
-import webpack from 'webpack';
-import { resolve } from 'path';
+import webpack from 'webpack'
+import { resolve } from 'path'
 
-import { paths } from '../config';
+import { paths } from '../config'
 
 const webpackBase = {
   mode: 'development',
@@ -42,6 +42,6 @@ const webpackBase = {
     net: 'empty',
     tls: 'empty',
   },
-};
+}
 
-export default webpackBase;
+export default webpackBase

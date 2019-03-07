@@ -1,5 +1,5 @@
 /* eslint global-require: 0 */
-const postCSSCustomProperties = require('postcss-custom-properties');
+const postCSSCustomProperties = require('postcss-custom-properties')
 
 module.exports = {
   plugins: [
@@ -28,4 +28,4 @@ module.exports = {
       remove: false,
     }),
   ],
-};
+}

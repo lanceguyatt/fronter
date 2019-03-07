@@ -1,4 +1,4 @@
-import webpackBase from './webpack.config';
+import webpackBase from './webpack.config'
 
 module.exports = Object.assign({}, webpackBase, {
   mode: 'development',
@@ -6,4 +6,4 @@ module.exports = Object.assign({}, webpackBase, {
   performance: {
     hints: 'error',
   },
-});
+})

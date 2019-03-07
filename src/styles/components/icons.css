@@ -1,4 +1,6 @@
 .c-icon {
   display: inline-block;
   size: 30px;
+  background: pink;
+  color: yellow;
 }

@@ -18,4 +18,4 @@ export default {
     addressLocality: 'London',
     addressCountry: 'United Kingdom',
   },
-};
+}

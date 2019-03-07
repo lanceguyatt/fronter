@@ -1,13 +1,13 @@
-import dotenv from 'dotenv/config';
-import { resolve } from 'path';
-import gutil from 'gulp-util';
+import dotenv from 'dotenv/config'
+import { resolve } from 'path'
+import gutil from 'gulp-util'
 
-const port = process.env.PORT || 8081;
-const isProduction = process.env.NODE_ENV === 'production';
+const port = process.env.PORT || 8081
+const isProduction = process.env.NODE_ENV === 'production'
 
-const buildDir = resolve(__dirname, 'build');
-const srcDir = resolve(__dirname, 'src');
-const staticDir = resolve(__dirname, 'static');
+const buildDir = resolve(__dirname, 'build')
+const srcDir = resolve(__dirname, 'src')
+const staticDir = resolve(__dirname, 'static')
 
 const paths = {
   buildDir,
@@ -29,14 +29,14 @@ const paths = {
     srcDir: resolve(srcDir, 'templates'),
     buildDir,
   },
-};
+}
 
-const onError = (err) => {
-  gutil.beep();
-  gutil.log(err.message);
+const onError = err => {
+  gutil.beep()
+  gutil.log(err.message)
   /* eslint no-console: 0 */
-  console.log(err);
-  this.emit('end');
-};
+  console.log(err)
+  this.emit('end')
+}
 
-export { dotenv, port, isProduction, paths, onError };
+export { dotenv, port, isProduction, paths, onError }

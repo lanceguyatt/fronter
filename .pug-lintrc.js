@@ -6,4 +6,4 @@ module.exports = {
   disallowLegacyMixinCall: true,
   disallowMultipleLineBreaks: true,
   validateTemplateString: true,
-};
+}
