@@ -38,9 +38,7 @@ const build = gulp.series(
   'utils:sitemap'
 )
 
-export { build }
-
-export default gulp.series(
+const start = gulp.series(
   'utils:copy',
   'images:compile',
   'scripts:compile',
@@ -50,3 +48,6 @@ export default gulp.series(
   'styles:watch',
   'templates:watch'
 )
+
+gulp.task('build', build)
+gulp.task('default', start)

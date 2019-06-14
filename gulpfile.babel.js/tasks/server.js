@@ -64,6 +64,4 @@ const start = done => {
   done()
 }
 
-export default {
-  start,
-}
+export default { start }

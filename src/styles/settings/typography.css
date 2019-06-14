@@ -15,7 +15,7 @@
   --h4: 1rem;
   --h5: 16px;
   --h6: 12px;
-
-  @custom-selector :--headings h1, h2, h3, h4, h5, h6;
-  @custom-selector :--focus-hover :focus, :hover;
 }
+
+@custom-selector :--headings h1, h2, h3, h4, h5, h6;
+@custom-selector :--focus-hover :focus, :hover;

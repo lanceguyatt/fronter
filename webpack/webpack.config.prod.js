@@ -9,9 +9,6 @@ module.exports = Object.assign({}, webpackBase, {
     minimizer: [
       new UglifyJsPlugin({
         uglifyOptions: {
-          compress: {
-            warnings: false,
-          },
           output: {
             comments: false,
           },

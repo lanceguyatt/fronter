@@ -1,3 +1,5 @@
+@import 'grids';
+
 .o-wrapper {
   display: flex;
   flex-direction: column;

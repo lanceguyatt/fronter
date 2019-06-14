@@ -42,6 +42,7 @@ const watch = done => {
   gulp.watch(resolve(paths.templates.srcDir, '**', '*.pug'), compile)
   done()
 }
+
 export default {
   compile,
   test,

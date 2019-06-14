@@ -10,19 +10,20 @@ module.exports = {
     require('postcss-simple-vars'),
     require('postcss-custom-media'),
     require('postcss-custom-selectors'),
-    require('css-mqpacker', {
-      sort: true,
-    }),
-    require('lost'),
-    require('postcss-calc', {
-      precision: 5,
-      preserve: true,
-    }),
     postCSSCustomProperties({
       strict: false,
       preserve: false,
       warnings: true,
     }),
+    // require('css-mqpacker', {
+    //   sort: true,
+    // }),
+    require('lost'),
+    require('postcss-calc', {
+      precision: 5,
+      preserve: true,
+    }),
+
     require('postcss-color-function'),
     require('autoprefixer', {
       remove: false,

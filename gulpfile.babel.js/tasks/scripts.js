@@ -19,6 +19,4 @@ const compile = done => {
   done()
 }
 
-export default {
-  compile,
-}
+export default { compile }
