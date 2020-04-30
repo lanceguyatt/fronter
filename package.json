@@ -71,7 +71,7 @@
     "gulp-svgstore": "^7.0.1",
     "gulp-util": "^3.0.8",
     "husky": "^2.4.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jstransformer-markdown-it": "^2.1.0",
     "lint-staged": "^8.2.1",
     "lost": "^8.3.1",
